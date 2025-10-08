@@ -1,9 +1,66 @@
-index_term,facet_category,facet,primary_domain,subject,lookup_term
-building design,phenomenon,phenomenon_object,architecture,architectural elements,building
-project management,phenomenon,phenomenon_process,business,management,project
-design analysis,methods,analytical_technique,architecture,analytical methods,design
-construction process,phenomenon,phenomenon_process,construction,construction methods,construction
-management techniques,methods,analytical_technique,business,management,management
-site coordination,methods,analytical_technique,construction,site management,coordination
-time performance,conceptual framing,concept,construction,performance metrics,performance
-subcontractor,phenomenon,phenomenon_role,construction,workforce,subcontractor
+index_term,facet,primary_domain,subject,lookup_term
+building design,phenomenon_object,architecture,architectural elements,building
+project management,phenomenon_process,business,management,project
+design analysis,analytical_technique,architecture,analytical methods,design
+construction process,phenomenon_process,construction,construction methods,construction
+management techniques,analytical_technique,business,management,management
+site coordination,analytical_technique,construction,site management,coordination
+time performance,concept,construction,performance metrics,performance
+subcontractor,phenomenon_role,construction,workforce,subcontractor
+accountability,concept,governance,control,accountability
+adjudicator,phenomenon_role,organization,dispute resolution,adjudicator
+affordance,concept,design,perception,affordance
+airfield pavement damage,phenomenon_object,built environment,resilience,airfield pavement damage
+analytic network process,analytical_technique,management,decision model,analytic network process
+analytical framework,analytical_technique,research,analytical methods,analytical framework
+analytical hierarchy process,analytical_technique,management,decision model,analytical hierarchy process
+analytical model,theoretical_framing,research practice,theoretical framework,analytical model
+buildability analysis,phenomenon_process,architecture,design practices,buildability analysis
+building automation system,phenomenon_process,construction technology,smart buildings,building automation system
+building contractor,phenomenon_role,organization,contractual role,building contractor
+client liaison officer,phenomenon_role,organization,project role,client liaison officer
+client organization,concept,project management,stakeholder management,client organization
+construction performance,analytical_technique,construction management,performance metrics,construction performance
+construction personnel,phenomenon_object,construction management,operative role,construction personnel
+construction phase,phenomenon_process,construction management,project phases,construction phase
+construction phasing,phenomenon_process,construction management,project execution,construction phasing
+construction planner,phenomenon_role,organization,project role,construction planner
+construction planning,phenomenon_process,construction management,site planning,construction planning
+construction plant,phenomenon_object,construction management,site equipment,construction plant
+construction process,phenomenon_process,construction management,construction methods,construction process
+corruption,concept,governance,ethical issues,corruption
+cost,concept,project management,cost management,cost
+delay,concept,project management,cost management,delay
+procurement,concept,procurement,procurement process,procurement
+project manager,phenomenon_role,organization,project role,project manager
+quality,concept,management,quality management,quality
+questionnaire,analytical_technique,research method,data collection,questionnaire
+questionnaire survey,analytical_technique,research method,data collection,questionnaire survey
+simulation analysis,analytical_technique,engineering,analytical methods,al network theory
+social value,theoretical_framing,sociology,value creation,social value
+stakeholder management,phenomenon_process,management,relationship management,stakeholder management
+stakeholder management practice,phenomenon_process,management,management strategies,stakeholder management practice
+stakeholder network,phenomenon_object,management,community connections,stakeholder network
+stakeholder value,concept,management,value creation,stakeholder value
+standard,phenomenon_object,management,quality benchmarks,standard
+standard effective temperature,concept,engineering,comfort standards,standard effective temperature
+standard form of contract,phenomenon_object,law,contractual agreements,standard form of contract
+standard forms of contract,phenomenon_object,law,contractual documents,standard forms of contract
+standard method of measurement,concept,construction,measurement technique,standard method of measurement
+standard methods and procedure,concept,management,best practices,standard methods and procedure
+social-ecological system,concept,environmental science,environmental systems,social-ecological system
+society,concept,sociology,community studies,society
+solution,concept,management,problem-solving,solution
+solution strategy,concept,management,solution development,solution strategy
+special purpose vehicle,concept,business management,financial tools,special purpose vehicle
+specialist,phenomenon_role,organization,contractual role,specialist
+specialist trade contractor,phenomenon_role,organization,contractual role,specialist trade contractor
+specialization,concept,business management,industry focus,specialization
+speculative housebuilding,phenomenon_process,architecture,real estate development,speculative housebuilding
+Sri Lanka,phenomenon_location,geographical location,country,Sri Lanka
+stability,concept,civil engineering,structural integrity,stability
+staged construction,phenomenon_process,civil engineering,phased development,staged construction
+stakeholder,phenomenon_role,organization,stakeholder role,stakeholder
+women,concept,social science,gender studies,women
+worker,concept,economics,labour market,worker
+workmanship,phenomenon_object,contract law,contractual term,workmanship
