@@ -166,6 +166,39 @@ push @{$c->{fields}->{eprint}},
 	input_boxes => 1,
 },
 
+{
+    name => 'taxonomy_domain',
+    type => 'subject',
+    multiple => 1,
+    required => 0,
+},
+{
+    name => 'taxonomy_subject', 
+    type => 'subject',
+    multiple => 1,
+    required => 0,
+},
+{
+    name => 'taxonomy_facets',
+    type => 'subject',
+    multiple => 1,
+    required => 0,
+},
+{
+    name => 'taxonomy_terms',
+    type => 'subject',
+    multiple => 1,
+    required => 0,
+},
+{
+    name => 'taxonomy_browse_method',
+    type => 'set',
+    options => ['Domain', 'Subject', 'Research Facets', 'Index Terms'],
+    input_boxes => 1,
+    multiple => 0,
+    required => 0,
+},
+
 ;
 
 =head1 COPYRIGHT
