@@ -190,14 +190,6 @@ push @{$c->{fields}->{eprint}},
     multiple => 1,
     required => 0,
 },
-{
-    name => 'taxonomy_browse_method',
-    type => 'set',
-    options => ['Domain', 'Subject', 'Research Facets', 'Index Terms'],
-    input_boxes => 1,
-    multiple => 0,
-    required => 0,
-},
 
 ;
 
