@@ -180,6 +180,7 @@
 <epp:phrase id="browse_creators_for_facet">Browse Creators for Selected Research Facet</epp:phrase>
 <epp:phrase id="browse_creators_for_term">Browse Creators for Selected Index Term</epp:phrase>
 
+<epp:phrase id="viewname_eprint_taxonomy_index">Browse by Index</epp:phrase>
 <!--
  
 Notes:
