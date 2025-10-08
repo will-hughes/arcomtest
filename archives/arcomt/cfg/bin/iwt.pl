@@ -9,7 +9,7 @@ my $repo = EPrints->new->repository( 'arcomt' );
 # Load simplified taxonomy
 my $taxonomy = load_taxonomy( '/opt/eprints3/archives/arcomt/taxonomy_common_test.csv' );
 
-# Add:
+# Add: 
 print "=== Taxonomy Load Results ===\n";
 print "Total lookup terms loaded: " . scalar(keys %$taxonomy) . "\n";
 if (scalar(keys %$taxonomy) > 0) {
