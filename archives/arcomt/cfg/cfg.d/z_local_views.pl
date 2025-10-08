@@ -97,28 +97,13 @@ render_up_link => sub {
 			"type",
 			"DEFAULT" ],
 },
+
 {
     id => "taxonomy",
     menus => [
         {
-            # Level 1: Main taxonomy categories - use array of field names
-            fields => [ "taxonomy_domain", "taxonomy_subject", "taxonomy_facets", "taxonomy_terms" ],
-            hideempty => 1,
-            allow_null => 0,
-            mode => "sections",
-            open_first_section => 1,
-        },
-        {
-            # Level 2: Index terms - single field
+            # Start with just ONE field to test
             fields => [ "taxonomy_terms" ],
-            hideempty => 1,
-            allow_null => 0,
-            mode => "sections", 
-            open_first_section => 1,
-        },
-        {
-            # Level 3: Creators
-            fields => [ "creators_name" ],
             hideempty => 1,
             allow_null => 0,
             mode => "sections",
