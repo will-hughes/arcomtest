@@ -84,6 +84,7 @@ render_up_link => sub {
 			"DEFAULT;numeric",
 		],
 },
+
 {
    id=>"doctype", # Browse by type of document
    menus => 
@@ -97,99 +98,44 @@ render_up_link => sub {
 			"creators_name;first_letter",
 			"type",
 			"DEFAULT" ],
-};
-	
-push @{$c->{browse_views}},
-{
-    id => "divisions",
-    menus => [
-        {
-            fields => [ "divisions" ],  # Level 1: Research Facets
-            hideempty => 1,
-            allow_null => 0,
-            mode => "tree",
-            open_first_section => 1,
-        },
-        {
-            fields => [ "subjects" ],   # Level 2: Index Terms under selected facet
-            hideempty => 1,
-            allow_null => 0,
-            mode => "tree", 
-            open_first_section => 1,
-            group => "divisions",  # Filter subjects to only those related to the selected division
-        }
-    ],
-    order => "creators_name/title",
-    include => 1,
-    variations => [
-        "creators_name;first_letter",
-        "type",
-        "DEFAULT",
-    ],
-    max_items => 10000,
-    render_title => sub {
-        my ($session, $current_view, $menu, $value) = @_;
-        
-        if ($menu->{fields}->[0] eq "divisions") {
-            return $session->html_phrase("browse_by_research_facets");
-        }
-        elsif ($menu->{fields}->[0] eq "subjects") {
-            my $facet = $menu->{group_value} || "Research Facet";
-            my $dataset = {
-                facet => $session->make_text($facet),
-                subject => defined $value ? $session->make_text($value) : undef
-            };
-            return defined $value
-                ? $session->html_phrase("browse_facet_subject", %$dataset)
-                : $session->html_phrase("browse_subjects_in_facet", %$dataset);
-        }
-        return $session->make_text("Browse Research Facets");
-    },
 },
-
 {
-    id => "subjects",
+    id => "taxonomy_index",
     menus => [
         {
-            fields => [ "subjects" ],  # Level 1: Subject Groups  
+            # Level 1: Main taxonomy categories
+            fields => [ "taxonomy_browse_method" ],
             hideempty => 1,
             allow_null => 0,
-            mode => "tree",
-            open_first_section => 1,
         },
         {
-            fields => [ "subjects" ],  # Level 2: Index Terms under selected subject group
+            # Level 2: Specific values from selected category  
+            fields => [ "taxonomy_domain", "taxonomy_subject", "taxonomy_facets", "taxonomy_terms" ],
+            hideempty => 1,
+            allow_null => 0,
+            mode => "sections",
+            group => "taxonomy_browse_method",
+        },
+        {
+            # Level 3: Index terms (except when already at terms level)
+            fields => [ "taxonomy_terms" ],
             hideempty => 1, 
             allow_null => 0,
-            mode => "tree",
-            open_first_section => 1,
-            group => "subjects",  # This will show the hierarchical children of the selected subject
+            mode => "sections",
+            group => "taxonomy_browse_method",
+        },
+        {
+            # Level 4: Creators
+            fields => [ "creators_name" ],
+            hideempty => 1,
+            allow_null => 0,
+            mode => "sections",
         }
     ],
     order => "creators_name/title",
     include => 1,
-    variations => [
-        "creators_name;first_letter",
-        "type",
-        "DEFAULT",
-    ],
+    variations => [ "type", "DEFAULT" ],
     max_items => 10000,
-    render_title => sub {
-        my ($session, $current_view, $menu, $value) = @_;
-        
-        if ($menu->{fields}->[0] eq "subjects" && !$menu->{group}) {
-            return $session->html_phrase("browse_by_subjects");
-        }
-        elsif ($menu->{fields}->[0] eq "subjects" && $menu->{group}) {
-            my $subject_group = $menu->{group_value} || "Subject";
-            my $dataset = {
-                subject_group => $session->make_text($subject_group),
-                index_term => defined $value ? $session->make_text($value) : undef
-            };
-            return defined $value
-                ? $session->html_phrase("browse_subject_index_term", %$dataset)
-                : $session->html_phrase("browse_index_terms_in_subject", %$dataset);
-        }
-        return $session->make_text("Browse Subjects");
-    },
+},
 };
+	
