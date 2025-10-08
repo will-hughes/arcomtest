@@ -103,38 +103,28 @@ render_up_link => sub {
     id => "taxonomy_index",
     menus => [
         {
-            # Level 1: Main taxonomy categories
-            fields => [ "taxonomy_browse_method" ],
-            hideempty => 1,
-            allow_null => 0,
-        },
-        {
-            # Level 2: Specific values from selected category  
-            fields => [ "taxonomy_domain", "taxonomy_subject", "taxonomy_facets", "taxonomy_terms" ],
-            hideempty => 1,
-            allow_null => 0,
-            mode => "sections",
-            group => "taxonomy_browse_method",
-        },
-        {
-            # Level 3: Index terms (except when already at terms level)
             fields => [ "taxonomy_terms" ],
-            hideempty => 1, 
+            hideempty => 1,
             allow_null => 0,
             mode => "sections",
-            group => "taxonomy_browse_method",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
         },
         {
-            # Level 4: Creators
             fields => [ "creators_name" ],
             hideempty => 1,
             allow_null => 0,
             mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
         }
     ],
     order => "creators_name/title",
     include => 1,
-    variations => [ "type", "DEFAULT" ],
+    variations => ["creators_name;first_letter", "type", "DEFAULT"],
     max_items => 10000,
+},
 };
 	
