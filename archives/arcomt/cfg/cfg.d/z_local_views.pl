@@ -46,8 +46,6 @@ push @{$c->{browse_views}},
             },
         ],
 		
-	
-		
 render_title => sub {
     my ($session, $current_view, $menu, $value) = @_;
     
@@ -100,17 +98,44 @@ render_up_link => sub {
 			"DEFAULT" ],
 },
 {
-    id => "taxonomy_index",
+    id => "taxonomy",
     menus => [
         {
+            # Level 1: Main taxonomy categories as separate fields
+            fields => [ "taxonomy_domain", "taxonomy_subject", "taxonomy_facets", "taxonomy_terms" ],
+            hideempty => 1,
+            allow_null => 0,
+            mode => "sections",
+            open_first_section => 1,
+        },
+        {
+            # Level 2: Show taxonomy_terms grouped by the parent selection
             fields => [ "taxonomy_terms" ],
             hideempty => 1,
             allow_null => 0,
+            mode => "sections", 
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+            # This will automatically filter terms based on the parent selection
+        },
+        {
+            # Level 3: Creators
+            fields => [ "creators_name" ],
+            hideempty => 1,
+            allow_null => 0,
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30", 
+            grouping_function => "group_by_a_to_z_hideempty",
         }
     ],
-    order => "creators_name/title", 
+    order => "creators_name/title",
     include => 1,
-    variations => ["creators_name;first_letter", "type", "DEFAULT"],
+    variations => [
+        "type",
+        "DEFAULT",
+    ],
     max_items => 10000,
 };
 	
