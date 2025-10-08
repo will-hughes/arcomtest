@@ -70,6 +70,29 @@ sub process_batch {
             $eprint->value('abstract') || '',
             join( ' ', @{$eprint->value('keywords') || []} )
         ));
+
+                # DEBUG: Check first eprint's content and matching
+        if ($eprint_id == 1) {
+            print "\n=== DEBUG EPrint 1 ===\n";
+            print "Title: " . ($eprint->value('title') || 'NO TITLE') . "\n";
+            print "Text sample (first 300 chars): " . substr($text, 0, 300) . "\n";
+            print "Looking for matches...\n";
+            
+            my $match_count = 0;
+            foreach my $lookup_term (keys %$taxonomy) {
+                if( index($text, lc($lookup_term)) >= 0 ) {
+                    print "  MATCH: '$lookup_term' found in text\n";
+                    my $data = $taxonomy->{$lookup_term};
+                    $found_domains{$data->{domain}} = 1 if $data->{domain};
+                    $found_subjects{$data->{subject}} = 1 if $data->{subject};
+                    $found_facets{$data->{facet}} = 1 if $data->{facet};
+                    $found_terms{$data->{index_term}} = 1 if $data->{index_term};
+                    $match_count++;
+                    last if $match_count >= 5; # Show first 5 matches
+                }
+            }
+            print "Total matches found for eprint 1: $match_count\n";
+        }
         
         # Match all lookup terms (synonyms) in text
         foreach my $lookup_term (keys %$taxonomy) {
