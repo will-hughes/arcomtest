@@ -125,6 +125,5 @@ render_up_link => sub {
     include => 1,
     variations => ["creators_name;first_letter", "type", "DEFAULT"],
     max_items => 10000,
-},
 };
 	
