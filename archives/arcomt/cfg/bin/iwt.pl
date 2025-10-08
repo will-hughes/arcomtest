@@ -9,6 +9,23 @@ my $repo = EPrints->new->repository( 'arcomt' );
 # Load simplified taxonomy
 my $taxonomy = load_taxonomy( '/opt/eprints3/archives/arcomt/taxonomy_common_test.csv' );
 
+# Add:
+print "=== Taxonomy Load Results ===\n";
+print "Total lookup terms loaded: " . scalar(keys %$taxonomy) . "\n";
+if (scalar(keys %$taxonomy) > 0) {
+    print "First 5 lookup terms:\n";
+    my $count = 0;
+    foreach my $lookup_term (keys %$taxonomy) {
+        last if $count >= 5;
+        my $data = $taxonomy->{$lookup_term};
+        print "  Lookup: '$lookup_term' -> Index: '$data->{index_term}'\n";
+        $count++;
+    }
+} else {
+    print "❌ No taxonomy entries loaded - check CSV file!\n";
+}
+
+
 my $eprint_ids = $repo->dataset( 'eprint' )->search()->ids();
 my $total = scalar(@$eprint_ids);
 print "Processing $total eprints\n";
