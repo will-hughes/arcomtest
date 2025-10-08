@@ -180,7 +180,23 @@
 <epp:phrase id="browse_creators_for_facet">Browse Creators for Selected Research Facet</epp:phrase>
 <epp:phrase id="browse_creators_for_term">Browse Creators for Selected Index Term</epp:phrase>
 
+<!-- Taxonomy Browse View Phrases -->
 <epp:phrase id="viewname_eprint_taxonomy_index">Browse by Index</epp:phrase>
+
+<!-- Taxonomy Browse Method Options -->
+<epp:phrase id="eprint_fieldopt_taxonomy_browse_method_Domain">Domain</epp:phrase>
+<epp:phrase id="eprint_fieldopt_taxonomy_browse_method_Subject">Subject</epp:phrase>
+<epp:phrase id="eprint_fieldopt_taxonomy_browse_method_Research Facets">Research Facets</epp:phrase>
+<epp:phrase id="eprint_fieldopt_taxonomy_browse_method_Index Terms">Index Terms</epp:phrase>
+
+<!-- Field Titles -->
+<epp:phrase id="eprint_fieldname_taxonomy_browse_method">Taxonomy Browse Method</epp:phrase>
+<epp:phrase id="eprint_fieldname_taxonomy_domain">Taxonomy Domain</epp:phrase>
+<epp:phrase id="eprint_fieldname_taxonomy_subject">Taxonomy Subject</epp:phrase>
+<epp:phrase id="eprint_fieldname_taxonomy_facets">Taxonomy Facets</epp:phrase>
+<epp:phrase id="eprint_fieldname_taxonomy_terms">Taxonomy Terms</epp:phrase>
+
+	
 <!--
  
 Notes:
