@@ -1,0 +1,43 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="MyPlugins::BibTeX">BibTeX</option><option value="BibTeX">BibTeX</option><option value="MyPlugins::EndNote">EndNote</option><option value="EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input value="Export" type="submit" class="ep_form_action_button" role="button" name="_action_export_redir" /><input name="view" value="creators" type="hidden" id="view" /><input name="values" value="Ferreira=3AL_M_D_F=3A=3A" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_creators"><div class="ep_view_group_by">Group by: <a href="Ferreira=3AL_M_D_F=3A=3A.html">Item Type</a> | <span class="ep_view_group_by_current">No Grouping</span></div><div class="ep_view_blurb">Number of items: <strong>1</strong>.</div><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Arantes, A</span> and <span class="person_name">Ferreira, L M D F</span>
+
+
+(2020)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/115/">
+      Underlying causes and mitigation measures of delays in construction projects: An empirical study.
+    </a>
+  
+
+
+    <em>Journal of Financial Management of Property and Construction</em>, <strong>25</strong>(2),
+     pp. 165-181.
+    
+  
+
+
+  
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:55 2025 UTC</strong>.</div></div>

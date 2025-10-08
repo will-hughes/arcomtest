@@ -1,0 +1,63 @@
+######################################################################
+#
+#  Util for responding to Ajax UploadProgress
+#
+######################################################################
+#
+#  __COPYRIGHT__
+#
+# Copyright 2022 University of Southampton.
+# EPrints 3.4 is supplied by EPrints Services.
+#
+# http://www.eprints.org/eprints-3.4/
+#
+#  __LICENSE__
+#
+# This file is part of EPrints 3.4 L<http://www.eprints.org/>.
+#
+# EPrints 3.4 and this file are released under the terms of the
+# GNU Lesser General Public License version 3 as published by
+# the Free Software Foundation unless otherwise stated.
+#
+# EPrints 3.4 is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with EPrints 3.4.
+# If not, see L<http://www.gnu.org/licenses/>.
+#
+######################################################################
+
+use EPrints;
+
+use strict;
+
+# Make sure we don't accidentally start another progress for this request
+my $session = EPrints::Session->new( 2 );
+
+my $progress = EPrints::DataObj::UploadProgress->new_from_request( $session );
+
+if( !$progress )
+{
+	$session->not_found( "No such file upload in progress" );
+	$session->terminate;
+	exit(0);
+}
+
+my $content = $progress->export( 'JSON' );
+
+my $r = $session->get_request;
+
+# Based on Apache2::UploadProgress
+$r->headers_out->set( 'Vary' => 'Accept' );
+$r->headers_out->set( 'Pragma'        => 'no-cache' );
+$r->headers_out->set( 'Expires'       => 'Thu, 01 Jan 1970 00:00:00 GMT' );
+$r->headers_out->set( 'Cache-Control' => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0' );
+
+$r->content_type( "application/json" );
+$r->set_content_length( length $content );
+$r->write( $content );
+
+$session->terminate;

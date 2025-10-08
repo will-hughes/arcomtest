@@ -1,0 +1,6 @@
+timestamp,username,password_length,ip,user_agent,target,status,userid,securecode
+"2025-10-02T11:47:53Z","will","20","192.168.39.6","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0","http://arcomtest/cgi/users/home","missing","",""
+"2025-10-02T11:47:56Z","admin","20","192.168.39.6","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0","http://arcomtest/cgi/users/home","missing","",""
+"2025-10-02T11:47:57Z","admin","20","192.168.39.6","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0","http://arcomtest/cgi/users/home","missing","",""
+"2025-10-02T11:49:05Z","eprints","12","192.168.39.6","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0","http://arcomtest/cgi/users/home","missing","",""
+"2025-10-02T11:49:15Z","billy","","192.168.39.6","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0","http://arcomtest/cgi/users/home","success","1","16122b0644e2e08396a64e3ece00314e"

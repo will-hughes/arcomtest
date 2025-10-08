@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE phrases SYSTEM "entities.dtd">
+<epp:phrases xmlns="http://www.w3.org/1999/xhtml" xmlns:epp="http://eprints.org/ep3/phrase" xmlns:epc="http://eprints.org/ep3/control">
+
+  <!-- This file is used to add phrases from the phrase editor screen -->
+
+
+    <epp:phrase id="opening_2"><p>Academic study in this field can be challenging to navigate. Construction is typically a technical or scientific subject, while management draws on social sciences such as organization studies, economics, and law. Construction management sits at the intersection of these traditions, creating new opportunities for using social science to understand and reflect on the construction sector. While new insights are developed for both social sciences and construction science, this combination can also make it harder to locate relevant literature, especially for those new to the field or working across disciplinary boundaries.</p></epp:phrase>
+
+    <epp:phrase id="opening_3"><p>This catalogue is one of ARCOM's key contributions to the field. It is intended to support access to previous research for both researchers and practitioners. By making abstracts and related information easy to find, we hope to encourage greater use of existing work, and to help reduce duplication of effort. By providing this catalogue, we hope to facilitate access to previous research for researchers and practitioners in this area.</p></epp:phrase>
+
+    <epp:phrase id="opening_4"><p>As well as papers from the ARCOM Conference Proceedings since 1997, the database includes complete metadata (titles, authors, abstracts and keywords) from the following journals:</p></epp:phrase>
+
+    <epp:phrase id="opening_6"><p>Finally, we are also collating PhD theses from around the world that help form the underpinning to new developments and insights. (If your abstract is not yet included, we would be glad to hear from you.) The database is updated regularly with new papers from the selected journals, as well as each new set of ARCOM Conference Proceedings. Earlier ARCOM Conference papers (those published before 1997) are not available online. If you are looking for one of these, your university or institutional library may be able to help via Inter-Library Loan because they have all been formally published. If you are unsure how to request this, your librarian should be able to guide you.</p></epp:phrase>
+
+    <epp:phrase id="opening_7"><p>This service originally took the form of printed volumes, available for purchase. Income from those sales helped cover the initial cost of setting up the online system. Now that these costs have been met, ongoing maintenance is supported through ARCOM's core budget. We no longer provide hard copies. As a learned society, we see it as our responsibility to make this resource freely available to the widest possible audience. If your library still holds printed editions, please consider letting them know about this online version.</p></epp:phrase>
+
+    <epp:phrase id="opening_8"><h3>Additional Publications</h3>
+<p>If you are the publisher or editor of a journal that you believe should be included in this database, we would be glad to consider your suggestion. To help us assess it fairly, we ask that you provide a brief analysis showing how often articles from your journal cite, and are cited by, publications already in the database. We can offer guidance on how to compile this information using tools such as Scopus. Once your analysis is ready, please send it to the email address below. We will review any request in the context of the broader citation landscape and consider its relevance to the field.</p></epp:phrase>
+
+    <epp:phrase id="eprint_fieldname_annotation">Notes</epp:phrase>
+
+    <epp:phrase id="eprint_fieldhelp_annotation">Specific notes about anything unusual or unique to this record</epp:phrase>
+
+    <epp:phrase id="bin/generate_views:intro"><div class="ep_view_intro">Please select a value to browse from the list below (All journal articles, ARCOM Conference papers, or doctoral theses)</div></epp:phrase>
+
+</epp:phrases>

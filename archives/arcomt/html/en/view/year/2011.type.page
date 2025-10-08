@@ -1,0 +1,97 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="BibTeX">BibTeX</option><option value="MyPlugins::BibTeX">BibTeX</option><option value="EndNote">EndNote</option><option value="MyPlugins::EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input type="submit" value="Export" class="ep_form_action_button" role="button" name="_action_export_redir" /><input name="view" value="year" type="hidden" id="view" /><input name="values" value="2011" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_year"><div class="ep_view_group_by">Group by: <a href="2011.html">Creators</a> | <span class="ep_view_group_by_current">Item Type</span> | <a href="2011.default.html">No Grouping</a></div><div class="ep_view_jump ep_view_year_type_jump"><div class="ep_view_jump_to">Jump to: <a href="#group_article">Article</a> | <a href="#group_thesis">Thesis</a></div></div><div class="ep_view_blurb">Number of items: <strong>3</strong>.</div><a name="group_article"></a><h2>Article</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Gonzlez, V</span>; <span class="person_name">Alarcn, L F</span>; <span class="person_name">Maturana, S</span> and <span class="person_name">Bustamante, J A</span>
+
+
+(2011)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/105/">
+      Site management of work-in-process buffers to enhance project performance using the reliable commitment model: Case study.
+    </a>
+  
+
+
+    <em>Journal of Construction Engineering and Management</em>, <strong>137</strong>(9),
+     pp. 707-715.
+    
+  
+
+
+  
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Styhre, A</span>
+
+
+(2011)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/144/">
+      The overworked site manager: Gendered ideologies in the construction industry.
+    </a>
+  
+
+
+    <em>Construction Management and Economics</em>, <strong>29</strong>(9),
+     pp. 943-955.
+    
+  
+
+
+  
+
+
+</p><a name="group_thesis"></a><h2>Thesis</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Kong, T-M S</span>
+
+
+(2011)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/88/">
+      <em>Organizational culture of safety in the Hong Kong construction industry.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Hong Kong, Hong Kong.
+  
+
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:50 2025 UTC</strong>.</div></div>

@@ -1,0 +1,39 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="MyPlugins::BibTeX">BibTeX</option><option value="BibTeX">BibTeX</option><option value="MyPlugins::EndNote">EndNote</option><option value="EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input class="ep_form_action_button" value="Export" type="submit" role="button" name="_action_export_redir" /><input name="view" value="creators" type="hidden" id="view" /><input name="values" value="Kuntz=3AK_A=3A=3A" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_creators"><div class="ep_view_group_by">Group by: <a href="Kuntz=3AK_A=3A=3A.html">Item Type</a> | <span class="ep_view_group_by_current">No Grouping</span></div><div class="ep_view_blurb">Number of items: <strong>1</strong>.</div><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Kuntz, K A</span>
+
+
+(1994)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/132/">
+      <em>A construction crew evaluation model to improve craft productivity.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, The Pennsylvania State University, USA.
+  
+
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:53 2025 UTC</strong>.</div></div>

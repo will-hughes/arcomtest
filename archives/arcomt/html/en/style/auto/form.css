@@ -1,0 +1,188 @@
+
+/* Form related styles */
+
+form {
+	display: inline;
+}
+
+select, input.ep_form_text, textarea {
+	padding: 1px 2px 1px 2px;
+	margin-right: 4px;
+	border: solid 1px #ccc;
+}
+
+.ep_form_example {
+	font-weight: bold;
+	color: blue;
+}
+
+/* buttons */
+
+.ep_form_button_bar {
+	text-align: center;
+	padding: 4px;
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.ep_form_action_button, .ep_form_internal_button {
+	text-align: center;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 3px;
+	padding: 2px 20px;
+	cursor: pointer;
+}
+.ep_form_internal_button {
+	padding: 1px 14px;
+	background-position: 0px -2px;
+}
+
+/* form fields */
+
+.ep_form_field_help {
+        font-size: small ;
+}
+
+.ep_form_field_name {
+        padding-top: 1em;
+	font-weight: bold;
+}
+
+.ep_form_field_input {
+        padding-bottom: 3pt;
+}
+
+/* input fields grid */
+
+
+.ep_form_input_grid th {
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+.ep_form_input_grid > div > div {
+	vertical-align: middle;
+}
+
+.ep_form_input_grid_pos {
+	padding-right: 4px;
+}
+.ep_form_input_grid_arrows {
+	white-space: nowrap;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+
+.ep_form_input_grid_wide {
+	text-align: left;
+}
+
+.ep_field_legend {
+	font-style: italic;
+	display: none;
+}
+.ep_field_legend:after {
+	content: ":";
+}
+
+.ep_multi_heading::after {
+	content: ":";
+}
+
+.ep_search_fields > div > div, .ep_table_row > div {
+	border-top: dashed #bbf 1px;
+	vertical-align: top;
+	padding: 0.5em;
+}
+
+.ep_table_row.ep_first > div {
+	border-top: 0;
+}
+
+.ep_multi_heading, .ep_multi_heading_legend {
+	border-right: dashed #bbf 1px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.ep_multi {
+	width: 100%;
+	display: table;
+}
+
+.ep_login_form_table {
+	margin:auto; 
+	display: table;	
+}
+
+.ep_login_form_table > div {
+	display: table-row;
+}
+
+.ep_login_form_table > div > div, .ep_login_form_table > div > label {
+        display: table-cell;
+}
+
+.ep_form_input_grid {
+	display: table; 
+	border: 0; 
+	padding: 0; 
+	border-spacing: 0; 
+	border-collapse: separate;
+}
+
+.ep_form_input_grid > div {
+	display: table-row;
+}
+
+.ep_form_input_grid > div > div {
+	display: table-cell; 
+}
+
+.ep_form_input_grid > div > div.heading {
+	text-align: center;
+	font-weight: bold; 
+}
+
+.ep_option_list {
+	display: table; 
+	border: 0;
+}
+
+.ep_option_list_row {
+	display: table-row;
+}
+
+.ep_option_list_cell {
+        display: table-cell;
+}
+
+.ep_option_list_option {
+	margin-left: 2em;
+}
+
+
+.ep_field_set_medium,  .ep_boolean_list {
+	display: inline-block;
+	margin: 0;
+}
+
+.ep_field_set_medium > dd, .ep_boolean_list > dd {
+	float: left;	
+	margin: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.5em;
+}
+
+.ep_field_set_medium > dt, .ep_boolean_list > dt {
+	float: left;
+	clear: both;
+}
+
+.ep_over_word_limit {
+	color: red;
+	font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE page SYSTEM "entities.dtd" >
+<xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+<xpage:title>About the <epc:phrase ref="archive_name" /></xpage:title>
+<xpage:body>
+
+<epc:phrase ref="opening_1" />
+<epc:phrase ref="opening_2" /> 
+<em>Answers to questions that may help to understand what we are doing here:</em>
+<ul>
+<li><a href="https://arcomabstracts.com/info-001.html">Why are we doing this?</a></li>
+<li><a href="https://arcomabstracts.com/info-002.html">What do we mean by construction management?</a></li>
+<li><a href="https://arcomabstracts.com/info-003.html">How are papers and theses chosen for inclusion?</a></li>
+<li><a href="https://arcomabstracts.com/info-004.html">What constitutes a research paper?</a></li>
+<li><a href="https://arcomabstracts.com/info-acronyms.html">Should I include acronyms in my title and keywords?</a></li>
+</ul>
+<epc:phrase ref="opening_3" /> 
+<epc:phrase ref="opening_4" />
+<epc:phrase ref="opening_5" />
+<epc:phrase ref="opening_6" />
+<epc:phrase ref="opening_7" />
+<epc:phrase ref="opening_8" /> 
+
+			<p>
+				-------------------------------------------
+			</p>
+
+<h3 id="contact-information">Contact Information</h3>
+<p>If you have any questions about the database, or suggestions for improving it, please get in touch. We welcome feedback from researchers, students, practitioners, and anyone with an interest in construction management research; including anyone involved in cataloguing, indexing, or managing similar databases in other topic areas.</p>
+<p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
+
+        <p>
+			<small>
+				<i>Last updated 20 August 2025</i>
+			</small>
+		</p>
+
+</xpage:body>
+</xpage:page>

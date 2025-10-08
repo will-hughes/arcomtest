@@ -1,0 +1,101 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="BibTeX">BibTeX</option><option value="MyPlugins::BibTeX">BibTeX</option><option value="EndNote">EndNote</option><option value="MyPlugins::EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input name="_action_export_redir" role="button" class="ep_form_action_button" type="submit" value="Export" /><input name="view" value="year" type="hidden" id="view" /><input name="values" value="2010" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_year"><div class="ep_view_group_by">Group by: <span class="ep_view_group_by_current">Creators</span> | <a href="2010.type.html">Item Type</a> | <a href="2010.default.html">No Grouping</a></div><div class="ep_view_jump ep_view_year_creators_name_jump"><div class="ep_view_jump_to">Jump to: <a href="#group_E">E</a> | <a href="#group_L">L</a> | <a href="#group_N">N</a></div></div><div class="ep_view_blurb">Number of items: <strong>3</strong>.</div><a name="group_E"></a><h2>E</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Enshassi, A</span>; <span class="person_name">Kumaraswamy, M</span> and <span class="person_name">Jomah, A N</span>
+
+
+(2010)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/103/">
+      Significant factors causing time and cost overruns in construction projects in the Gaza Strip: Contractors' perspective.
+    </a>
+  
+
+
+    <em>International Journal of Construction Management</em>, <strong>10</strong>(1),
+     pp. 35-60.
+    
+  
+
+
+  
+
+
+</p><a name="group_L"></a><h2>L</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Lim, B T H</span>; <span class="person_name">Oo, B L</span> and <span class="person_name">Ling, F</span>
+
+
+(2010)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/148/">
+      The survival strategies of Singapore contractors in prolonged recession.
+    </a>
+  
+
+
+    <em>Engineering, Construction and Architectural Management</em>, <strong>17</strong>(4),
+     pp. 387-403.
+    
+  
+
+
+  
+
+
+</p><a name="group_N"></a><h2>N</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Ng, A K W</span> and <span class="person_name">Price, A D F</span>
+
+
+(2010)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/87/">
+      Optimizing the time performance of subcontractors in building projects.
+    </a>
+  
+
+
+    <em>Construction Economics and Building</em>, <strong>10</strong>(1-2),
+     pp. 90-102.
+    
+  
+
+
+  
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:50 2025 UTC</strong>.</div></div>

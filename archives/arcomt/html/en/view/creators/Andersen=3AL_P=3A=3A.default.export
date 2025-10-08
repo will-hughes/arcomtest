@@ -1,0 +1,14 @@
+<form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="MyPlugins::BibTeX">BibTeX</option><option value="BibTeX">BibTeX</option><option value="MyPlugins::EndNote">EndNote</option><option value="EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input class="ep_form_action_button" type="submit" value="Export" role="button" name="_action_export_redir" /><input name="view" value="creators" type="hidden" id="view" /><input name="values" value="Andersen=3AL_P=3A=3A" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form>

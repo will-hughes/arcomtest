@@ -1,0 +1,9 @@
+index_term,facet_category,facet,primary_domain,subject,lookup_term
+building design,phenomenon,phenomenon_object,architecture,architectural elements,building
+project management,phenomenon,phenomenon_process,business,management,project
+design analysis,methods,analytical_technique,architecture,analytical methods,design
+construction process,phenomenon,phenomenon_process,construction,construction methods,construction
+management techniques,methods,analytical_technique,business,management,management
+site coordination,methods,analytical_technique,construction,site management,coordination
+time performance,conceptual framing,concept,construction,performance metrics,performance
+subcontractor,phenomenon,phenomenon_role,construction,workforce,subcontractor

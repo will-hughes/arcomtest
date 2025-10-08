@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Accessibility roadmap for ARCOM Test Repo - ARCOM Test Repo</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript">
+// <![CDATA[
+var eprints_http_root = "http://arcomtest";
+var eprints_http_cgiroot = "http://arcomtest/cgi";
+var eprints_oai_archive_id = "arcomtest";
+var eprints_logged_in = false;
+var eprints_logged_in_userid = 0; 
+var eprints_logged_in_username = ""; 
+var eprints_logged_in_usertype = ""; 
+var eprints_lang_id = "";
+// ]]></script>
+    <style type="text/css">.ep_logged_in { display: none }</style>
+    <link rel="stylesheet" type="text/css" href="/style/auto-3.4.7.css?1758138084" />
+    <script type="text/javascript" src="/javascript/auto-3.4.7.js?1758138084">
+//padder
+</script>
+    <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="/style/ie6.css" />
+   <![endif]-->
+    <meta name="Generator" content="EPrints 3.4.7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <link rel="Top" href="http://arcomtest/" />
+    <link rel="Sword" href="http://arcomtest/sword-app/servicedocument" />
+    <link rel="SwordDeposit" href="http://arcomtest/id/contents" />
+    <link rel="Search" type="text/html" href="http://arcomtest/cgi/search" />
+    <link rel="Search" type="application/opensearchdescription+xml" href="http://arcomtest/cgi/opensearchdescription" title="ARCOM Test Repo" />
+    
+  </head>
+  <body>
+    
+    <div id="wrapper">
+      <header>
+        <div class="ep_tm_header ep_noprint">
+          <nav aria-label="Main Navigation">
+            <ul role="menubar" class="ep_tm_menu">
+              <li role="none">
+                <a href="/" title="Go to start page!" role="menuitem">
+                  Home
+                </a>
+              </li>
+              <li role="none">
+                <a href="/information.html" title="Get some detailed repository information!" role="menuitem">
+                  About
+                </a>
+              </li>
+              <li role="none">
+                <a href="/view/" title="Browse the items using prepared lists!" role="menuitem" menu="ep_tm_menu_browse" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_browse">
+                  Browse
+                </a>
+                <ul role="menu" id="ep_tm_menu_browse" style="display:none;">
+                  <li role="none">
+                    <a href="/view/year/" role="menuitem">
+                      Browse by 
+                      Year
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="/view/subjects/" role="menuitem">
+                      Browse by 
+                      Subject
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="/view/divisions/" role="menuitem">
+                      Browse by 
+                      Division
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a href="/view/creators/" role="menuitem">
+                      Browse by 
+                      Author
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        
+          <div class="ep_tm_searchbar">
+            <div>
+              <ul class="ep_tm_key_tools" id="ep_tm_menu_tools"><li class="ep_tm_key_tools_item"><a href="/cgi/users/home" class="ep_tm_key_tools_item_link">Login</a></li><li class="ep_tm_key_tools_item"><a href="/cgi/register" class="ep_tm_key_tools_item_link">Create Account</a></li></ul>
+            </div>
+            <div>
+              
+              <form method="get" accept-charset="utf-8" action="/cgi/search" style="display:inline" role="search" aria-label="Publication simple search">
+                <input class="ep_tm_searchbarbox" size="20" type="text" name="q" aria-labelledby="searchbutton" />
+                <input class="ep_tm_searchbarbutton" value="Search" type="submit" name="_action_search" id="searchbutton" />
+                <input type="hidden" name="_action_search" value="Search" />
+                <input type="hidden" name="_order" value="bytitle" />
+                <input type="hidden" name="basic_srchtype" value="ALL" />
+                <input type="hidden" name="_satisfyall" value="ALL" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="main_content">
+        <div class="ep_tm_page_content">
+          <h1 id="page-title" class="ep_tm_pagetitle">
+            Accessibility roadmap for ARCOM Test Repo
+          </h1>
+          
+<div class="ep_msg_message">
+  <div class="ep_msg_message_content">
+    <div class="ep_msg_message_icon" style="width: 32px;">
+      <img alt="Message" src="/style/images/message.png" />
+    </div>
+    <div class="ep_msg_message_text">This page is intended as a generic accessibility roadmap for EPrints and should be amended as required before deployment of your EPrints repository.</div>
+  </div>
+</div>
+<p>In this roadmap "accessibility compliant" is intended to mean that a page reports no errors, alerts or contrast errors according to the <a href="https://wave.webaim.org/extension/" rel="external">Chrome Extension</a> of the <a href="https://wave.webaim.org/" rel="external">WAVE web accessibility evaluation tool</a>. For the purposes of this roadmap "user-generated content" will be considered as that generated by EPrints' testdata/bin/import_test_data script.</p>
+
+<dl>
+  <dt style="font-weight: bold;">EPrints 3.4.2 released (July 2020)</dt>
+  <dd>
+    <p>Ensures all pages accessible without login are accessibility compliant, except where this would directly affect them from fulfilling their function as an Open Access archive, (e.g. links to PDF documents).  This includes:</p>
+    <ol>
+      <li>Fully static pages. Such as the <a href="/">Home</a>, <a href="/information.html">About</a>, <a href="/">About EPrints</a>, <a href="/policies.html">Repository Policies</a>, <a href="/accessibility/">Accessibility</a>, etc. pages.</li>
+      <li>Standard form-based pages. Such as <a href="/cgi/search/simple">Simple Search</a>, <a href="/cgi/search/advanced">Advanced Search</a>, <a href="/cgi/register">Create Account</a> pages.</li>
+      <li>Pages generated from user-generated content.  Such as <a href="/view/">browse views</a>, abstract pages, result pages from searches, etc.  Assuming typical user-generated content.</li>
+    </ol>
+  </dd>
+
+  <dt style="font-weight: bold; margin-top: 20px;">EPrints 3.4.3 released (April 2021)</dt>
+  <dd>
+    <p>Ensures all commonly used pages accessible to only logged in users are accessibility compliant, when using typical user-generated content.  This includes:</p>
+    <ol>
+      <li>Manage deposits page</li>
+      <li>View and edit pages for deposits</li>
+      <li>Review pages for deposits</li>
+      <li>Manage records page and its subsidiary "Manage [dataset]" pages</li>
+      <li>Admin Menu</li>
+      <li>Create, view and edit pages for users</li>
+      <li>View and edit pages for saved searches</li>
+      <li>Admin search pages for items, issues, users and history</li>
+      <li>Repository status page</li>
+      <li>Create user page</li>
+      <li>EPrints Bazaar</li>
+      <li>Send test email page</li>
+      <li>Database schema page</li>
+      <li>Storage manager page</li>
+      <li>Phrase editor and editing phrases pages</li>
+      <li>Edit subject pages</li>
+      <li>Manage metadata fields pages</li>
+    </ol>
+  </dd>
+  <dt style="font-weight: bold; margin-top: 20px;">EPrints 3.4.4 released (August 2022)</dt>
+  <dd>
+    <p>Incremental modifications to further improve accessibility changes made in 3.4.2 and 3.4.3 and fixes any snags associated with these changes.  In particular, improving the functionality to allow the number of names displayed in a citation to be limited but expanded on request.</p>
+  </dd>
+  <dt style="font-weight: bold; margin-top: 20px;">EPrints 3.4.5 released (May 2023)</dt>
+  <dd>
+    <p>Further incremental changes and snag fixes. In particular, the use of fieldsets and legends in search and input forms to make them easier to style with CSS.</p>
+  </dd>
+  <dt style="font-weight: bold; margin-top: 20px;">EPrints 3.4.6 released (August 2024)</dt>
+  <dd>
+    <p>Further incremental changes and snag fixes. Including increased usage or appropriate ARIA attributes for elements.</p>
+</dd>
+  <dt style="font-weight: bold; margin-top: 20px;">EPrints 3.4.7 released (August 2025)</dt>
+  <dd>
+	  <p>Further incremental changes and snag fixes.</p>
+	  <ol>
+		  <li>Removing dangling ARIA describedby attributes for fields with no help text.</li>
+		  <li>Ensuring unique element IDs for common actions in different tabs.</li>
+		  <li>Adding /cgi/register to the Accessibility report.</li>
+	  </ol>
+  </dd>
+  <dt style="font-weight: bold; margin-top: 20px;">Future releases</dt>
+  <dd>Improving the accessibility of PDF documents uploaded to EPrints repositories.  In particular, tools to insert metadata and accessibility features into uploaded files.</dd>
+</dl>
+
+<p><em>Roadmap last updated on <b>12 August 2025</b></em></p>
+
+
+        </div>
+      </div>
+
+      <footer>
+        <div class="ep_tm_footer ep_noprint">
+          <span>ARCOM Test Repo is powered by <em><a href="http://eprints.org/software/">EPrints 3.4</a></em> which is developed by the <a href="https://www.ecs.soton.ac.uk/">School of Electronics and Computer Science</a> at the University of Southampton. <a href="/eprints/">About EPrints</a> | <a href="/accessibility/">Accessibility</a></span>
+          <div class="ep_tm_eprints_logo">
+            <a rel="external" href="https://eprints.org/software/">
+              <img alt="EPrints Logo" src="/images/eprintslogo.png" /><img alt="EPrints Publications Flavour Logo" src="/images/flavour.png" style="width: 28px" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div> <!-- wrapper -->
+  </body>
+</html>

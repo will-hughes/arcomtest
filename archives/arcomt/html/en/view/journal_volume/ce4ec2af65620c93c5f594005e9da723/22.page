@@ -1,0 +1,43 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="MyPlugins::BibTeX">BibTeX</option><option value="BibTeX">BibTeX</option><option value="MyPlugins::EndNote">EndNote</option><option value="EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input role="button" name="_action_export_redir" class="ep_form_action_button" type="submit" value="Export" /><input name="view" value="journal_volume" type="hidden" id="view" /><input name="values" value="Journal_of_Financial_Management_of_Property_and_Construction/22" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_journal_volume"><div class="ep_view_blurb">Number of items: <strong>1</strong>.</div><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Oyegoke, A S</span> and <span class="person_name">Al Kiyumi, N</span>
+
+
+(2017)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/130/">
+      The causes, impacts and mitigations of delay in megaprojects in the Sultanate of Oman.
+    </a>
+  
+
+
+    <em>Journal of Financial Management of Property and Construction</em>, <strong>22</strong>(3),
+     pp. 286-302.
+    
+  
+
+
+  
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:56 2025 UTC</strong>.</div></div>

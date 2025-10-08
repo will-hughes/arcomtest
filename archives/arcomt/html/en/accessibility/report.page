@@ -1,0 +1,487 @@
+
+
+<div class="ep_msg_message">
+  <div class="ep_msg_message_content">
+    <div class="ep_msg_message_icon" style="width: 32px;">
+      <img alt="Message" src="/style/images/message.png" />
+    </div>
+    <div class="ep_msg_message_text">This report is based on a default publication flavour installation of <a href="https://www.eprints.org/uk/index.php/eprints-3-4/" rel="external">EPrints 3.4</a> using the data imported by the testdata/bin/import_test_data script.  Any rebranding to EPrints or significant customisation is liable to significantly alter the results show below.</div>
+  </div>
+</div>
+
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#test-results">Test Results</a>
+    <ul>
+      <li><a href="#public-facing-pages">Public-facing Pages</a></li>
+      <li><a href="#non-public-administration-pages">Non-public Administration Pages</a></li>
+      <li><a href="#miscellaneous-pages">Miscellaneous Page</a></li>
+    </ul>
+  </li>
+  <li><a href="#summary">Summary</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>This report is intended to present the results of the testing of ARCOM Test Repo to assess its accessibility compliance.  This has been undertaken with the use of the <a href="https://wave.webaim.org/extension/" rel="external">Firefox Extension</a> of the <a href="https://wave.webaim.org/" rel="external">WAVE web accessibility evaluation tool</a>.  To emulate user-generated content EPrints' testdata/bin/import_test_data script has been used to import 100 publications to populate various pages under test.  In addition to this one empty (unedited) publication was added to make a total of 101 publication records (100 in the live archive).  Also, a Saved Search for "Habits" was created. Also, due to a permissions change "+eprint/remove_once_archived" and "+eprint/remove_with_email" has been added to the admin user who is logged in to test the non-public administration pages.</p>
+<p>Where there are known issues, the comments section should describe the reasons and where appropriate how these issues are likely be addressed.  For more details on planned future accessibility improvements, please see <a href="roadmap.html">our accessibility roadmap</a>.</p>
+
+<h2 id="test-results">Test Results</h2>
+<p><em>Test last run on <b>27 August 2025</b></em></p>
+<h3 id="public-facing-pages">Public-facing Pages</h3>
+<table class="ep_accessibility_results">
+  <tr>
+    <th>Page</th>
+    <th>Result</th>
+    <th>Comments</th>
+  </tr>
+  <tr> 
+    <td><a href="/">/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 10 | Structural Elements: 10 | ARIA: 33</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/information.html">/information.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 9 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/view/">/view/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 9 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/view/year/">/view/year/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 9 | ARIA: 21</div></td>
+    <td>Index based on user-generated content.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/year/2004.html">/view/year/2004.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 21 | ARIA: 22</div></td>
+    <td>Contains user-generated content.  Only testing one listing per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/subjects/">/view/subjects/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 220 | ARIA: 21</div></td>
+    <td>Index based on user-generated content.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/subjects/D.html">/view/subjects/D.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 24 | ARIA: 22</div></td>
+    <td>Index based on user-generated content. Only testing one sub-menu per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/subjects/D051.html">/view/subjects/D051.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 15 | ARIA: 22</div></td>
+    <td>Contains user-generated content. Only testing one listing per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/divisions/">/view/divisions/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 11 | ARIA: 21</div></td>
+    <td>Index based on user-generated content.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/divisions/sch=5Fmat/">/view/divisions/sch=5fmat/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 12 | ARIA: 21</div></td>
+    <td>Index based on user-generated content. Only testing one sub-menu per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/divisions/sch=5Fmat/1998.html">/view/divisions/sch=5Fmat/1998.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 9 | ARIA: 22</div></td>
+    <td>Contains user-generated content. Only testing one listing per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/creators/">/view/creators/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 12 | ARIA: 21</div></td>
+    <td>Index based on user-generated content.</td>
+  </tr>
+  <tr>
+    <td><a href="/view/creators/Bonardi=3AN=2E=3A=3A.html">/view/creators/Bonardi=3AN=2E=3A=3A.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 9 | ARIA: 22</div></td>
+    <td>Contains user-generated content. Only testing one listing per browse view type.</td>
+  </tr>
+  <tr>
+    <td><a href="/id/eprint/4/">/id/eprint/4/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 3</div><div class="ep_accessibility_good">Features: 8 | Structural Elements: 19 | ARIA: 22</div></td>
+    <td>Contains user-generated content. Only testing one eprint summary page per eprint type, in this case "Conference of Workshop Item". 3 alerts are caused by linking to PDFs, which is cannot be fixed as is essential to the purpose of an Open Access repository. However, one of the links is actually for front page JPEG image preview but is identified as a PDF due to the file extension used in the URL.</td>
+  </tr>
+  <tr>
+    <td><a href="/id/eprint/54/">/id/eprint/54/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 3</div><div class="ep_accessibility_good">Features: 8 | Structural Elements: 19 | ARIA: 22</div></td>
+    <td>Contains user-generated content. Only testing one eprint summary page per eprint type, in this case "Article". 2 alerts are caused by linking to PDFs, which is cannot be fixed as is essential to the purpose of an Open Access repository. However, one of the links is actually for front page JPEG image preview but is identified as a PDF due to the file extension used in the URL.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/login">/cgi/users/login</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 8 | Structural Elements: 8 | ARIA: 22</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/logout">/cgi/logout</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 8 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+	  <td><a href="/cgi/register">/cgi/register</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 9 | Structural Elements: 8 | ARIA: 28</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/latest">/cgi/latest</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 9 | ARIA: 21</div></td>
+    <td>Contains user-generated content.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/advanced">/cgi/search/advanced</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 67 | Structural Elements: 8 | ARIA: 108</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/archive/advanced?screen=Search&amp;dataset=archive&amp;_action_search=Search&amp;documents_merge=ALL&amp;documents=&amp;title_merge=ALL&amp;title=Habits&amp;subjects_merge=ANY&amp;satisfyall=ALL&amp;order=title%2Ftype">/cgi/search/archive/advanced?screen=Search...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 21</div><div class="ep_accessibility_good">Features: 34 | Structural Elements: 8 | ARIA: 26</div></td>
+    <td>10 (of 21) alerts are caused by thumbnail image previews of PDFs having the same alternative text, due to the original PDF filenames are the same, due to the wat the import_test_data script works. The other 11 (of 21) alerts are caused by linking to PDFs, which is cannot be fixed as is essential to the purpose of an Open Access repository. (Based on a search of "Habits" in title field. Contains user-generated content.)</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/simple">/cgi/search/simple</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 8 | ARIA: 24</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/archive/simple?screen=Search&amp;dataset=archive&amp;_action_search=Search&amp;dataset=archive&amp;order=&amp;q=Habits&amp;_action_search=Search">/cgi/search/archive/simple?screen=Search...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 21</div><div class="ep_accessibility_good">Features: 34 | Structural Elements: 8 | ARIA: 26</div></td>
+    <td>Same alerts as for /cgi/search/archive/advanced?screen=Search... (Based on a search of "Habits" in title field. Contains user-generated content.)</td>
+  </tr>
+  <tr>
+    <td><a href="/policies.html">/policies.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 8 | ARIA: 22</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/eprints/">/eprints/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 24 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/error401.html">/error401.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 8 | ARIA: 21</div></td>
+    <td>One alert is due to registration link appearing in both the menu and main content of the page.  This is appropriate, to make it as straightforward as possible for a user to gain legitimate access.</td>
+  </tr>
+  <tr>
+    <td><a href="/accessibility/">/accessibility/</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 32 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/accessibility/report.html">/accessibility/report.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 30 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/accessibility/roadmap.html">/accessibility/roadmap.html</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 12 | ARIA: 21</div></td>
+    <td>None</td>
+  </tr>
+</table>
+
+
+<h3 id="non-public-administration-pages">Non-public Administration Pages</h3>
+<table class="ep_accessibility_results">
+  <tr>
+    <th>Page</th>
+    <th>Result</th>
+    <th>Comments</th>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home">/cgi/users/home</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 2</div><div class="ep_accessibility_good">Features: 54 | Structural Elements: 25 | ARIA: 78</div></td>
+    <td>Alerts due to two redundant links as "Show All" links are same as links to show 100 items, as there is exactly 100 items from test data.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Items">/cgi/users/home?screen=Items</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 2</div><div class="ep_accessibility_good">Features: 54 | Structural Elements: 25 | ARIA: 78</div></td>
+    <td>Alerts the same as /cgi/users/home as this is effectively the same page.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3AView&amp;eprintid=4">/cgi/users/home?screen=EPrint%3A%3AView&amp;eprintid=4</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 7</div><div class="ep_accessibility_good">Features: 11 | Structural Elements: 63 | ARIA: 94</div></td>
+    <td>Alerts due to five links to PDF documents (essential to the purpose of an Open Access repository), one suspicious link text "Details" which within the context of the page is appropriate and one redundant link because both the thumbnail and the adjacent download link can be used to down the document.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=type">/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=type</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 9 | Structural Elements: 9 | ARIA: 68</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=files">/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=files</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 42 | Structural Elements: 9 | ARIA: 79</div></td>
+    <td>Alert due to one link to a PDF document (essential to the purpose of an Open Access repository).</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=core">/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=core</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 99 | Structural Elements: 13 | ARIA: 166</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=subjects">/cgi/users/home?screen=EPrint%3A%3AEdit&amp;eprintid=4&amp;stage=subjects</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 10 | Structural Elements: 52 | ARIA: 275</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3ADeposit&amp;eprintid=4">/cgi/users/home?screen=EPrint%3A%3ADeposit&amp;eprintid=4</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 9 | ARIA: 29</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?format=XML&amp;_action_import_from=Import&amp;screen=Import">/cgi/users/home?format=XML&amp;_action_import_from=Import&amp;screen=Import</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 11 | ARIA: 44</div></td>
+    <td>None. (Only one EPrint import form is tested as forms for different formats are almost identical).</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=DataSets">/cgi/users/home?screen=DataSets</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 16 | ARIA: 22</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=eprint">/cgi/users/home?screen=Listing&amp;dataset=eprint</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 10</div><div class="ep_accessibility_good">Features: 60 | Structural Elements: 25 | ARIA: 111</div></td>
+    <td>All 10 alerts due to links to PDF documents (essential for an Open Access repository).</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=eprint&amp;dataobj=4">/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=eprint&amp;dataobj=4</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 3</div><div class="ep_accessibility_good">Features: 8 | Structural Elements: 48 | ARIA: 44</div></td>
+    <td>Alerts due to two links to PDF documents (essential for an Open Access repository) and a suspicious link text "Details" which within the context of the page is appropriate.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=event_queue">/cgi/users/home?screen=Listing&amp;dataset=event_queue</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 39 | Structural Elements: 16 | ARIA: 46</div></td>
+    <td>Alert due to possible table caption due to deliberate feature to indicate a table has "No items" rather than displaying as empty that might imply something is broken.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=file">/cgi/users/home?screen=Listing&amp;dataset=file</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 60 | Structural Elements: 25 | ARIA: 109</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=file&amp;dataobj=3">/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=file&amp;dataobj=3</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 23 | ARIA: 40</div></td>
+    <td>Alert due to suspicious link text "Details" which within the context of the page is appropriate.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=import">/cgi/users/home?screen=Listing&amp;dataset=import</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 30 | Structural Elements: 15 | ARIA: 40</div></td>
+    <td>Alert due to possible table caption due to deliberate feature to indicate a table has "No items" rather than displaying as empty that might imply something is broken.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=saved_search">/cgi/users/home?screen=Listing&amp;dataset=saved_search</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 23 | Structural Elements: 14 | ARIA: 41</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=saved_search&amp;dataobj=1">/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=saved_search&amp;dataobj=1</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 23 | ARIA: 41</div></td>
+    <td>Alert due to suspicious link text "Details" which within the context of the page is appropriate.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=saved_search&amp;dataobj=1">/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=saved_search&amp;dataobj=1</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 16 | Structural Elements: 10 | ARIA: 40</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=subject">/cgi/users/home?screen=Listing&amp;dataset=subject</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 40 | Structural Elements: 25 | ARIA: 71</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=subject&amp;dataobj=A">/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=subject&amp;dataobj=A</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 11 | ARIA: 31</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Listing&amp;dataset=user">/cgi/users/home?screen=Listing&amp;dataset=user</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 33 | Structural Elements: 16 | ARIA: 47</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=user&amp;dataobj=1">/cgi/users/home?screen=Workflow%3A%3AView&amp;dataset=user&amp;dataobj=1</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 31 | ARIA: 42</div></td>
+    <td>Alert due to suspicious link text "Details" which within the context of the page is appropriate.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=user&amp;dataobj=1&amp;stage=usertype">/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=user&amp;dataobj=1&amp;stage=usertype</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 17 | Structural Elements: 9 | ARIA: 45</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=user&amp;dataobj=1&amp;stage=default">/cgi/users/home?screen=Workflow%3A%3AEdit&amp;dataset=user&amp;dataobj=1&amp;stage=default</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 44 | Structural Elements: 11 | ARIA: 89</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Review">/cgi/users/home?screen=Review</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 59 | Structural Elements: 14 | ARIA: 55</div></td>
+    <td>Alert due to possible table caption due to deliberate feature to indicate a table has "No items" rather than displaying as empty that might imply something is broken.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=EPrint%3A%3ARemoveWithEmail&amp;eprintid=4">/cgi/users/home?screen=EPrint%3A%3ARemoveWithEmail&amp;eprintid=4</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 1</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 8 | ARIA: 25</div></td>
+    <td>Alert is due to email address for the one and only admin being linked for the To and From address, which is just a result of the testing regime.</td> 
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?edit_phrases=yes">/cgi/users/home?edit_phrases=yes</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 12 | ARIA: 161</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin">/cgi/users/home?screen=Admin</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 12 | ARIA: 122</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/eprint/staff">/cgi/search/eprint/staff</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 84 | Structural Elements: 8 | ARIA: 133</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/search/eprint/staff?screen=Search&amp;eprintid=&amp;userid.username=&amp;userid.name_merge=ALL&amp;serid.name=&amp;eprint_status=archive&amp;dir_merge=ALL&amp;dir=&amp;documents_merge=ALL&amp;documents=&amp;title_merge=ALL&amp;title=Habits&amp;creators_name_merge=ALL&amp;creators_name=&amp;abstract_merge=ALL&amp;abstract=&amp;date=&amp;keywords_merge=ALL&amp;keywords=&amp;subjects_merge=ANY&amp;department_merge=ALL&amp;department=&amp;editors_name_merge=ALL&amp;editors_name=&amp;refereed=EITHER&amp;publication_merge=ALL&amp;publication=&amp;satisfyall=ALL&amp;order=-date%2Fcreators_name%2Ftitle&amp;_action_search=Search">/cgi/search/eprint/staff?screen=Search&amp;...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 21</div><div class="ep_accessibility_good">Features: 35 | Structural Elements: 8 | ARIA: 26</div></td>
+    <td>10 (of 21) alerts are caused by thumbnail image previews of PDFs having the same alternative text, as a result of the original PDF filenames are the same, due to the way the import_test_data script works. The other 11 (of 21) alerts are caused by linking to PDFs, which is cannot be fixed as is essential to the purpose of an Open Access repository. (Based on a search where "Item Status" is "Live Archive".)</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=BatchEdit&amp;cache=1">/cgi/users/home?screen=BatchEdit&amp;...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 11 | ARIA: 38</div></td>
+    <td>None. (Based on using results from earlier admin item search.)</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Staff%3A%3AIssueSearch">/cgi/users/home?screen=Staff%3A%3AIssueSearch</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 46 | Structural Elements: 8 | ARIA: 75</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Staff%3A%3AUserSearch">/cgi/users/home?screen=Staff%3A%3AUserSearch</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 24 | Structural Elements: 8 | ARIA: 55</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Staff%3A%3AUserSearch&amp;name_merge=ALL&amp;name=&amp;username=&amp;userid=1&amp;dept%2Forg_merge=ALL&amp;dept%2Forg=&amp;address%2Fcountry_merge=ALL&amp;address%2Fcountry=&amp;email=&amp;satisfyall=ALL&amp;order=name%2Fjoined&amp;_action_search=Search">/cgi/users/home?screen=Staff%3A%3AUserSearch...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 9 | Structural Elements: 8 | ARIA: 27</div></td>
+    <td>None. (Search for user with ID 1.)</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Staff%3A%3AHistorySearch">/cgi/users/home?screen=Staff%3A%3AHistorySearch</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 30 | Structural Elements: 8 | ARIA: 55</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Staff%3A%3AHistorySearch&amp;userid.username=&amp;action=create&amp;timestamp=&amp;objectid=&amp;satisfyall=ALL&amp;order=-timestamp&amp;_action_search=Search">/cgi/users/home?screen=Staff%3A%3AHistorySearch...</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 9 | Structural Elements: 8 | ARIA: 27</div></td>
+    <td>Search for Action: Created.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Status">/cgi/users/home?screen=Status</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 38 | ARIA: 22</div></td>
+    <td>EPrints Indexer is running.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=NewUser">/cgi/users/home?screen=NewUser</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 8 | ARIA: 24</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin%3A%3AEPM">/cgi/users/home?screen=Admin%3A%3AEPM</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 172 | Structural Elements: 11 | ARIA: 141</div></td>
+    <td>Number of features and ARIA elements liable to vary based on number of available Bazaar plugins.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin%3A%3ATestEmail">/cgi/users/home?screen=Admin%3A%3ATestEmail</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 8 | ARIA: 26</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=DatabaseSchema">/cgi/users/home?screen=DatabaseSchema</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 163 | ARIA: 22</div></td>
+    <td>Number of structured elements liable to vary based on number of cache tables in the database.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin%3A%3AStorageManager">/cgi/users/home?screen=Admin%3A%3AStorageManager</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 16 | ARIA: 28</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin%3A%3AConfig">/cgi/users/home?screen=Admin%3A%3AConfig</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 17 | Structural Elements: 20 | ARIA: 44</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Admin%3A%3APhrases">/cgi/users/home?screen=Admin%3A%3APhrases</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 12 | ARIA: 3646</div></td>
+    <td>Number ARIA elements likely to vary dependent on total number of phrases defined.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=Subject%3A%3AEdit">/cgi/users/home?screen=Subject%3A%3AEdit</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 7 | Structural Elements: 13 | ARIA: 27</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=MetaField%3A%3AListing">/cgi/users/home?screen=MetaField%3A%3AListing</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 28 | ARIA: 13</div></td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/users/home?screen=MetaField%3A%3AListing&amp;dataset=access">/cgi/users/home?screen=MetaField%3A%3AListing&amp;dataset=access</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 0</div><div class="ep_accessibility_good">Features: 6 | Structural Elements: 28 | ARIA: 22</div></td>
+    <td>None (Only testing one object type for its MetaField listing.)</td>
+  </tr>
+</table>
+
+
+<h3 id="miscellaneous-pages">Miscellaneous Pages</h3>
+<table class="ep_accessibility_results">
+  <tr>
+    <th>Page</th>
+    <th>Result</th>
+    <th>Comments</th>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2">/cgi/oai2</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 2</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 9 | ARIA: 0</div></td>
+    <td>Two alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2?verb=Identify">/cgi/oai2?verb=Identify</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 3</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 15 | ARIA: 0</div></td>
+    <td>Three alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2?verb=ListRecords&amp;metadataPrefix=oai_dc">/cgi/oai2?verb=ListRecords&amp;metadataPrefix=oai_dc</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 201</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 308 | ARIA: 0</div></td>
+    <td>201 alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2?verb=ListSets">/cgi/oai2?verb=ListSets</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 283</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 290 | ARIA: 0</div></td>
+    <td>283 alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2?verb=ListMetadataFormats">/cgi/oai2?verb=ListMetadataFormats</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 7</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 14 | ARIA: 0</div></td>
+    <td>Seven alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+  <tr>
+    <td><a href="/cgi/oai2?verb=ListIdentifiers&amp;metadataPrefix=oai_dc">/cgi/oai2?verb=ListIdentifiers&amp;metadataPrefix=oai_dc</a></td>
+    <td><div class="ep_accessibility_bad">Errors: 0 | Contrast Errors: 0 | Alerts: 101</div><div class="ep_accessibility_good">Features: 1 | Structural Elements: 108 | ARIA: 0</div></td>
+    <td>101 alerts are due to suspicion of tables being used for layout but are actually being used as tables.</td>
+  </tr>
+</table>
+
+<h2 id="summary">Summary</h2>
+
+<p>Based on testing a default publication flavour installation of EPrints using standard test data, all tested public-facing and back-end administration pages currently report no errors or contrast errors. These pages may have one or more alerts. If so, these alerts are considered acceptable and/or essential for the functioning of EPrints as an Open Access repository and will fall into one of the following categories:</p>
+<ol>
+  <li>Links to PDF documents.</li>
+  <li>Duplications in the test or third-party data leading to alerts about shared alternative texts for nearby images.</li>
+  <li>Reports of suspicious link texts that are not considered suspicious within the context of where they appear.</li>
+  <li>Apparent missing table captions due to a feature in EPrints to make clear a table has no items rather than leaving the table empty.</li>
+</ol>
+<p>It should be noted that whilst Chromium's WAVE extension that was used for testing.  It did not report any contrast errors for any of the tested public-facing and back-end administration pages.  However, Firefox's WAVE extension has been seen to report some contrast errors.  Firefox's contrast errors are due to its default setting for the background colour of select form elements.</p>
+<p>Miscellaneous pages like those for OAI metadata harvesting have been tested and found to have issues with tables being reported as being used for layout when they are genuinely being used as tables. However, as these pages are not intended for general human use, there is no intention to further address these issues.</p>
+
+

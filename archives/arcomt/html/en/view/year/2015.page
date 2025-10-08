@@ -1,0 +1,184 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="BibTeX">BibTeX</option><option value="MyPlugins::BibTeX">BibTeX</option><option value="EndNote">EndNote</option><option value="MyPlugins::EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input value="Export" type="submit" class="ep_form_action_button" role="button" name="_action_export_redir" /><input name="view" value="year" type="hidden" id="view" /><input name="values" value="2015" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_year"><div class="ep_view_group_by">Group by: <span class="ep_view_group_by_current">Creators</span> | <a href="2015.type.html">Item Type</a> | <a href="2015.default.html">No Grouping</a></div><div class="ep_view_jump ep_view_year_creators_name_jump"><div class="ep_view_jump_to">Jump to: <a href="#group_A">A</a> | <a href="#group_B">B</a> | <a href="#group_L">L</a> | <a href="#group_M">M</a></div></div><div class="ep_view_blurb">Number of items: <strong>6</strong>.</div><a name="group_A"></a><h2>A</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Abbasian-Hosseini, S A</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/109/">
+      <em>Social and engineering aspects of construction site management using simulation and social network analysis.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, North Carolina State University, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Andersen, L P</span>; <span class="person_name">Karlsen, I L</span>; <span class="person_name">Kines, P</span>; <span class="person_name">Joensson, T</span> and <span class="person_name">Nielsen, K J</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/110/">
+      Social identity in the construction industry: Implications for safety perception and behaviour.
+    </a>
+  
+
+
+    <em>Construction Management and Economics</em>, <strong>33</strong>(8),
+     pp. 640-652.
+    
+  
+
+
+  
+
+
+</p><a name="group_B"></a><h2>B</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Bi, L</span>; <span class="person_name">Ren, B</span>; <span class="person_name">Zhong, D</span> and <span class="person_name">Hu, L</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/95/">
+      Real-time construction schedule analysis of long-distance diversion tunnels based on lithological predictions using a markov process.
+    </a>
+  
+
+
+    <em>Journal of Construction Engineering and Management</em>, <strong>141</strong>(2),
+    
+    
+  
+
+
+  
+
+
+</p><a name="group_L"></a><h2>L</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Lin, S C</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/125/">
+      An analysis for construction engineering networks.
+    </a>
+  
+
+
+    <em>Journal of Construction Engineering and Management</em>, <strong>141</strong>(5),
+    
+    
+  
+
+
+  
+
+
+</p><a name="group_M"></a><h2>M</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">McCord, J</span>; <span class="person_name">McCord, M</span>; <span class="person_name">Davis, P T</span>; <span class="person_name">Haran, M</span> and <span class="person_name">Rodgers, W J</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/117/">
+      Understanding delays in housing construction: Evidence from Northern Ireland.
+    </a>
+  
+
+
+    <em>Journal of Financial Management of Property and Construction</em>, <strong>20</strong>(3),
+     pp. 286-319.
+    
+  
+
+
+  
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">MÃ¤ki, T</span> and <span class="person_name">Kerosuo, H</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/107/">
+      Site managers' daily work and the uses of building information modelling in construction site management.
+    </a>
+  
+
+
+    <em>Construction Management and Economics</em>, <strong>33</strong>(3),
+     pp. 163-175.
+    
+  
+
+
+  
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:50 2025 UTC</strong>.</div></div>

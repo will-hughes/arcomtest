@@ -1,0 +1,48 @@
+
+
+<div style="text-align: right;">
+  <span id="atom-feed" class="ep_search_feed">
+    <a href="/cgi/latest_tool?output=Atom">
+      <img alt="[atom feed icon]" src="/style/images/feed-icon-14x14.png" style="border: 0;" />
+      Atom
+    </a>
+  </span>
+  <span id="rss-feed" class="ep_search_feed">
+    <a href="/cgi/latest_tool?output=RSS">
+      <img alt="[rss feed]" src="/style/images/feed-icon-14x14.png" style="border: 0;" />
+      RSS 1.0
+    </a>
+  </span>
+  <span id="rss2-feed" class="ep_search_feed">
+    <a href="/cgi/latest_tool?output=RSS2">
+      <img alt="[rss 2 feed]" src="/style/images/feed-icon-14x14.png" style="border: 0;" />
+      RSS 2.0
+    </a>
+  </span>
+</div>
+
+<dl id="ep-homepage-menu" title="Homepage Menu">
+
+  <dt><h3>A curated catalogue of research to support discovery, reflection, and new thinking in the field</h3></dt>
+  <dd>Part of the work of the <strong>Association of Researchers in Construction Management</strong> at <a href="https://www.arcom.ac.uk">www.arcom.ac.uk</a>. This site is an exploratory development area for experimentation and exploration of possibilities for the abstracts service. 
+  <p>The live ARCOM CM Abstracts are at <a href="https://www.arcom.ac.uk/abstracts.php">www.arcom.ac.uk/abstracts.php</a></p></dd>
+    
+
+  <dt id="search-repository"><a href="/cgi/search/advanced">Advanced search</a></dt>
+  <dd>Search the catalogue using a full range of fields. <b>Use the search field at the top of the page for a quick search of the database</b>.</dd>
+    
+  <dt id="about-this-repository"><a href="/information.html">About the ARCOM CM Abstracts</a></dt>
+  <dd><b>Find out what this website is, why we are doing it, how we are doing it and how to get involved.</b></dd>
+
+  <dt id="browse-repository"><a href="/view/">Browse catalogue</a></dt>
+  <dd>Browse items in the catalogue by <a href="/view/year/">year</a>, <a href="/view/creators/">author</a>, <a href="/view/journal_volume/">journal</a> or <a href="/view/doctype/">document type</a>.</dd>
+ 
+  <dt id="latest-additions"><a href="/cgi/latest">Latest Additions</a></dt>
+  <dd>View items added to the catalogue in the past week.</dd>
+
+</dl>
+
+<p style="margin-top: 2em; font-size: 90%">
+ARCOM CM Abstracts is provided by the <strong>Association of Researchers in Construction Management</strong> at <a href="https://www.arcom.ac.uk">www.arcom.ac.uk</a>
+</p>
+

@@ -1,0 +1,464 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="MyPlugins::BibTeX">BibTeX</option><option value="BibTeX">BibTeX</option><option value="MyPlugins::EndNote">EndNote</option><option value="EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input type="submit" value="Export" class="ep_form_action_button" role="button" name="_action_export_redir" /><input name="view" value="doctype" type="hidden" id="view" /><input name="values" value="thesis" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_doctype"><div class="ep_view_group_by">Group by: <a href="thesis.html">Creators</a> | <a href="thesis.type.html">Item Type</a> | <span class="ep_view_group_by_current">No Grouping</span></div><div class="ep_view_blurb">Number of items: <strong>18</strong>.</div><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Abbasian-Hosseini, S A</span>
+
+
+(2015)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/109/">
+      <em>Social and engineering aspects of construction site management using simulation and social network analysis.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, North Carolina State University, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Adjei, K O</span>
+
+
+(2020)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/142/">
+      <em>A model for predicting cost control practice in the Ghanaian construction industry.</em>
+    </a>
+  
+
+
+    Unpublished DPhil thesis, University of Johannesburg, South Africa.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Barroso-Aguilar, L F</span>
+
+
+(1973)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/139/">
+      <em>An integrated modeling methodology for project-site management.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Illinois at Urbana-Champaign, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Bello, W A</span>
+
+
+(2017)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/94/">
+      <em>Project performance diagnostics: a model for assessing construction project performance in Nigeria.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Salford, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Dupin, P</span>
+
+
+(2021)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/124/">
+      <em>Using pull and flow systems to improve production stability in real estate development projects.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, Nottingham Trent University, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Gong, J</span>
+
+
+(2009)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/143/">
+      <em>An object recognition, tracking, and contextual reasoning based video interpretation methodology for rapid productivity analysis of construction operations.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Texas at Austin, Texas, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Haghdadi, H</span>
+
+
+(1989)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/147/">
+      <em>The role of micro computers on the construction site.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, Aston University, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Hassan, P F</span>
+
+
+(2005)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/129/">
+      <em>A best practice framework for training UK construction site managers.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, Sheffield Hallam University, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Kimmance, A G</span>
+
+
+(2002)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/140/">
+      <em>An integrated product and process information modelling system for on-site construction.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, Loughborough University, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Kong, T-M S</span>
+
+
+(2011)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/88/">
+      <em>Organizational culture of safety in the Hong Kong construction industry.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Hong Kong, Hong Kong.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Kuntz, K A</span>
+
+
+(1994)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/132/">
+      <em>A construction crew evaluation model to improve craft productivity.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, The Pennsylvania State University, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Odimabo, O</span>
+
+
+(2016)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/99/">
+      <em>Risk management system to guide building construction projects in developing countries: a case study of Nigeria.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Wolverhampton, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Perkinson, C L</span>
+
+
+(2008)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/149/">
+      <em>The use of computing technology in highway construction contractor companies as a total jobsite management tool (TJMT).</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, Florida International University, USA.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Recsei, R A</span>
+
+
+(1998)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/136/">
+      <em>A generalised decision support system for contaminated site management.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of New South Wales, Australia.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Sayed Suleiman, R</span>
+
+
+(2019)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/119/">
+      <em>Understanding site offices challenges to communicate and exchange information using technology in UK: main contractor perspective.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Salford, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Tennant, S</span>
+
+
+(2007)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/106/">
+      <em>Site management teams and project performance in the UK construction industry.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Strathclyde, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Trill, J E</span>
+
+
+(2003)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/128/">
+      <em>The application of occupational performance standards in the construction industry: 'Factors influencing their use'.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Sussex, UK.
+  
+
+
+
+</p><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Yang, J</span>
+
+
+(2001)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/133/">
+      <em>A decision support system for material routing in construction sites.</em>
+    </a>
+  
+
+
+    Unpublished PhD thesis, University of Wolverhampton, UK.
+  
+
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:57 2025 UTC</strong>.</div></div>

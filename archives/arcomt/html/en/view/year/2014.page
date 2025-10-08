@@ -1,0 +1,74 @@
+<div class="no_link_decor"><a href="./" alt="[up]"><img src="/style/images/multi_up.png" alt="[up]"> Up a level</img></a></div><form method="get" accept-charset="utf-8" action="/cgi/exportview">
+<div>
+  <div class="ep_export_bar">
+    <div><label for="export-format">Export as</label> <select name="format" id="export-format"><option value="BibTeX">BibTeX</option><option value="MyPlugins::BibTeX">BibTeX</option><option value="EndNote">EndNote</option><option value="MyPlugins::EndNote">EndNote</option><option value="HTML">HTML Citation</option><option value="MyPlugins::RIS">RIS</option></select><input class="ep_form_action_button" type="submit" value="Export" name="_action_export_redir" role="button" /><input name="view" value="year" type="hidden" id="view" /><input name="values" value="2014" type="hidden" id="values" /></div>
+    <div></div>
+  </div>
+  <div>
+    <span>
+      
+    </span>
+  </div>
+</div>
+
+</form><div class="ep_view_page ep_view_page_view_year"><div class="ep_view_group_by">Group by: <span class="ep_view_group_by_current">Creators</span> | <a href="2014.type.html">Item Type</a> | <a href="2014.default.html">No Grouping</a></div><div class="ep_view_jump ep_view_year_creators_name_jump"><div class="ep_view_jump_to">Jump to: <a href="#group_A">A</a> | <a href="#group_H">H</a></div></div><div class="ep_view_blurb">Number of items: <strong>2</strong>.</div><a name="group_A"></a><h2>A</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Aboagye-Nimo, E</span>; <span class="person_name">RaidÃ©n, A B</span> and <span class="person_name">King, A</span>
+
+
+(2014)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/121/">
+      Understanding the role of local safety groups in managing safety practices between micro construction firms and principal contractors.
+    </a>
+  
+
+
+    In: <span class="person_name">Raiden, A.</span> and <span class="person_name">Aboagye-Nimo, E.</span> 
+		
+			(eds.)
+			
+	<em>Proceedings of 30th Annual ARCOM Conference</em>, 1-3 September 2014, Portsmouth, UK.
+  
+
+
+  
+
+
+</p><a name="group_H"></a><h2>H</h2><p>
+
+<!-- 
+	Full citation for an eprint. 
+-->
+
+
+  <span class="person_name">Hwang, B G</span> and <span class="person_name">Yang, S</span>
+
+
+(2014)
+
+<!-- Make sure that the title of the publication, rather than the article, is italicized (WH 17-03-2025)-->
+
+    <a href="http://arcomtest/id/eprint/97/">
+      Rework and schedule performance: A profile of incidence, impact, causes and solutions.
+    </a>
+  
+
+
+    <em>Engineering, Construction and Architectural Management</em>, <strong>21</strong>(2),
+     pp. 190-205.
+    
+  
+
+
+  
+
+
+</p><div class="ep_view_timestamp">This list was generated on <strong>Tue Oct  7 22:17:49 2025 UTC</strong>.</div></div>

@@ -1,0 +1,91 @@
+
+/* paginated columns */
+
+.ep_columns {
+	margin: auto;
+}
+
+td.ep_columns_cell {
+	border-style: none dashed solid none;
+	border-width: 1px;
+}
+td.ep_columns_cell:first-child {
+	border-left-style: dashed;
+}
+
+th.ep_columns_title, td.ep_columns_alter {
+	border-width: 1px;
+	font-weight: normal;
+}
+th.ep_columns_title {
+	border-style: solid solid solid none;
+}
+td.ep_columns_alter {
+	border-style: none solid solid none;
+}
+th.ep_columns_title:first-child, td.ep_columns_alter:first-child {
+	border-left-style: solid;
+}
+th.ep_columns_title a {
+	font-weight: normal;
+}
+
+
+td.ep_columns_no_items {
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding: 0.5em;
+	text-align: center;
+	font-size: 120%;
+}
+
+.ep_columns_add {
+	text-align: center;
+}
+
+.ep_columns_add select {
+	max-width: 95%;
+}
+
+.ep_columns_title_inner, .ep_columns_alter_inner {
+	display: table;
+	border-width: 0; 
+	width: 100%;
+}
+
+.ep_columns_title_inner > div, .ep_columns_alter_inner > div {
+	display: table-row;
+}
+
+.ep_columns_title_inner > div > div, .ep_columns_alter_inner > div > div {
+        display: table-cell;
+}
+
+.ep_columns_alter_inner > div > div:nth-child(1) {
+	text-align: left;
+	width: 14px;
+}
+
+.ep_columns_alter_inner > div > div:nth-child(2) {
+        text-align: center;
+	width: 100%;
+}
+
+.ep_columns_alter_inner > div > div:nth-child(3) {
+        text-align: right;
+	width: 14px;
+}
+
+
+.ep_columns_title_inner_sort {
+	width: 22px; 
+	text-align: right;
+	vertical-align: middle;
+}
+
+.ep_columns_title_inner_sort img {
+	border: 0px;
+	padding: 4px;
+}
+

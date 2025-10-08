@@ -1,0 +1,16 @@
+
+
+<a href="dataset_dictionary.html?1#eprint">eprint</a> |
+<a href="dataset_dictionary.html?2#user">user</a> |
+<a href="dataset_dictionary.html?3#file">file</a> |
+<a href="dataset_dictionary.html?4#document">document</a> |
+<a href="dataset_dictionary.html?5#subject">subject</a> |
+<a href="dataset_dictionary.html?6#history">history</a> |
+<a href="dataset_dictionary.html?7#access">access</a>
+
+<div id="dataset_dictionary"></div>
+<script type="text/javascript">
+var dataset = location.hash.substr(1);
+new Ajax.Updater('dataset_dictionary',"/cgi/dataset_dictionary?nohead=1&amp;dataset="+dataset ,{method:'get'});
+</script>
+
