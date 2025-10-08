@@ -1,3 +1,4 @@
-archives
-cfg
-tmp
+/cfg/
+archives/arcomt/documents/
+archives/arcomt/html/en/archive/
+tmp/
