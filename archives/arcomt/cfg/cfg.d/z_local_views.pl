@@ -116,6 +116,6 @@ render_up_link => sub {
         "type",
         "DEFAULT",
     ],
-    max_items => 10000,
+    max_items => 100000,
 };
 	
