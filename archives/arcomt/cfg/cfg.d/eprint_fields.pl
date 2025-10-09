@@ -167,28 +167,12 @@ push @{$c->{fields}->{eprint}},
 },
 
 {
-    name => 'taxonomy_domain',
-    type => 'subject',
+    name => 'iterm',
+    type => 'text',
     multiple => 1,
     required => 0,
-},
-{
-    name => 'taxonomy_subject', 
-    type => 'subject',
-    multiple => 1,
-    required => 0,
-},
-{
-    name => 'taxonomy_facets',
-    type => 'subject',
-    multiple => 1,
-    required => 0,
-},
-{
-    name => 'taxonomy_terms',
-    type => 'subject',
-    multiple => 1,
-    required => 0,
+	top => 'taxonomy',
+	browse_link => 'taxonomy',
 },
 
 ;
