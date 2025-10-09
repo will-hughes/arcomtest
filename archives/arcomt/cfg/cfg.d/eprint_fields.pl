@@ -171,8 +171,6 @@ push @{$c->{fields}->{eprint}},
     type => 'text',
     multiple => 1,
     required => 0,
-	top => 'taxonomy',
-	browse_link => 'taxonomy',
 },
 
 ;
