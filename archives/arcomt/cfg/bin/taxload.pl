@@ -17,6 +17,7 @@ my $sth = $dbh->prepare("INSERT INTO taxonomy (iterm, domain, subject, facet, lw
 
 while (<$fh>) {
     chomp;
+    print "RAW LINE: $_\n";  # DEBUG
     my ($iterm, $facet_category, $facet, $domain, $subject, $lword) = split /,/;
     $sth->execute($iterm, $domain, $subject, $facet, $lword);
 }
