@@ -11,8 +11,7 @@ my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M
 $dbh->do("TRUNCATE TABLE taxonomy");
 
 # Load CSV
-open my $fh, "<:encoding(utf8)", "taxonomy_common_test.csv" or die "Cannot open CSV: $!";
-<$fh>; # Skip header
+open my $fh, "<:encoding(utf8)", "/opt/eprints3/archives/arcomt/taxonomy_common_test.csv" or die "Cannot open CSV: $!";
 
 my $sth = $dbh->prepare("INSERT INTO taxonomy (iterm, domain, subject, facet, lword) VALUES (?, ?, ?, ?, ?)");
 
