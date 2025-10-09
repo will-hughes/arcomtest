@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use DBI;
 
-my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "your_password_here") 
+my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M") 
     or die "Could not connect to database: $DBI::errstr";
 
 # Clear existing data
