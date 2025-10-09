@@ -46,7 +46,7 @@ sub process_batch {
         my $text = lc(join(' ', 
             $eprint->value('title') || '',
             $eprint->value('abstract') || '',
-            join(' ', @{$eprint->value('keywords') || []})
+            $eprint->value('keywords') || '',
         ));
         
         # Efficient hash lookup instead of linear search
