@@ -103,7 +103,7 @@ render_up_link => sub {
     menus => [
         {
             # Start with just ONE field to test
-            fields => [ "taxonomy_terms" ],
+            fields => [ "iterm" ],
             hideempty => 1,
             allow_null => 0,
             mode => "sections",
