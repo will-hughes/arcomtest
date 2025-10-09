@@ -19,6 +19,7 @@ while (<$fh>) {
     chomp;
     print "RAW LINE: $_\n";  # DEBUG
     my ($iterm, $facet_category, $facet, $domain, $subject, $lword) = split /,/;
+     print "PARSED: iterm='$iterm', lword='$lword'\n"; # DEBUG
     $sth->execute($iterm, $domain, $subject, $facet, $lword);
 }
 
