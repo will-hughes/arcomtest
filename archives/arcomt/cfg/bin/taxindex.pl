@@ -9,7 +9,7 @@ use EPrints;
 print "Starting taxonomy indexing...\n";
 
 my $repo = EPrints->new->repository('arcomt');
-my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "your_password_here") 
+my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M") 
     or die "Could not connect to database: $DBI::errstr";
 
 # Get all lookup terms
