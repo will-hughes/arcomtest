@@ -15,6 +15,10 @@ my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M
 # Get all lookup terms
 my $lookup_terms = $dbh->selectall_hashref("SELECT lword, iterm FROM taxonomy", "lword");
 
+# DEBUG statements:
+print "Total lookup terms: " . scalar(keys %$lookup_terms) . "\n";
+print "Sample lookup terms: " . join(', ', (keys %$lookup_terms)[0..10]) . "\n";
+
 # Get all eprint IDs
 my $eprint_ids = $repo->dataset('eprint')->search()->ids();
 my $total = scalar(@$eprint_ids);
@@ -57,6 +61,8 @@ sub process_batch {
         }
         
         if (keys %found_iterms) {
+        # ONE DEBUG LINE HERE
+            print "  EPrint $eprint_id found terms: " . join(', ', keys %found_iterms) . "\n";
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->commit();
             $batch_updated++;
