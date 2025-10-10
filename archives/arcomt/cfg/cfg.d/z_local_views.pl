@@ -75,9 +75,10 @@ push @{$c->{browse_views}},
             grouping_function => "group_by_a_to_z_hideempty",
         },
     ],
-    order => "-date/title",
+    order => "creators_name/date",
     variations => [
+        "creators_name;first_letter",
         "type",
-        "DEFAULT",
+        "DEFAULT"
     ],
 };
