@@ -168,7 +168,7 @@ push @{$c->{fields}->{eprint}},
 
 {
     name => 'iterm',
-    type => 'subject',
+    type => 'text',
     multiple => 1,
     required => 0,
 },
