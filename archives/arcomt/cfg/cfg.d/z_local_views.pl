@@ -99,15 +99,17 @@ render_up_link => sub {
 },
 
 {
-    id => "taxonomy",
+    id => "iterm",
     menus => [
         {
-            # Start with just ONE field to test
             fields => [ "iterm" ],
             hideempty => 1,
             allow_null => 0,
             mode => "sections",
             open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_100",
+            grouping_function => "group_by_a_to_z_hideempty", 
+            new_column_at => [3, 3],  # Multi-column display
         }
     ],
     order => "creators_name/title",
@@ -116,6 +118,8 @@ render_up_link => sub {
         "type",
         "DEFAULT",
     ],
-    max_items => 100000,
+    max_items => 10000,
+    max_menu_age => 7*24*60*60,  # Weekly cache
+    max_list_age => 7*24*60*60,
 };
 	
