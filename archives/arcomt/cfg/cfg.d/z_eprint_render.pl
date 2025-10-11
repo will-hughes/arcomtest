@@ -1,6 +1,7 @@
 
 $c->{summary_page_metadata} = [qw/
 	keywords
+	iterm
 	note
 	datestamp
 	lastmod
