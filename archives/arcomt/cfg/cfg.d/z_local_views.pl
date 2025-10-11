@@ -65,15 +65,12 @@ push @{$c->{browse_views}},
 		id => "iterm",
 		menus => [
 			{
-				fields => [ "type" ],
+				fields => [ "iterm" ],
 				hideempty => 1,
 			}
 		],
 		order => "creators_name/title",
 		include => 1,
-		variations => [
-			"creators_name;first_letter",
-			"type",
 		],
 	};
 
