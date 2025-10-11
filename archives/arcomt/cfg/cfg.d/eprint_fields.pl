@@ -77,21 +77,9 @@ push @{$c->{fields}->{eprint}},
 	input_style => 'medium',
 },
 
-{	# Taxonomy Index Terms
-	name => 'subjects',
-	type => 'subject',
-	multiple => 1,
-	required => 0,		   
-	top => 'taxonomy_index',
-	browse_link => 'taxonomy_index',
-},
-
 {
 	name => 'divisions',
-	type => 'subject',
-	multiple => 1,
-	top => 'taxonomy_facets',
-	browse_link => 'taxonomy_facets',
+	type => 'subject',	
 },
 
 {
@@ -166,13 +154,33 @@ push @{$c->{fields}->{eprint}},
 	input_boxes => 1,
 },
 
-{
+{	# Taxonomy Index Terms
     name => 'iterm',
     type => 'text',
     multiple => 1,
     required => 0,
 },
 
+{	
+	name => 'facet',
+	type => 'text',
+	multiple => 1,
+	required => 0,		   
+},
+
+{	
+	name => 'domain',
+	type => 'text',
+	multiple => 1,
+	required => 0,		   
+},
+
+{	
+	name => 'subject',
+	type => 'text',
+	multiple => 1,
+	required => 0,		   
+},
 ;
 
 =head1 COPYRIGHT
