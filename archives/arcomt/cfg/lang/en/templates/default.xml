@@ -54,6 +54,12 @@
                       <epc:phrase ref="viewname_eprint_doctype"/>
                     </a>
                   </li>
+                <li role="none">
+                    <a href="{$config{rel_path}}/view/iterm/" role="menuitem">
+                      <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                      <epc:phrase ref="viewname_eprint_iterm"/>
+                    </a>
+                  </li>
                 </ul>
               </li>
 
