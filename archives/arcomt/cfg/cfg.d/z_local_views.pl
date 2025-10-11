@@ -65,7 +65,7 @@ push @{$c->{browse_views}},
 		id => "iterm",
 		menus => [
 			{
-				fields => [ "iterm" ],
+				fields => [ "type" ],
 				hideempty => 1,
 			}
 		],
