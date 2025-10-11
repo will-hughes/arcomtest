@@ -13,7 +13,7 @@ my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M
     or die "Could not connect to database: $DBI::errstr";
 
 # Get all lookup terms
-my $lookup_terms = $dbh->selectall_hashref("SELECT lword, iterm FROM taxonomy", "lword");
+my $lookup_terms = $dbh->selectall_hashref("SELECT lword, iterm, domain, subject, facet FROM taxonomy", "lword");
 
 # DEBUG statements:
 print "Total lookup terms: " . scalar(keys %$lookup_terms) . "\n";
