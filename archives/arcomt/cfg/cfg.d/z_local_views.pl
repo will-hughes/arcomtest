@@ -77,9 +77,9 @@ push @{$c->{browse_views}},
         },
     ],
     order => "creators_name/date",
-    variations => [
-        "creators_name;first_letter",
-        "type",
-        "DEFAULT"
-    ],
+#    variations => [
+#        "creators_name;first_letter",
+#        "type",
+#        "DEFAULT"
+#    ],
 };
