@@ -47,6 +47,10 @@ sub process_batch {
         next unless $eprint;
         
         my %found_iterms;
+        my %found_domains;
+        my %found_subjects; 
+        my %found_facets;
+        
         my $text = lc(join(' ', 
             $eprint->value('title') || '',
             $eprint->value('abstract') || '',
@@ -57,6 +61,9 @@ sub process_batch {
         foreach my $lword (keys %$lookup_terms) {
             if( $text =~ /\b\Q$lword\E\b/i ) {
                 $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
+                $found_domains{$lookup_terms->{$lword}->{domain}} = 1;
+                $found_subjects{$lookup_terms->{$lword}->{subject}} = 1;
+                $found_facets{$lookup_terms->{$lword}->{facet}} = 1;
             }
         }
         
@@ -64,10 +71,16 @@ sub process_batch {
         # ONE DEBUG LINE HERE
             print "  EPrint $eprint_id found terms: " . join(', ', keys %found_iterms) . "\n";
             $eprint->set_value('iterm', [keys %found_iterms]);
+            $eprint->set_value('domain', [keys %found_domains]);
+            $eprint->set_value('subject', [keys %found_subjects]);
+            $eprint->set_value('facet', [keys %found_facets]);
             $eprint->commit();
             $batch_updated++;
         } else {
             $eprint->set_value('iterm', []);
+            $eprint->set_value('domain', []);
+            $eprint->set_value('subject', []);
+            $eprint->set_value('facet', []);
             $eprint->commit();
         }
     }
