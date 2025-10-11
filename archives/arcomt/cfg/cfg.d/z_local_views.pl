@@ -1,5 +1,4 @@
 push @{$c->{browse_views}},
-[
 {
         id => "journal_volume",
         menus => [
@@ -62,14 +61,14 @@ push @{$c->{browse_views}},
         "DEFAULT"
     ],
 },
-	{
-		id => "iterm",
-	    {
-		    fields => [ "iterm" ],
-	    	hideempty => 1,
-	    },
-	},
-];
+{
+	id => "iterm",
+    {
+	    fields => [ "iterm" ],
+    	hideempty => 1,
+    },
+	};
+
 
 #{
 #    id => "iterm",
