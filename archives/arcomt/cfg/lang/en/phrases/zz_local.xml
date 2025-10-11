@@ -62,6 +62,7 @@
 <epp:phrase id="viewname_eprint_journal_volume">Journal</epp:phrase>
 <epp:phrase id="viewtitle:browse_by_volume_for_journal">Browsing <epc:print expr="publication"/> by Volume</epp:phrase>
 <epp:phrase id="viewname_eprint_doctype">Document type</epp:phrase>
+<epp:phrase id="viewname_eprint_iterm">Index terms</epp:phrase>
 	
 <!-- Main browse pages -->
 <epp:phrase id="viewtitle:browse_by_journal">Browse by Journal</epp:phrase>
