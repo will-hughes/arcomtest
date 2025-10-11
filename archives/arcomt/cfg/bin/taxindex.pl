@@ -55,7 +55,7 @@ sub process_batch {
         
         # Efficient hash lookup instead of linear search
         foreach my $lword (keys %$lookup_terms) {
-            if (index($text, lc($lword)) >= 0) {
+            if( $text =~ /\b\Q$lword\E\b/i ) {
                 $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
             }
         }
