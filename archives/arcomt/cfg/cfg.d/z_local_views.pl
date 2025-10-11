@@ -63,15 +63,8 @@ push @{$c->{browse_views}},
 },
 	{
 		id => "iterm",
-		menus => [
-			{
-				fields => [ "iterm" ],
-				hideempty => 1,
-			}
-		],
-		order => "creators_name/title",
-		include => 1,
-		],
+		fields => "iterm",
+	
 	};
 
 #{
