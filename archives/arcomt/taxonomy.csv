@@ -4273,7 +4273,6 @@ mind body relationship,concept,psychology,behavioural studies,mind body relation
 mindfulness,concept,psychology,mental health,mindfulness
 mindfulness characteristics,concept,psychology,mental health attributes,mindfulness characteristics
 mindset,concept,psychology,behavioural patterns,mindset
-mine,phenomenon_object,mining engineering,mining operations,mine
 mine roof control,phenomenon_process,mining engineering,mining operations,mine roof control
 mine waste recycling,phenomenon_process,environmental science,waste management,mine waste recycling
 minimization,concept,management,optimization techniques,minimization
@@ -4758,7 +4757,6 @@ panel binary logit,analytical_technique,statistics,statistical methods,panel bin
 panel connection,concept,structural engineering,structural connections,panel connection
 panic,concept,psychology,behavioural states,panic
 panorama,phenomenon_process,information technology,visualization tools,panorama
-paper,empirical_technique,publishing,research outputs,paper
 Papua New Guinea,phenomenon_location,geographical location,country,Papua New Guinea
 paradigm,empirical_technique,research method,research models,paradigm
 paradigm shift,phenomenon_process,research method,theoretical framework,paradigm shift
@@ -5736,7 +5734,6 @@ research productivity,phenomenon_process,research strategy,research metrics,rese
 research project,phenomenon_process,research strategy,research initiatives,research project
 research roadmap,phenomenon_process,research strategy,research strategy,research roadmap
 research translation,phenomenon_process,publishing,knowledge transfer,research translation
-researcher,phenomenon_process,research management,research professionals,researcher
 Reserve Bank of India,phenomenon_object,economics,financial institutions,Reserve Bank of India
 reservoir,phenomenon_object,engineering,infrastructure,reservoir
 resident,phenomenon_object,real estate management,stakeholder role,resident
@@ -5873,7 +5870,7 @@ risk-informed,concept,management,risk management,risk-informed
 risk-return,concept,management,risk assessment,risk-return
 river basins,concept,environmental science,water management,river basins
 river engineering,concept,engineering,water infrastructure,river engineering
-rivers,concept,environmental science,water bodies,rivers
+river,concept,environmental science,water body,river
 rizing damp,phenomenon_process,architecture,building defects,rizing damp
 road,concept,transportation,infrastructure,road
 road asset,phenomenon_object,transportation,infrastructure management,road asset
