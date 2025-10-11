@@ -60,14 +60,7 @@ push @{$c->{browse_views}},
         "type",
         "DEFAULT"
     ],
-},
-{
-	id => "iterm",
-    {
-	    fields => [ "iterm" ],
-    	hideempty => 1,
-    },
-	};
+};
 
 
 #{
