@@ -9,6 +9,8 @@
     <epp:phrase id="eprint_fieldname_thesis_name">Thesis Name</epp:phrase>
     <epp:phrase id="eprint_fieldhelp_thesis_name">Please select the thesis name.</epp:phrase>
 	<epp:phrase id="eprint_fieldname_thesis_type_display">Thesis type display</epp:phrase>
+	<epp:phrase id="eprint_fieldname_iterm">Index terms</epp:phrase>
+
 	
 	<epp:phrase id="eprint_fieldopt_thesis_name_phd">PhD</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_archd">ArchD</epp:phrase>
