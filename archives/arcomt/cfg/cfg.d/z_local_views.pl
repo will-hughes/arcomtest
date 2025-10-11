@@ -1,4 +1,5 @@
 push @{$c->{browse_views}},
+[
 {
         id => "journal_volume",
         menus => [
@@ -63,9 +64,12 @@ push @{$c->{browse_views}},
 },
 	{
 		id => "iterm",
-		fields => "iterm",
-	
-	};
+	    {
+		    fields => [ "iterm" ],
+	    	hideempty => 1,
+	    },
+	},
+];
 
 #{
 #    id => "iterm",
