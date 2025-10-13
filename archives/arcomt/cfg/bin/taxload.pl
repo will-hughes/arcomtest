@@ -32,9 +32,8 @@ Examples:
 USAGE
     exit;
 }
-
 my $archive = EPrints->new->repository($archive_id) or die "Could not load archive $archive_id";
-my $dbh = $archive->get_database->get_handle;
+my $dbh = $archive->get_database->{dbh};
 
 # Determine CSV file path
 my $csv_path = $csv_file || $archive->get_conf("archiveroot") . "/taxonomy.csv";
