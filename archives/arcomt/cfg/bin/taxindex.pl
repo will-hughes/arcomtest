@@ -184,7 +184,13 @@ sub update_descriptive_scope {
     }
     
     my $scope_count = scalar(keys %facet_letters);
-    my $facet_code = join('', sort keys %facet_letters);
+    # Manual ordering instead of sort
+    my $facet_code = '';
+    $facet_code .= 'P' if exists $facet_letters{P};
+    $facet_code .= 'C' if exists $facet_letters{C};
+    $facet_code .= 'T' if exists $facet_letters{T};
+    $facet_code .= 'E' if exists $facet_letters{E};
+    $facet_code .= 'A' if exists $facet_letters{A};
     
     return "$scope_count $facet_code";
 }
