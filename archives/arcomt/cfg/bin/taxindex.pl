@@ -2,25 +2,55 @@
 
 use strict;
 use warnings;
-use DBI;
+use Getopt::Long;
 use lib "/opt/eprints3/perl_lib";
 use EPrints;
 
-print "Starting taxonomy indexing...\n";
+# Command line options
+my ($repo_id, $eprint_ids_file, $since_date, $help, $verbose);
+GetOptions(
+    'repository=s'   => \$repo_id,
+    'eprints-file=s' => \$eprint_ids_file, 
+    'since-date=s'   => \$since_date,
+    'verbose'        => \$verbose,
+    'help'           => \$help
+);
 
-my $repo = EPrints->new->repository('arcomt');
-my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M") 
-    or die "Could not connect to database: $DBI::errstr";
+# Help and usage
+if ($help || !$repo_id) {
+    print <<"USAGE";
+Usage: $0 --repository <repo_id> [options]
 
-# Get all lookup terms
-my $lookup_terms = $dbh->selectall_hashref("SELECT lword, iterm, domain, subject, facet FROM taxonomy", "lword");
+Options:
+    --repository <id>    Repository ID (required)
+    --eprints-file <file>  File containing eprint IDs to process
+    --since-date <date>    Process eprints modified since date (YYYY-MM-DD)
+    --verbose            Show detailed term matching output
+    --help               Show this help message
 
-# DEBUG statements:
-print "Total lookup terms: " . scalar(keys %$lookup_terms) . "\n";
-print "Sample lookup terms: " . join(', ', (keys %$lookup_terms)[0..10]) . "\n";
+Examples:
+    $0 --repository arcomt                    # Process all eprints
+    $0 --repository arcomt --verbose          # Verbose output
+    $0 --repository arcomt --since-date 2024-01-01  # Incremental update
+    $0 --repository arcomtest                 # Process test repository
 
-# Get all eprint IDs
-my $eprint_ids = $repo->dataset('eprint')->search()->ids();
+USAGE
+    exit;
+}
+
+my $repo = EPrints->new->repository($repo_id) or die "Could not load repository $repo_id";
+my $dbh = $repo->get_database->get_connection;
+
+print "Starting taxonomy indexing for repository: $repo_id\n";
+
+# Get all lookup terms with all fields
+my $lookup_terms = $dbh->selectall_hashref(
+    "SELECT lword, iterm, domain, subject, facet FROM taxonomy", 
+    "lword"
+);
+
+# Get eprint IDs based on options
+my $eprint_ids = get_eprint_ids($repo, $eprint_ids_file, $since_date);
 my $total = scalar(@$eprint_ids);
 print "Found $total eprints to index\n";
 
@@ -29,20 +59,46 @@ my $updated_count = 0;
 
 for (my $i = 0; $i < $total; $i += $batch_size) {
     my @batch_ids = @$eprint_ids[$i .. ($i + $batch_size - 1)];
-    $updated_count += process_batch(\@batch_ids, $lookup_terms, $i + scalar(@batch_ids), $total);
+    $updated_count += process_batch(\@batch_ids, $lookup_terms, $i + 1, $total, $verbose);
 }
 
-$dbh->disconnect;
 print "Taxonomy indexing complete. Updated $updated_count eprints.\n";
 
-sub process_batch {
-    my ($batch_ids, $lookup_terms, $current, $total) = @_;
+sub get_eprint_ids {
+    my ($repo, $eprint_ids_file, $since_date) = @_;
     
-    print "Processing batch ($current/$total)...\n";
+    if ($eprint_ids_file) {
+        open my $fh, '<', $eprint_ids_file or die "Cannot open $eprint_ids_file: $!";
+        chomp(my @ids = <$fh>);
+        close $fh;
+        return \@ids;
+    }
+    elsif ($since_date) {
+        return $repo->dataset('eprint')->search(
+            filters => [
+                { meta_fields => ['lastmod'], value => "{$since_date}" }
+            ]
+        )->ids;
+    }
+    else {
+        return $repo->dataset('eprint')->search()->ids();
+    }
+}
+
+sub process_batch {
+    my ($batch_ids, $lookup_terms, $current, $total, $verbose) = @_;
+    
+    my $batch_end = $current + scalar(@$batch_ids) - 1;
+    print "Processing records $current to $batch_end of $total\n";
+    
     my $batch_updated = 0;
     
     foreach my $eprint_id (@$batch_ids) {
         next unless $eprint_id;
+        
+        # Simple progress indicator
+        print "  Processing record: $eprint_id\r";
+        
         my $eprint = $repo->dataset('eprint')->dataobj($eprint_id);
         next unless $eprint;
         
@@ -57,7 +113,7 @@ sub process_batch {
             $eprint->value('keywords') || '',
         ));
         
-        # Efficient hash lookup instead of linear search
+        # Efficient hash lookup with word boundaries
         foreach my $lword (keys %$lookup_terms) {
             if( $text =~ /\b\Q$lword\E\b/i ) {
                 $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
@@ -68,12 +124,25 @@ sub process_batch {
         }
         
         if (keys %found_iterms) {
-        # ONE DEBUG LINE HERE
-            print "  EPrint $eprint_id found terms: " . join(', ', keys %found_iterms) . "\n";
+            # Calculate descriptive scope before commit
+            my $scope_count = update_descriptive_scope($eprint, \%found_facets);
+            
+            # Verbose debug output
+            if ($verbose) {
+                print "\n  EPrint $eprint_id found:\n";
+                print "    Terms: " . join(', ', keys %found_iterms) . "\n";
+                print "    Domains: " . join(', ', keys %found_domains) . "\n";
+                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
+                print "    Facets: " . join(', ', keys %found_facets) . "\n";
+                print "    Descriptive Scope: $scope_count/5\n";
+            }
+            
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->set_value('domain', [keys %found_domains]);
             $eprint->set_value('subject', [keys %found_subjects]);
             $eprint->set_value('facet', [keys %found_facets]);
+            $eprint->set_value('descriptive_scope', $scope_count);
+            
             $eprint->commit();
             $batch_updated++;
         } else {
@@ -81,10 +150,26 @@ sub process_batch {
             $eprint->set_value('domain', []);
             $eprint->set_value('subject', []);
             $eprint->set_value('facet', []);
+            $eprint->set_value('descriptive_scope', 0);
             $eprint->commit();
         }
     }
     
-    print "  Batch complete ($batch_updated updated)\n";
+    print "\n  Batch complete ($batch_updated updated)\n";
     return $batch_updated;
+}
+
+sub update_descriptive_scope {
+    my ( $eprint, $found_facets_ref ) = @_;
+    
+    my $facets_str = join(' ', keys %$found_facets_ref);
+    my $scope_count = 0;
+    
+    $scope_count++ if $facets_str =~ /phenomenon_/;
+    $scope_count++ if $facets_str =~ /\bconcept\b/;
+    $scope_count++ if $facets_str =~ /\btheoretical_framing\b/;
+    $scope_count++ if $facets_str =~ /\bempirical_technique\b/;
+    $scope_count++ if $facets_str =~ /\banalytical_technique\b/;
+    
+    return $scope_count;
 }
