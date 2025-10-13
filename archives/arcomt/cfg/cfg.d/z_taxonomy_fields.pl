@@ -1,4 +1,4 @@
-push @{$c->{fields}->{eprint}}'
+push @{$c->{fields}->{eprint}},
 
 {	
     name => 'iterm',
