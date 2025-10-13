@@ -38,8 +38,8 @@ USAGE
     exit;
 }
 
-my $archive = EPrints->new->archive($archive_id) or die "Could not load archive $archive_id";
-my $dbh = $archive->get_database->get_connection;
+my $archive = EPrints->new->repository($archive_id) or die "Could not load archive $archive_id";
+my $dbh = $archive->get_database->{dbh};
 
 print "Starting taxonomy indexing for archive: $archive_id\n";
 
@@ -50,7 +50,7 @@ my $lookup_terms = $dbh->selectall_hashref(
 );
 
 # Get eprint IDs based on options
-my $eprint_ids = get_eprint_ids($repo, $eprint_ids_file, $since_date);
+my $eprint_ids = get_eprint_ids($archive, $eprint_ids_file, $since_date);
 my $total = scalar(@$eprint_ids);
 print "Found $total eprints to index\n";
 
@@ -76,7 +76,7 @@ sub get_eprint_ids {
     elsif ($since_date) {
         return $archive->dataset('eprint')->search(
             filters => [
-                { meta_fields => ['lastmod'], value => "{$since_date}" }
+                { meta_fields => ['lastmod'], value => $since_date, match => 'gt' }
             ]
         )->ids;
     }
