@@ -134,7 +134,7 @@ sub process_batch {
                 print "    Domains: " . join(', ', keys %found_domains) . "\n";
                 print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
                 print "    Facets: " . join(', ', keys %found_facets) . "\n";
-                print "    Descriptive Scope: $scope_count/5\n";
+                print "    Descriptive Scope: $descriptive_scope\n";
             }
             
             $eprint->set_value('iterm', [keys %found_iterms]);
