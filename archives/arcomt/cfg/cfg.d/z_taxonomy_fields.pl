@@ -26,7 +26,7 @@ push @{$c->{fields}->{eprint}},
 },
 {
     name => 'descriptive_scope',
-    type => 'int',  # Store as integer (0-5)
+    type => 'text',
     required => 0,
     input_boxes => 1,
 },
