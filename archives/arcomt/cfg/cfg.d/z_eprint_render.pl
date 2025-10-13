@@ -2,7 +2,7 @@
 $c->{summary_page_metadata} = [qw/
 	keywords
 	iterm
-	facet
+	decriptive_scope
 	note
 	datestamp
 	lastmod
