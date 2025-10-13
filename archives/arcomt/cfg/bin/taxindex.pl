@@ -162,14 +162,29 @@ sub process_batch {
 sub update_descriptive_scope {
     my ( $eprint, $found_facets_ref ) = @_;
     
-    my $facets_str = join(' ', keys %$found_facets_ref);
-    my $scope_count = 0;
+    my %facet_letters;
     
-    $scope_count++ if $facets_str =~ /phenomenon_/;
-    $scope_count++ if $facets_str =~ /\bconcept\b/;
-    $scope_count++ if $facets_str =~ /\btheoretical_framing\b/;
-    $scope_count++ if $facets_str =~ /\bempirical_technique\b/;
-    $scope_count++ if $facets_str =~ /\banalytical_technique\b/;
+    # Map facets to their letters
+    foreach my $facet (keys %$found_facets_ref) {
+        if ($facet =~ /phenomenon_/) {
+            $facet_letters{P} = 1;
+        }
+        elsif ($facet eq 'concept') {
+            $facet_letters{C} = 1;
+        }
+        elsif ($facet eq 'theoretical_framing') {
+            $facet_letters{T} = 1;
+        }
+        elsif ($facet eq 'empirical_technique') {
+            $facet_letters{E} = 1;
+        }
+        elsif ($facet eq 'analytical_technique') {
+            $facet_letters{A} = 1;
+        }
+    }
     
-    return $scope_count;
+    my $scope_count = scalar(keys %facet_letters);
+    my $facet_code = join('', sort keys %facet_letters);
+    
+    return "$scope_count $facet_code";
 }
