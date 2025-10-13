@@ -2,28 +2,81 @@
 
 use strict;
 use warnings;
-use DBI;
+use Getopt::Long;
+use lib "/opt/eprints3/perl_lib";
+use EPrints;
 
-my $dbh = DBI->connect("DBI:mysql:database=arcomt", "eprints", "FRGmDrtWuaG93J6M") 
-    or die "Could not connect to database: $DBI::errstr";
+# Command line options
+my ($archive_id, $csv_file, $help);
+GetOptions(
+    'archive=s'   => \$archive_id,  # Actually archive ID
+    'csv-file=s'  => \$csv_file,
+    'help'        => \$help
+);
+
+# Help and usage
+if ($help || !$archive_id) {
+    print <<"USAGE";
+Usage: $0 --archive <archive_id> [options]
+
+Options:
+    --archive <id>    Archive ID (required)
+    --csv-file <file>    Path to CSV file (default: <archive_path>/taxonomy.csv)
+    --help               Show this help message
+
+Examples:
+    $0 --archive arcom                    # Load into live archive
+    $0 --archive arcomt                   # Load into test archive  
+    $0 --archive arcom --csv-file /path/to/custom.csv  # Load custom CSV
+
+USAGE
+    exit;
+}
+
+my $archive = EPrints->new->repository($archive_id) or die "Could not load archive $archive_id";
+my $dbh = $archive->get_database->get_connection;
+
+# Determine CSV file path
+my $csv_path = $csv_file || $archive->get_conf("archiveroot") . "/taxonomy.csv";
+
+print "Loading taxonomy for repository: $archive_id\n";
+print "CSV file: $csv_path\n";
 
 # Clear existing data
 $dbh->do("TRUNCATE TABLE taxonomy");
 
 # Load CSV
-open my $fh, "<:encoding(utf8)", "/opt/eprints3/archives/arcomt/taxonomy.csv" or die "Cannot open CSV: $!";
+open my $fh, "<:encoding(utf8)", $csv_path or die "Cannot open CSV file '$csv_path': $!";
 my $header = <$fh>;  # Read and discard the header line
-my $sth = $dbh->prepare("INSERT INTO taxonomy (iterm, domain, subject, facet, lword) VALUES (?, ?, ?, ?, ?)");
+
+my $sth = $dbh->prepare("INSERT IGNORE INTO taxonomy (iterm, domain, subject, facet, lword) VALUES (?, ?, ?, ?, ?)");
+my $line_count = 0;
+my $loaded_count = 0;
 
 while (<$fh>) {
     chomp;
-    print "RAW LINE: $_\n";  # DEBUG
+    $line_count++;
+    
     my ($iterm, $facet, $domain, $subject, $lword) = split /,/;
-     print "PARSED: iterm='$iterm', lword='$lword'\n"; # DEBUG
-    $sth->execute($iterm, $domain, $subject, $facet, $lword);
+    
+    # Skip empty lines or malformed rows
+    unless ($iterm && $lword) {
+        print "Warning: Skipping malformed line $line_count: $_\n";
+        next;
+    }
+    
+    eval {
+        $sth->execute($iterm, $domain, $subject, $facet, $lword);
+        $loaded_count++;
+    };
+    
+    if ($@) {
+        print "Error inserting line $line_count: $@\n";
+    }
 }
 
 close $fh;
 $dbh->disconnect;
 
-print "Taxonomy loaded successfully!\n";
+print "Taxonomy loading complete!\n";
+print "Processed $line_count lines, loaded $loaded_count terms into repository: $repo_id\n";
