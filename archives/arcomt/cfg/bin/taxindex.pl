@@ -125,7 +125,7 @@ sub process_batch {
         
         if (keys %found_iterms) {
             # Calculate descriptive scope before commit
-            my $scope_count = update_descriptive_scope($eprint, \%found_facets);
+            my $descriptive_scope = update_descriptive_scope($eprint, \%found_facets);
             
             # Verbose debug output
             if ($verbose) {
@@ -141,7 +141,7 @@ sub process_batch {
             $eprint->set_value('domain', [keys %found_domains]);
             $eprint->set_value('subject', [keys %found_subjects]);
             $eprint->set_value('facet', [keys %found_facets]);
-            $eprint->set_value('descriptive_scope', $scope_count);
+            $eprint->set_value('descriptive_scope', $descriptive_scope);
             
             $eprint->commit();
             $batch_updated++;
@@ -150,7 +150,7 @@ sub process_batch {
             $eprint->set_value('domain', []);
             $eprint->set_value('subject', []);
             $eprint->set_value('facet', []);
-            $eprint->set_value('descriptive_scope', 0);
+            $eprint->set_value('descriptive_scope', "0");
             $eprint->commit();
         }
     }
