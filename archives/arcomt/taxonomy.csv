@@ -2501,6 +2501,7 @@ experiential learning,concept,education,learning methods,experiential learning
 experiment,empirical_technique,research method,experimental design,experiment
 experimental design,phenomenon_process,research method,experimental design,experimental design
 experimental questionnaire,empirical_technique,research method,experimental design,experimental questionnaire
+experimental site,empirical_technique,research method,experimental design,experimental site
 experimental study,empirical_technique,research method,experimental design,experimental study
 experimentation,empirical_technique,research method,experimental design,experimentation
 expert,phenomenon_role,organization,professional role,expert
@@ -3590,7 +3591,7 @@ intervention,concept,management,risk management,intervention
 intervention analysis,analytical_technique,management,analytical methods,intervention analysis
 intervention management,phenomenon_process,management,risk management,intervention management
 intervention strategy,concept,management,risk management,intervention strategy
-interview,theoretical_framing,research method,data collection,interview
+interview,empirical_technique,research method,data collection,interview
 interwire parasitic,concept,electrical engineering,electrical systems,interwire parasitic
 intuition,concept,psychology,decision-making process,intuition
 intuitive design,concept,architecture,design methods,intuitive design
@@ -4570,6 +4571,8 @@ object recognition,phenomenon_process,computer science,computer vision,object re
 object relations,theoretical_framing,psychology,psychological theory,object relations
 object type,empirical_technique,research method,classification methods,object type
 object-oriented modelling,phenomenon_process,engineering,software development,object-oriented modelling
+observation,empirical_technique,research method,data collection,observation
+observation,empirical_technique,research method,data collection,observed
 observational learning,concept,psychology,learning theory,observational learning
 observational method,theoretical_framing,research method,qualitative research,observational method
 obsolescence,concept,real estate management,asset management,obsolescence
