@@ -7,7 +7,7 @@ use lib "/opt/eprints3/perl_lib";
 use EPrints;
 
 # Command line options
-my ($repo_id, $eprint_ids_file, $since_date, $help, $verbose);
+my ($archive_id, $eprint_ids_file, $since_date, $help, $verbose);
 GetOptions(
     'archive=s'      => \$archive_id,
     'eprints-file=s' => \$eprint_ids_file, 
