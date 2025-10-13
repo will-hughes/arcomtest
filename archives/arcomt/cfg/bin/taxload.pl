@@ -79,4 +79,4 @@ close $fh;
 $dbh->disconnect;
 
 print "Taxonomy loading complete!\n";
-print "Processed $line_count lines, loaded $loaded_count terms into repository: $repo_id\n";
+print "Processed $line_count lines, loaded $loaded_count terms into archive: $archive_id\n";
