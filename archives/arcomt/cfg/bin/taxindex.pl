@@ -9,7 +9,7 @@ use EPrints;
 # Command line options
 my ($repo_id, $eprint_ids_file, $since_date, $help, $verbose);
 GetOptions(
-    'repository=s'   => \$repo_id,
+    'archive=s'      => \$archive_id,
     'eprints-file=s' => \$eprint_ids_file, 
     'since-date=s'   => \$since_date,
     'verbose'        => \$verbose,
@@ -17,31 +17,31 @@ GetOptions(
 );
 
 # Help and usage
-if ($help || !$repo_id) {
+if ($help || !$archive_id) {
     print <<"USAGE";
-Usage: $0 --repository <repo_id> [options]
+Usage: $0 --archive <archive_id> [options]
 
 Options:
-    --repository <id>    Repository ID (required)
-    --eprints-file <file>  File containing eprint IDs to process
-    --since-date <date>    Process eprints modified since date (YYYY-MM-DD)
-    --verbose            Show detailed term matching output
-    --help               Show this help message
+    --archive <id>        archive ID (required)
+    --eprints-file <file> File containing eprint IDs to process
+    --since-date <date>   Process eprints modified since date (YYYY-MM-DD)
+    --verbose             Show detailed term matching output
+    --help                Show this help message
 
 Examples:
-    $0 --repository arcomt                    # Process all eprints
-    $0 --repository arcomt --verbose          # Verbose output
-    $0 --repository arcomt --since-date 2024-01-01  # Incremental update
-    $0 --repository arcomtest                 # Process test repository
+    $0 --archive arcom                    # Process all eprints
+    $0 --archive arcom --verbose          # Verbose output
+    $0 --archive arcom --since-date 2024-01-01  # Incremental update
+    $0 --archive arcomt                 # Process test repository
 
 USAGE
     exit;
 }
 
-my $repo = EPrints->new->repository($repo_id) or die "Could not load repository $repo_id";
-my $dbh = $repo->get_database->get_connection;
+my $archive = EPrints->new->archive($archive_id) or die "Could not load archive $archive_id";
+my $dbh = $archive->get_database->get_connection;
 
-print "Starting taxonomy indexing for repository: $repo_id\n";
+print "Starting taxonomy indexing for archive: $archive_id\n";
 
 # Get all lookup terms with all fields
 my $lookup_terms = $dbh->selectall_hashref(
@@ -65,7 +65,7 @@ for (my $i = 0; $i < $total; $i += $batch_size) {
 print "Taxonomy indexing complete. Updated $updated_count eprints.\n";
 
 sub get_eprint_ids {
-    my ($repo, $eprint_ids_file, $since_date) = @_;
+    my ($archive, $eprint_ids_file, $since_date) = @_;
     
     if ($eprint_ids_file) {
         open my $fh, '<', $eprint_ids_file or die "Cannot open $eprint_ids_file: $!";
@@ -74,14 +74,14 @@ sub get_eprint_ids {
         return \@ids;
     }
     elsif ($since_date) {
-        return $repo->dataset('eprint')->search(
+        return $archive->dataset('eprint')->search(
             filters => [
                 { meta_fields => ['lastmod'], value => "{$since_date}" }
             ]
         )->ids;
     }
     else {
-        return $repo->dataset('eprint')->search()->ids();
+        return $archive->dataset('eprint')->search()->ids();
     }
 }
 
@@ -99,7 +99,7 @@ sub process_batch {
         # Simple progress indicator
         print "  Processing record: $eprint_id\r";
         
-        my $eprint = $repo->dataset('eprint')->dataobj($eprint_id);
+        my $eprint = $archive->dataset('eprint')->dataobj($eprint_id);
         next unless $eprint;
         
         my %found_iterms;
