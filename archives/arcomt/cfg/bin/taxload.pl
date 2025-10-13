@@ -36,7 +36,7 @@ my $archive = EPrints->new->repository($archive_id) or die "Could not load archi
 my $dbh = $archive->get_database->{dbh};
 
 # Determine CSV file path
-my $csv_path = $csv_file || $archive->get_conf("archiveroot") . "/taxonomy.csv";
+my $csv_path = $archive->get_conf("archiveroot") . "/" . ($csv_file || "taxonomy.csv");
 
 print "Loading taxonomy for repository: $archive_id\n";
 print "CSV file: $csv_path\n";
