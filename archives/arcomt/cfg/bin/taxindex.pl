@@ -29,10 +29,11 @@ Options:
     --help                Show this help message
 
 Examples:
-    $0 --archive arcom                    # Process all eprints
-    $0 --archive arcom --verbose          # Verbose output
-    $0 --archive arcom --since-date 2024-01-01  # Incremental update
-    $0 --archive arcomt                 # Process test repository
+    perl $0 --archive arcom                    # Process all eprints
+    perl $0 --archive arcom --verbose          # Verbose output
+    perl $0 --archive arcom --since-date 2024-01-01  # Incremental update
+    perl $0 --archive arcomt                 # Process test repository
+    perl $0 --archive arcom --eprints-file new_records.txt # selected records only
 
 USAGE
     exit;
