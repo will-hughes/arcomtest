@@ -2,6 +2,9 @@
 $c->{summary_page_metadata} = [qw/
 	keywords
 	iterm
+	facet
+	domain
+	subject
 	descriptive_scope
 	note
 	datestamp
