@@ -180,7 +180,7 @@
 <epp:phrase id="viewname_eprint_taxonomy">Taxonomy</epp:phrase>
 <epp:phrase id="viewname_eprint_iterm">Index terms</epp:phrase>
 
-<epp:phrase id="desc_scope_explain"><p><small>N.B. Descriptive scope is a count how many of the five facets of empirical research are indicated by the words used in title, abstract and keywords. It is not intended as a judgement on the research; merely a count of the kind of word we would expect to indicate <ul>P</ul>henomenon, <ul>C</ul>oncepts, <ul>T</ul>heoretical framing, <ul>E</ul>mpirical techniques, <ul>A</ul>nalytical techniques. If all five are present, then 5 PCTEA will indicate this.</small></p></epp:phrase>
+<epp:phrase id="desc_scope_explain"><p><small>N.B. Descriptive scope is a count how many of the five facets of empirical research are indicated by the words used in title, abstract and keywords. It is not intended as a judgement on the research; merely a count of the kind of word we would expect to indicate Phenomenon, Concepts, Theoretical framing, Empirical techniques, Analytical techniques. If all five are present, then 5 PCTEA will indicate this.</small></p></epp:phrase>
 
 
 <!--
