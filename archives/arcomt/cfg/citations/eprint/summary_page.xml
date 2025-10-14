@@ -128,6 +128,9 @@
     <epc:print expr="$commentary_tree" />
   </epc:if>
 
+<!-- Footnote to explain Descriptive Scope -->
+<epc:phrase ref="desc_scope_explain" />
+	
 <!-- Commented out because redundant in metadata catalogue
   <epc:if test="!$flags{preview}">
     <epc:phrase ref="summary_page:actions"/>
