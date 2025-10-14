@@ -48,7 +48,7 @@ $dbh->do("TRUNCATE TABLE taxonomy");
 open my $fh, "<:encoding(utf8)", $csv_path or die "Cannot open CSV file '$csv_path': $!";
 my $header = <$fh>;  # Read and discard the header line
 
-my $sth = $dbh->prepare("INSERT IGNORE INTO taxonomy (iterm, facet, domain, subject, lword) VALUES (?, ?, ?, ?, ?)");
+my $sth = $dbh->prepare("INSERT INTO taxonomy (iterm, facet, domain, subject, lword) VALUES (?, ?, ?, ?, ?)");
 my $line_count = 0;
 my $loaded_count = 0;
 
