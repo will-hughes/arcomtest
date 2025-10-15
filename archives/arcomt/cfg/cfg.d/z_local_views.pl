@@ -1,4 +1,5 @@
 push @{$c->{browse_views}},
+THIS_SHOULD_CAUSE_A_SYNTAX_ERROR!!
 {
     id => "journal_volume",
     menus => [
