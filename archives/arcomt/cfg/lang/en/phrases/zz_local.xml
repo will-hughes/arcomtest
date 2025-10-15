@@ -85,12 +85,12 @@ Browse by Journal/Volume
 
 <!-- Level 2: Browse by Volume where Journal is [Journal Name] -->
 <epp:phrase id="viewtitle_eprint_journal_volume_menu_2">
-Browse by Volume where Journal is <epc:pin name="value1" />
+<epc:pin name="value1" /> by Volume
 </epp:phrase>
 
 <!-- Level 3: List page title -->
 <epp:phrase id="viewtitle_eprint_journal_volume_list">
-Volume Contents: <epc:pin name="value2" /> of <epc:pin name="value1" />
+Volume <epc:pin name="value2" /> of <epc:pin name="value1" />
 </epp:phrase>
 	
 	
