@@ -60,9 +60,7 @@
                       <epc:phrase ref="viewname_eprint_iterm"/>
                     </a>
                   </li>
-                </ul>
-              </li>
-                <li role="none">
+				<li role="none">
                     <a href="{$config{rel_path}}/view/iterm/" role="menuitem">
                       <epc:phrase ref="bin/generate_views:indextitleprefix"/>
                       <epc:phrase ref="viewname_eprint_domain"/>
@@ -71,6 +69,9 @@
                 </ul>
               </li>
 
+                </ul>
+              </li>
+              
 				<li role="none" style="margin-left:auto;">
 					<a href="{$config{rel_path}}/cgi/search/advanced" title="Advanced Search" role="menuitem">Advanced Search</a>
 
