@@ -37,6 +37,8 @@ push @{$c->{browse_views}},
             fields => [ "type" ], 
         },
     ],
+    order => "creators_name/date",
+},
     
 {
     id => "iterm",
@@ -53,9 +55,4 @@ push @{$c->{browse_views}},
         },
     ],
     order => "creators_name/date",
-#    variations => [
-#        "creators_name;first_letter",
-#        "type",
-#        "DEFAULT"
-#    ],
 };
