@@ -67,21 +67,32 @@
 <epp:phrase id="viewname_eprint_iterm">Index terms</epp:phrase>
 <epp:phrase id="viewname_eprint_domain">Domain</epp:phrase>
 	
-<!-- Main browse pages -->
-<epp:phrase id="viewtitle:browse_by_journal">Browse by Journal</epp:phrase>
-<epp:phrase id="viewtitle:browse_volumes_of_journal">Volumes of: <epc:param name="journal"/></epp:phrase>
-<epp:phrase id="viewtitle:browse_volume_contents">Volume <epc:param name="volume"/> of <epc:param name="journal"/></epp:phrase>
-
 <!-- Navigation -->
 <epp:phrase id="navigation:back_to_journals">← Back to Journal List</epp:phrase>
 <epp:phrase id="navigation:back_to_volumes">← Back to Volume List</epp:phrase>
 
-	<!-- Index Terms Browse Titles -->
+<!-- Index Terms Browse Titles -->
 <epp:phrase id="viewtitle:browse_by_iterm">Browse by Index Terms</epp:phrase>
 <epp:phrase id="viewtitle:browse_by_iterm_selected">Browse by: <epc:param name="iterm"/></epp:phrase>
 
 <!-- Index Terms Navigation -->
 <epp:phrase id="navigation:back_to_iterms">← Back to Index Terms</epp:phrase>
+
+<!-- Level 1: Browse by Journal/Volume -->
+<epp:phrase id="viewtitle_eprint_journal_volume_menu_1">
+Browse by Journal/Volume
+</epp:phrase>
+
+<!-- Level 2: Browse by Volume where Journal is [Journal Name] -->
+<epp:phrase id="viewtitle_eprint_journal_volume_menu_2">
+Browse by Volume where Journal is <epc:pin name="value1" />
+</epp:phrase>
+
+<!-- Level 3: List page title -->
+<epp:phrase id="viewtitle_eprint_journal_volume_list">
+Volume Contents: <epc:pin name="value2" /> of <epc:pin name="value1" />
+</epp:phrase>
+	
 	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
