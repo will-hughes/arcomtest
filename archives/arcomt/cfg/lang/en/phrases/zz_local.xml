@@ -90,7 +90,7 @@ Browse by Journal/Volume
 
 <!-- Level 3: List page title -->
 <epp:phrase id="viewtitle_eprint_journal_volume_list">
-Volume <epc:pin name="value2" /> of <epc:pin name="value1" />
+<epc:pin name="value1" /> - Volume <epc:pin name="value2" />
 </epp:phrase>
 	
 	
