@@ -20,54 +20,7 @@ push @{$c->{browse_views}},
             },
         },
     ],
-    render_title => sub {
-        my ($session, $current_view, $menu, $value) = @_;
-
-        # Level 1: No publication selected yet
-        if (!defined $current_view->{menus}->[0]{selected}) {
-            return $session->html_phrase("viewtitle:browse_by_journal");
-        }
         
-        # Level 2: Publication selected, but no volume selected
-        elsif (!defined $current_view->{menus}->[1]{selected}) {
-            my $journal = $current_view->{menus}->[0]{selected};
-            return $session->html_phrase(
-                "viewtitle:browse_volumes_of_journal",
-                journal => $session->make_text($journal)
-            );
-        }
-        
-        # Level 3: Both publication and volume selected
-        else {
-            my $journal = $current_view->{menus}->[0]{selected};
-            my $volume = $current_view->{menus}->[1]{selected};
-            return $session->html_phrase(
-                "viewtitle:browse_volume_contents", 
-                journal => $session->make_text($journal),
-                volume => $session->make_text($volume)
-            );
-        }
-    },
-    render_up_link => sub {
-        my ($session, $current_view, $menu) = @_;
-
-    if (defined $current_view->{menus}->[1]{selected}) {
-        return $session->html_phrase("navigation:back_to_volumes");
-    }
-        
-        # Level 3: Back to volumes list
-        if (defined $current_view->{menus}->[1]{selected}) {
-            return $session->html_phrase("navigation:back_to_volumes");
-        }
-        # Level 2: Back to journals list  
-        elsif (defined $current_view->{menus}->[0]{selected}) {
-            return $session->html_phrase("navigation:back_to_journals");
-        }
-        # Level 1: No up link needed
-        else {
-            return undef;
-        }
-    },
     filters => [
         { meta_fields => [ "type" ], value => "article" },
         { meta_fields => [ "publication" ], value => ".+" },
@@ -84,40 +37,7 @@ push @{$c->{browse_views}},
             fields => [ "type" ], 
         },
     ],
-    render_title => sub {
-        my ($session, $current_view, $menu, $value) = @_;
-        
-        # First level: Browse by Document Type
-        if (!defined $current_view->{menus}->[0]{selected}) {
-            return $session->html_phrase("viewtitle:browse_by_doctype");
-        }
-        # Second level: Browse by [Specific Type]
-        else {
-            my $type_value = $current_view->{menus}->[0]{selected};
-            my $phrase_id = "viewtitle:browse_by_" . lc($type_value);
-            
-            if ($session->get_lang->has_phrase($phrase_id, $session)) {
-                return $session->html_phrase($phrase_id);
-            } else {
-                return $session->make_text("Browse by " . $type_value);
-            }
-        }
-    },
-    render_up_link => sub {
-        my ($session, $current_view, $menu) = @_;
-        if (defined $current_view->{menus}->[0]{selected}) {
-            return $session->html_phrase("navigation:back_to_doctypes");
-        }
-        return undef;
-    },
-    order => "creators_name/date",
-    variations => [
-        "creators_name;first_letter",
-        "type", 
-        "DEFAULT"
-    ],
-},
-
+    
 {
     id => "iterm",
     allow_null => 0,
