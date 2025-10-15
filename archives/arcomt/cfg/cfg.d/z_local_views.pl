@@ -1,30 +1,26 @@
 push @{$c->{browse_views}},
 {
-        id => "journal_volume",
-        menus => [
-            {
-                id => "publication_menu", # menu ID for better identification
-                fields => [ "publication" ],
-                hideempty => 1,
+    id => "journal_volume",
+    menus => [
+        {
+            id => "publication_menu",
+            fields => [ "publication" ],
+            hideempty => 1,
+        },
+        {
+            id => "volume_menu", 
+            fields => [ "volume" ],
+            hideempty => 1,
+            group => "publication",
+            sort_order => sub {
+                my( $repo, $values, $lang ) = @_;
+                my @sorted_values = sort { $a <=> $b } @$values;
+                return \@sorted_values;
             },
-            {
-                id => "volume_menu", # menu ID for better identification        
-                fields => [ "volume" ],
-                hideempty => 1,
-                group => "publication",
-                sort_order => sub {
-                    my( $repo, $values, $lang ) = @_;
-                    my @sorted_values = sort { $a <=> $b } @$values;
-                    return \@sorted_values;
-                },
-            },
-        ],
-        render_title => sub {
+        },
+    ],
+    render_title => sub {
         my ($session, $current_view, $menu, $value) = @_;
-        
-        # Debug: Check what we're working with
-        # $session->get_repository->log("Current menu: " . ($menu->{id} || 'no id'));
-        # $session->get_repository->log("Menu fields: " . join(',', @{$menu->{fields}}));
         
         # Level 1: No publication selected yet
         if (!defined $current_view->{menus}->[0]{selected}) {
@@ -51,7 +47,7 @@ push @{$c->{browse_views}},
             );
         }
     },
-        render_up_link => sub {
+    render_up_link => sub {
         my ($session, $current_view, $menu) = @_;
         
         # Level 3: Back to volumes list
@@ -67,7 +63,7 @@ push @{$c->{browse_views}},
             return undef;
         }
     },
-        filters => [
+    filters => [
         { meta_fields => [ "type" ], value => "article" },
         { meta_fields => [ "publication" ], value => ".+" },
         { meta_fields => [ "volume" ], value => ".+" },
@@ -77,16 +73,42 @@ push @{$c->{browse_views}},
     variation => [ "DEFAULT;numeric" ],
 },
 {
-   id => "doctype",
-   menus => [ 
+    id => "doctype",
+    menus => [ 
         { 
             fields => [ "type" ], 
         },
-    ], 
+    ],
+    render_title => sub {
+        my ($session, $current_view, $menu, $value) = @_;
+        
+        # First level: Browse by Document Type
+        if (!defined $current_view->{menus}->[0]{selected}) {
+            return $session->html_phrase("viewtitle:browse_by_doctype");
+        }
+        # Second level: Browse by [Specific Type]
+        else {
+            my $type_value = $current_view->{menus}->[0]{selected};
+            my $phrase_id = "viewtitle:browse_by_" . lc($type_value);
+            
+            if ($session->get_lang->has_phrase($phrase_id, $session)) {
+                return $session->html_phrase($phrase_id);
+            } else {
+                return $session->make_text("Browse by " . $type_value);
+            }
+        }
+    },
+    render_up_link => sub {
+        my ($session, $current_view, $menu) = @_;
+        if (defined $current_view->{menus}->[0]{selected}) {
+            return $session->html_phrase("navigation:back_to_doctypes");
+        }
+        return undef;
+    },
     order => "creators_name/date",
     variations => [
         "creators_name;first_letter",
-        "type",
+        "type", 
         "DEFAULT"
     ],
 },
