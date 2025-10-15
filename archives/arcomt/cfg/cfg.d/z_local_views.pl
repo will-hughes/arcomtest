@@ -4,10 +4,12 @@ push @{$c->{browse_views}},
     id => "journal_volume",
     menus => [
         {
+            id => "publication_menu",
             fields => [ "publication" ],
             hideempty => 1,
         },
         {
+            id => "volume_menu", 
             fields => [ "volume" ],
             hideempty => 1,
             group => "publication",
@@ -20,32 +22,51 @@ push @{$c->{browse_views}},
     ],
     render_title => sub {
         my ($session, $current_view, $menu, $value) = @_;
-        
-        # SIMPLE DEBUG - just return what level we think we're on
-        my $level = "UNKNOWN";
+
+        # Level 1: No publication selected yet
         if (!defined $current_view->{menus}->[0]{selected}) {
-            $level = "LEVEL1 - No journal selected";
-        }
-        elsif (!defined $current_view->{menus}->[1]{selected}) {
-            $level = "LEVEL2 - Journal selected, no volume";
-        }
-        else {
-            $level = "LEVEL3 - Both journal and volume selected";
+            return $session->html_phrase("viewtitle:browse_by_journal");
         }
         
-        return $session->make_text("DEBUG: $level");
+        # Level 2: Publication selected, but no volume selected
+        elsif (!defined $current_view->{menus}->[1]{selected}) {
+            my $journal = $current_view->{menus}->[0]{selected};
+            return $session->html_phrase(
+                "viewtitle:browse_volumes_of_journal",
+                journal => $session->make_text($journal)
+            );
+        }
+        
+        # Level 3: Both publication and volume selected
+        else {
+            my $journal = $current_view->{menus}->[0]{selected};
+            my $volume = $current_view->{menus}->[1]{selected};
+            return $session->html_phrase(
+                "viewtitle:browse_volume_contents", 
+                journal => $session->make_text($journal),
+                volume => $session->make_text($volume)
+            );
+        }
     },
     render_up_link => sub {
         my ($session, $current_view, $menu) = @_;
+
+    if (defined $current_view->{menus}->[1]{selected}) {
+        return $session->html_phrase("navigation:back_to_volumes");
+    }
         
-        # SIMPLE DEBUG
+        # Level 3: Back to volumes list
         if (defined $current_view->{menus}->[1]{selected}) {
-            return $session->make_text("DEBUG UP: Back to volumes");
+            return $session->html_phrase("navigation:back_to_volumes");
         }
+        # Level 2: Back to journals list  
         elsif (defined $current_view->{menus}->[0]{selected}) {
-            return $session->make_text("DEBUG UP: Back to journals");
+            return $session->html_phrase("navigation:back_to_journals");
         }
-        return undef;
+        # Level 1: No up link needed
+        else {
+            return undef;
+        }
     },
     filters => [
         { meta_fields => [ "type" ], value => "article" },
@@ -56,84 +77,6 @@ push @{$c->{browse_views}},
     max_items => 10000,
     variation => [ "DEFAULT;numeric" ],
 },
-
-#{
-#    id => "journal_volume",
-#    menus => [
-#        {
-#            id => "publication_menu",
-#            fields => [ "publication" ],
-#            hideempty => 1,
-#        },
-#        {
-#            id => "volume_menu", 
-#            fields => [ "volume" ],
-#            hideempty => 1,
-#            group => "publication",
-#            sort_order => sub {
-#                my( $repo, $values, $lang ) = @_;
-#                my @sorted_values = sort { $a <=> $b } @$values;
-#                return \@sorted_values;
-#            },
-#        },
-#    ],
-#    render_title => sub {
-#        my ($session, $current_view, $menu, $value) = @_;
-#
-#        # Level 1: No publication selected yet
-#        if (!defined $current_view->{menus}->[0]{selected}) {
-#            return $session->html_phrase("viewtitle:browse_by_journal");
-#        }
-#        
-#        # Level 2: Publication selected, but no volume selected
-#        elsif (!defined $current_view->{menus}->[1]{selected}) {
-#            my $journal = $current_view->{menus}->[0]{selected};
-#            return $session->html_phrase(
-#                "viewtitle:browse_volumes_of_journal",
-#                journal => $session->make_text($journal)
-#            );
-#        }
-#        
-#        # Level 3: Both publication and volume selected
-#        else {
-#            my $journal = $current_view->{menus}->[0]{selected};
-#            my $volume = $current_view->{menus}->[1]{selected};
-#            return $session->html_phrase(
-#                "viewtitle:browse_volume_contents", 
-#                journal => $session->make_text($journal),
-#                volume => $session->make_text($volume)
-#            );
-#        }
-#    },
-#    render_up_link => sub {
-#        my ($session, $current_view, $menu) = @_;
-#
-#    if (defined $current_view->{menus}->[1]{selected}) {
-#        return $session->html_phrase("navigation:back_to_volumes");
-#    }
-#        
-#        # Level 3: Back to volumes list
-#        if (defined $current_view->{menus}->[1]{selected}) {
-#            return $session->html_phrase("navigation:back_to_volumes");
-#        }
-#        # Level 2: Back to journals list  
-#        elsif (defined $current_view->{menus}->[0]{selected}) {
-#            return $session->html_phrase("navigation:back_to_journals");
-#        }
-#        # Level 1: No up link needed
-#        else {
-#            return undef;
-#        }
-#    },
-#    filters => [
-#        { meta_fields => [ "type" ], value => "article" },
-#        { meta_fields => [ "publication" ], value => ".+" },
-#        { meta_fields => [ "volume" ], value => ".+" },
-#    ],
-#    order => "number/title",
-#    max_items => 10000,
-#    variation => [ "DEFAULT;numeric" ],
-#},
 {
     id => "doctype",
     menus => [ 
