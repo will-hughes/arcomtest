@@ -21,7 +21,12 @@ push @{$c->{browse_views}},
     ],
     render_title => sub {
         my ($session, $current_view, $menu, $value) = @_;
-        
+
+    $session->get_repository->log("=== RENDER_TITLE CALLED ===");
+    $session->get_repository->log("Menu 0 selected: " . ($current_view->{menus}->[0]{selected} || 'UNDEF'));
+    $session->get_repository->log("Menu 1 selected: " . ($current_view->{menus}->[1]{selected} || 'UNDEF'));
+    $session->get_repository->log("Number of menus: " . scalar(@{$current_view->{menus}}));
+    
         # Level 1: No publication selected yet
         if (!defined $current_view->{menus}->[0]{selected}) {
             return $session->html_phrase("viewtitle:browse_by_journal");
@@ -49,6 +54,15 @@ push @{$c->{browse_views}},
     },
     render_up_link => sub {
         my ($session, $current_view, $menu) = @_;
+
+$session->get_repository->log("=== RENDER_UP_LINK CALLED ===");
+$session->get_repository->log("Menu 0 selected: " . ($current_view->{menus}->[0]{selected} || 'UNDEF'));
+$session->get_repository->log("Menu 1 selected: " . ($current_view->{menus}->[1]{selected} || 'UNDEF'));
+    
+    # Your existing logic here...
+    if (defined $current_view->{menus}->[1]{selected}) {
+        return $session->html_phrase("navigation:back_to_volumes");
+    }
         
         # Level 3: Back to volumes list
         if (defined $current_view->{menus}->[1]{selected}) {
