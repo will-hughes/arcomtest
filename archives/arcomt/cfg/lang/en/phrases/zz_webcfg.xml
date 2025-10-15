@@ -22,6 +22,6 @@
 
     <epp:phrase id="eprint_fieldhelp_annotation">Specific notes about anything unusual or unique to this record</epp:phrase>
 
-    <epp:phrase id="bin/generate_views:intro"><div class="ep_view_intro">Please select a value to browse from the list below (All journal articles, ARCOM Conference papers, or doctoral theses)</div></epp:phrase>
+    <epp:phrase id="bin/generate_views:intro"><div class="ep_view_intro">Please select a value to browse:</div></epp:phrase>
 
 </epp:phrases>
