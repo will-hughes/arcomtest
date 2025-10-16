@@ -45,15 +45,16 @@ push @{$c->{browse_views}},
         menus => [
         {
             fields => [ "iterm" ],
+            mode => "sections",
         },
     ],
-    order => "creators_name/date",
-    hideempty => 1,
-    variations => [
-        "iterm;filename=iterm,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
-        "facet;filename=facet,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
-        "domain;filename=domain,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30", 
-        "subject;filename=subject,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
-    ],
+#    order => "creators_name/date",
+#    hideempty => 1,
+#    variations => [
+#        "iterm;filename=iterm,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
+#        "facet;filename=facet,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
+#        "domain;filename=domain,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30", 
+#        "subject;filename=subject,sections,grouping_function=group_by_a_to_z_hideempty,group_range_function=EPrints::Update::Views::cluster_ranges_30",
+#    ],
 };
 
