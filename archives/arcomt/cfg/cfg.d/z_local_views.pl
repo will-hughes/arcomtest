@@ -45,11 +45,6 @@ push @{$c->{browse_views}},
         menus => [
         {
             fields => [ "iterm" ],
-            new_column_at => [1, 1],
-            mode => "sections",
-            open_first_section => 1,
-            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
-            grouping_function => "group_by_a_to_z_hideempty",
         },
     ],
     order => "creators_name/date",
