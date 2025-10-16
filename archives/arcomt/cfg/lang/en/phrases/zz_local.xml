@@ -79,6 +79,25 @@
 
 <!-- Index Terms Navigation -->
 <epp:phrase id="navigation:back_to_iterms">← Back to Index Terms</epp:phrase>
+	<!-- For iterm view -->
+<epp:phrase id="viewtitle_eprint_iterm_list">
+    Items with Index Term: <epc:pin name="value1" />
+</epp:phrase>
+
+<!-- For facet view -->
+<epp:phrase id="viewtitle_eprint_facet_list">
+    Items with Facet: <epc:pin name="value1" />
+</epp:phrase>
+
+<!-- For domain view -->
+<epp:phrase id="viewtitle_eprint_domain_list">
+    Items with Domain: <epc:pin name="value1" />
+</epp:phrase>
+
+<!-- For subject view -->
+<epp:phrase id="viewtitle_eprint_subject_list">
+    Items with Subject: <epc:pin name="value1" />
+</epp:phrase>
 
 <!-- Level 1: Browse by Journal/Volume -->
 <epp:phrase id="viewtitle_eprint_journal_volume_menu_1">
