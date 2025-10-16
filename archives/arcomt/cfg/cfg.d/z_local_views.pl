@@ -40,19 +40,39 @@ push @{$c->{browse_views}},
     order => "creators_name/date",
 },
 {   id => "iterm",
-    menus => [ { fields => [ "iterm" ], }, ],
+    menus => [ 
+    { 
+    fields => [ "iterm" ], 
+    new_column_at => [10,10],
+    }, 
+    ],
     order => "creators_name/date", 
     },
 {   id => "subject",
-    menus => [ { fields => [ "subject" ], }, ],
+    menus => [ 
+    { 
+    fields => [ "subject" ], 
+    new_column_at => [10,10],
+    }, 
+    ],
     order => "creators_name/date", 
 },
 {   id => "domain",
-    menus => [ { fields => [ "domain" ], }, ],
+    menus => [ 
+    { 
+    fields => [ "domain" ], 
+    new_column_at => [10,10],
+    }, 
+    ],
     order => "creators_name/date", 
 },
 {   id => "facet",
-    menus => [ { fields => [ "facet" ], }, ],
+    menus => [ 
+    { 
+    fields => [ "facet" ], 
+    new_column_at => [10,10],
+    }, 
+    ],
     order => "creators_name/date", 
 };
 
