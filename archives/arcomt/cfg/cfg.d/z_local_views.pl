@@ -41,19 +41,18 @@ push @{$c->{browse_views}},
 },
 {   id => "iterm",
     menus => [ { fields => [ "iterm" ], }, ],
-    order => "creators_name/date", },
-
+    order => "creators_name/date", 
+    },
 {   id => "subject",
     menus => [ { fields => [ "subject" ], }, ],
-    order => "creators_name/date", },
-
+    order => "creators_name/date", 
+},
 {   id => "domain",
     menus => [ { fields => [ "somain" ], }, ],
-    order => "creators_name/date", },
-
+    order => "creators_name/date", 
+},
 {   id => "facet",
     menus => [ { fields => [ "facet" ], }, ],
-    order => "creators_name/date", },
-
+    order => "creators_name/date", 
 };
 
