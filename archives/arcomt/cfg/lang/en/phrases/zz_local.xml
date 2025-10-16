@@ -95,13 +95,16 @@ Browse by Journal/Volume
 
 <epp:phrase id="viewname_eprint_taxonomic">Taxonomic Terms</epp:phrase>
 <epp:phrase id="viewtitle_eprint_taxonomic_menu_1">
-Browse by Taxonomic Terms - Grouped by: <epc:pin name="grouping" />
+	Browse by Taxonomic Terms
+</epp:phrase>
+<!-- For list pages (when you click on a term) -->
+<epp:phrase id="viewtitle_eprint_taxonomic_list">
+    Items grouped by: <epc:pin name="grouping" />
 </epp:phrase>
 	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
   <epp:phrase id="lib/metafield:join_name.last"> and </epp:phrase>
-	
 
 <epp:phrase id="opening_1"><p>The <b>Construction Management Abstracts</b> site is a database of titles, authors, abstracts, and keywords. We bring together material from a wide range of sources: leading journals in construction management, recent ARCOM Conference Proceedings, and PhD theses.</p></epp:phrase>
 
