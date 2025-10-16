@@ -92,7 +92,11 @@ Browse by Journal/Volume
 <epp:phrase id="viewtitle_eprint_journal_volume_list">
 <epc:pin name="value1" /> - Volume <epc:pin name="value2" />
 </epp:phrase>
-	
+
+<epp:phrase id="viewname_eprint_taxonomic">Taxonomic Terms</epp:phrase>
+<epp:phrase id="viewtitle_eprint_taxonomic_menu_1">
+Browse by Taxonomic Terms - Grouped by: <epc:pin name="grouping" />
+</epp:phrase>
 	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
