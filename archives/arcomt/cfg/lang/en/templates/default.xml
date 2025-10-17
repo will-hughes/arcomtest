@@ -61,9 +61,21 @@
                     </a>
                   </li>
 				<li role="none">
-                    <a href="{$config{rel_path}}/view/iterm/" role="menuitem">
+                    <a href="{$config{rel_path}}/view/subject/" role="menuitem">
+                      <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                      <epc:phrase ref="viewname_eprint_subject"/>
+                    </a>
+                  </li>
+            	<li role="none">
+                    <a href="{$config{rel_path}}/view/domain/" role="menuitem">
                       <epc:phrase ref="bin/generate_views:indextitleprefix"/>
                       <epc:phrase ref="viewname_eprint_domain"/>
+                    </a>
+                  </li>
+            	<li role="none">
+                    <a href="{$config{rel_path}}/view/facet/" role="menuitem">
+                      <epc:phrase ref="bin/generate_views:indextitleprefix"/>
+                      <epc:phrase ref="viewname_eprint_facet"/>
                     </a>
                   </li>
             	</ul>
