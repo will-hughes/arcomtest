@@ -93,12 +93,19 @@ sub process_batch {
     print "Processing records $current to $batch_end of $total\n";
     
     my $batch_updated = 0;
+    my $count = 0;
     
     foreach my $eprint_id (@$batch_ids) {
         next unless $eprint_id;
-        
+
+        $count++;
         # Simple progress indicator
-        print "  Processing record: $eprint_id\r";
+        if ($verbose) {
+            print "  Processing record: $eprint_id\n";
+        } else {
+        # Non-verbose: show counter that updates in place
+            print "  Processed $count of " . scalar(@$batch_ids) . " records in batch\r";
+        }
         
         my $eprint = $archive->dataset('eprint')->dataobj($eprint_id);
         next unless $eprint;
@@ -128,15 +135,15 @@ sub process_batch {
             # Calculate descriptive scope before commit
             my $descriptive_scope = update_descriptive_scope($eprint, \%found_facets);
             
-            # Verbose debug output
-            if ($verbose) {
-                print "\n  EPrint $eprint_id found:\n";
-                print "    Terms: " . join(', ', keys %found_iterms) . "\n";
-                print "    Domains: " . join(', ', keys %found_domains) . "\n";
-                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
-                print "    Facets: " . join(', ', keys %found_facets) . "\n";
-                print "    Descriptive Scope: $descriptive_scope\n";
-            }
+#            # Verbose debug output
+#            if ($verbose) {
+#                print "\n  EPrint $eprint_id found:\n";
+#                print "    Terms: " . join(', ', keys %found_iterms) . "\n";
+#                print "    Domains: " . join(', ', keys %found_domains) . "\n";
+#                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
+#                print "    Facets: " . join(', ', keys %found_facets) . "\n";
+#                print "    Descriptive Scope: $descriptive_scope\n";
+#            }
             
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->set_value('domain', [keys %found_domains]);
