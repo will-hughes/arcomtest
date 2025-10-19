@@ -1,8 +1,10 @@
 package EPrints::Plugin::Export::MyPlugins::arcomCSV;
 
-@ISA = ('EPrints::Plugin::Export');
-
+use Unicode::Normalize;
+use Text::CSV_XS;
 use strict;
+
+@ISA = ('EPrints::Plugin::Export');
 
 sub new
 {
@@ -10,13 +12,13 @@ sub new
 
     my $self = $class->SUPER::new( %opts );
 
-    $self->{name} = "arcomCSV";
+    $self->{name} = "CSV";
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible} = "all";
+    $self->{advertise} = 1;
     $self->{suffix} = ".csv";
     $self->{mimetype} = "text/csv; charset=utf-8";
-    $self->{disposition} = 'attachment';
-
+    
     return $self;
 }
 
