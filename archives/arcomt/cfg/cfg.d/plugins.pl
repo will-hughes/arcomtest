@@ -21,6 +21,7 @@ $c->{plugins}->{'Import::Bulk'}->{params}->{visible} = "staff";
 # To remove the screen Screen::Items from the key_tools list:
 # $c->{plugins}->{"Screen::Items"}->{appears}->{key_tools} = undef;
 
+
 # Disabling Issues plugins so that my local ones do not overlap
 $c->{plugins}->{"Issues::SimilarTitles"}->{params}->{disable} = 1;
 $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
@@ -51,24 +52,12 @@ $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
 # not actually disable it.
 # $c->{plugins}->{"Export::BibTeX"}->{params}->{advertise} = 0;
 
-# Custom view for ARCOM repo, same for all users
-# Disable all Export plugins by default, then selectively re-enable chosen ones
-foreach my $plugin_id (keys %{$c->{plugins}}) {
-    next unless $plugin_id =~ /^Export::/;
-    $c->{plugins}->{$plugin_id}->{params}->{advertise} = 0;
-}
-
-foreach my $plugin_id (
-    "Export::MyPlugins::RIS",
-    "Export::EndNote",
-    "Export::BibTeX",
-    "Export::HTML",
-    "Export::CSV"
-) {
-    $c->{plugins}->{$plugin_id}->{params}->{advertise} = 1;
-    $c->{plugins}->{$plugin_id}->{params}->{visible} = "all";
-}
-
+# Only show selected export plugins to regular users
+$c->{plugins}{"Export::MyPlugins::RIS"}{params}{visible} = "all";
+$c->{plugins}{"Export::EndNote"}{params}{visible} = "all";
+$c->{plugins}{"Export::BibTeX"}{params}{visible} = "all";
+$c->{plugins}{"Export::HTML"}{params}{visible} = "all";
+$c->{plugins}{"Export::CSV"}{params}{visible} = "all";
 
 # Hide all others from regular users
 #$c->{plugins}{"Export::Atom"}{params}{visible} = "staff";
