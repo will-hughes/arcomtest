@@ -1,6 +1,6 @@
 =head1 NAME
 
-EPrints::Plugin::Export::MyPlugins::arcomCSV
+EPrints::Plugin::Export::MyPlugins::arcomCSV;
 
 =head1 DESCRIPTION
 
