@@ -52,7 +52,16 @@ $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
 # not actually disable it.
 # $c->{plugins}->{"Export::BibTeX"}->{params}->{advertise} = 0;
 
-# Only show selected export plugins to regular users
+# Custom view for ARCOM repo, same for all users
+
+$c->{plugins}->{"Export"}->{params}->{disable} = "all";
+
+$c->{plugins}->{"Export::MyPlugins::RIS"}->{params}->{disable} = 0;
+$c->{plugins}->{"Export::EndNote"}->{params}->{disable} = 0;
+$c->{plugins}->{"Export::BibTeX"}->{params}->{disable} = 0;
+$c->{plugins}->{"Export::HTML"}->{params}->{disable} = 0;
+$c->{plugins}->{"Export::CSV"}->{params}->{disable} = 0;
+
 $c->{plugins}{"Export::MyPlugins::RIS"}{params}{visible} = "all";
 $c->{plugins}{"Export::EndNote"}{params}{visible} = "all";
 $c->{plugins}{"Export::BibTeX"}{params}{visible} = "all";
