@@ -11,7 +11,7 @@ sub new {
     my( $class, %params ) = @_;
     my $self = $class->SUPER::new( %params );
 
-    $self->{name} = "3 BibTeX";
+    $self->{name} = "BibTeX";
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible} = "all";
     $self->{suffix} = ".bib";
