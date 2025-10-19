@@ -1,20 +1,8 @@
-=head1 NAME
-
-EPrints::Plugin::Export::MyPlugins::arcomCSV;
-
-=head1 DESCRIPTION
-
-Custom CSV export plugin for specific requirements with fixed column headers.
-
-=cut
-
 package EPrints::Plugin::Export::MyPlugins::arcomCSV;
 
-use Unicode::Normalize;
-use Text::CSV_XS;
-use strict;
+@ISA = ('EPrints::Plugin::Export');
 
-our @ISA = qw( EPrints::Plugin::Export );
+use strict;
 
 sub new
 {
