@@ -12,7 +12,7 @@ sub new {
     my( $class, %opts ) = @_;
     my $self = $class->SUPER::new( %opts );
 
-    $self->{name} = "2 EndNote";
+    $self->{name} = "EndNote";
     $self->{accept} = [ 'list/eprint', 'dataobj/eprint' ];
     $self->{visible} = "all";
     $self->{suffix} = ".enw";
