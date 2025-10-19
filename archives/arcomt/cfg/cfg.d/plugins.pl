@@ -57,7 +57,7 @@ $c->{plugins}{"Export::MyPlugins::RIS"}{params}{visible} = "all";
 $c->{plugins}{"Export::EndNote"}{params}{visible} = "all";
 $c->{plugins}{"Export::BibTeX"}{params}{visible} = "all";
 $c->{plugins}{"Export::HTML"}{params}{visible} = "all";
-$c->{plugins}{"Export::CSV"}{params}{visible} = "all";
+$c->{plugins}{"Export::MyPlugins::CustomCSV"}{params}{visible} = "all";
 
 # Hide all others from regular users
 $c->{plugins}{"Export::Atom"}{params}{visible} = "staff";
