@@ -55,9 +55,9 @@ $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
 # Disable all Export plugins by default, then selectively re-enable chosen ones
 foreach my $plugin_id (keys %{$c->{plugins}}) {
     next unless $plugin_id =~ /^Export::/;
-    $c->{plugins}->{$plugin_id}->{params}->{disable} = 1;
+    $c->{plugins}->{$plugin_id}->{params}->{advertise} = 0;
 }
-# Re-enable specific export formats for all users
+
 foreach my $plugin_id (
     "Export::MyPlugins::RIS",
     "Export::EndNote",
@@ -65,7 +65,7 @@ foreach my $plugin_id (
     "Export::HTML",
     "Export::CSV"
 ) {
-    $c->{plugins}->{$plugin_id}->{params}->{disable} = 0;
+    $c->{plugins}->{$plugin_id}->{params}->{advertise} = 1;
     $c->{plugins}->{$plugin_id}->{params}->{visible} = "all";
 }
 
@@ -129,29 +129,6 @@ foreach my $plugin_id (
 # own repository requirements
 #$c->{plugins}->{"Import::DOI"}->{params}->{doi_field} = "id_number";
 #$c->{plugins}->{"Import::DOI"}->{params}->{use_prefix} = 1;
-
-# --- DEBUGGING: Log which Export plugins are enabled/disabled ---
-$c->add_trigger( EPrints::Const::EP_TRIGGER_READY, sub {
-    my( %params ) = @_;
-    my $repository = $params{repository};
-
-    my $logfile = "/opt/eprints3/var/log/export_plugins.log";
-    if (open(my $fh, ">", $logfile)) {
-        print $fh "=== Export plugin visibility check (".localtime().") ===\n";
-
-        foreach my $plugin_id (sort keys %{$repository->{config}->{plugins}}) {
-            next unless $plugin_id =~ /^Export::/;
-            my $p = $repository->{config}->{plugins}->{$plugin_id}->{params} || {};
-            my $disabled = defined $p->{disable} ? $p->{disable} : "(undef)";
-            my $visible  = defined $p->{visible} ? $p->{visible} : "(undef)";
-            my $advertise = defined $p->{advertise} ? $p->{advertise} : "(undef)";
-            print $fh sprintf("%-40s disable=%-6s visible=%-8s advertise=%s\n",
-                $plugin_id, $disabled, $visible, $advertise);
-        }
-        close $fh;
-    }
-});
-
 
 
 =head1 COPYRIGHT
