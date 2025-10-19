@@ -130,6 +130,24 @@ foreach my $plugin_id (
 #$c->{plugins}->{"Import::DOI"}->{params}->{doi_field} = "id_number";
 #$c->{plugins}->{"Import::DOI"}->{params}->{use_prefix} = 1;
 
+# --- DEBUGGING: Log which Export plugins are enabled/disabled ---
+{
+    my $logfile = "/opt/eprints3/var/log/export_plugins.log";
+    open(my $fh, ">", $logfile);
+
+    print $fh "=== Export plugin visibility check ===\n";
+
+    foreach my $plugin_id (sort keys %{$c->{plugins}}) {
+        next unless $plugin_id =~ /^Export::/;
+        my $disabled = $c->{plugins}->{$plugin_id}->{params}->{disable} // "(undef)";
+        my $visible  = $c->{plugins}->{$plugin_id}->{params}->{visible} // "(undef)";
+        print $fh sprintf("%-40s disable=%-6s visible=%s\n",
+            $plugin_id, $disabled, $visible);
+    }
+
+    close $fh;
+}
+
 
 =head1 COPYRIGHT
 
