@@ -32,6 +32,11 @@ sub new
     return $self;
 }
 
+sub outout_file_name {
+    my ($plugin, $list) = @_;
+    return "arcom.csv";
+    }
+
 sub output_dataobj
 {
     my( $self, $dataobj ) = @_;
