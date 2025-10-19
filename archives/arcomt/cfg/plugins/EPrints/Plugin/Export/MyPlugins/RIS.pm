@@ -8,7 +8,7 @@ sub new {
     my ($class, %opts) = @_;
     my $self = $class->SUPER::new(%opts);
 
-    $self->{name}        = '1 RIS';
+    $self->{name}        = 'RIS';
     $self->{accept}      = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible}     = 'all';
     $self->{suffix}      = '.ris';
