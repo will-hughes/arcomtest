@@ -65,7 +65,7 @@ $c->{plugins}{"Export::BadData"}{params}{visible} = "staff";
 $c->{plugins}{"Export::BatchEdit"}{params}{visible} = "staff";
 $c->{plugins}{"Export::COinS"}{params}{visible} = "staff";
 $c->{plugins}{"Export::CSV"}{params}{visible} = "staff";
-$c->{plugins}{"Export::CerifXML"}{params}{visible} = "staff";
+$c->{plugins}{"Export::CerifXML"}{params}{visible} = "none";
 $c->{plugins}{"Export::ContextObject"}{params}{visible} = "staff";
 $c->{plugins}{"Export::ContextObject::Book"}{params}{visible} = "staff";
 $c->{plugins}{"Export::ContextObject::Dissertation"}{params}{visible} = "staff";
@@ -80,22 +80,22 @@ $c->{plugins}{"Export::JSON"}{params}{visible} = "none";
 $c->{plugins}{"Export::METS"}{params}{visible} = "none";
 $c->{plugins}{"Export::MODS"}{params}{visible} = "staff";
 $c->{plugins}{"Export::MultilineCSV"}{params}{visible} = "none";
-$c->{plugins}{"Export::OAI_Bibliography"}{params}{visible} = "staff";
-$c->{plugins}{"Export::OAI_DC"}{params}{visible} = "staff";
-$c->{plugins}{"Export::OAI_UKETD_DC"}{params}{visible} = "staff";
+$c->{plugins}{"Export::OAI_Bibliography"}{params}{visible} = "none";
+$c->{plugins}{"Export::OAI_DC"}{params}{visible} = "none";
+$c->{plugins}{"Export::OAI_UKETD_DC"}{params}{visible} = "none";
 $c->{plugins}{"Export::OldXML"}{params}{visible} = "none";
 $c->{plugins}{"Export::RDFN3"}{params}{visible} = "none";
 $c->{plugins}{"Export::RDFNT"}{params}{visible} = "none";
 $c->{plugins}{"Export::RDFXML"}{params}{visible} = "none";
-$c->{plugins}{"Export::RIS"}{params}{visible} = "staff";  # Hide default RIS
+$c->{plugins}{"Export::RIS"}{params}{visible} = "none";  # Hide default RIS
 $c->{plugins}{"Export::RSS"}{params}{visible} = "staff";
 $c->{plugins}{"Export::RSS2"}{params}{visible} = "staff";
 $c->{plugins}{"Export::Refer"}{params}{visible} = "staff";
 $c->{plugins}{"Export::Simple"}{params}{visible} = "staff";
 $c->{plugins}{"Export::StaffXML"}{params}{visible} = "none";
 $c->{plugins}{"Export::Text"}{params}{visible} = "staff";
-$c->{plugins}{"Export::XML"}{params}{visible} = "staff";
-$c->{plugins}{"Export::XMLFiles"}{params}{visible} = "staff";
+$c->{plugins}{"Export::XML"}{params}{visible} = "none";
+$c->{plugins}{"Export::XMLFiles"}{params}{visible} = "none";
 
 
 
