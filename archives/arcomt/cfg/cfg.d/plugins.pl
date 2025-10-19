@@ -131,7 +131,7 @@ foreach my $plugin_id (
 #$c->{plugins}->{"Import::DOI"}->{params}->{use_prefix} = 1;
 
 # --- DEBUGGING: Log which Export plugins are enabled/disabled ---
-$c->add_trigger( EP_TRIGGER_READY, sub {
+$c->add_trigger( EPrints::Const::EP_TRIGGER_READY, sub {
     my( %params ) = @_;
     my $repository = $params{repository};
 
