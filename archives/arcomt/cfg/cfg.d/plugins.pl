@@ -131,22 +131,27 @@ foreach my $plugin_id (
 #$c->{plugins}->{"Import::DOI"}->{params}->{use_prefix} = 1;
 
 # --- DEBUGGING: Log which Export plugins are enabled/disabled ---
-{
+$c->add_trigger( EP_TRIGGER_READY, sub {
+    my( %params ) = @_;
+    my $repository = $params{repository};
+
     my $logfile = "/opt/eprints3/var/log/export_plugins.log";
-    open(my $fh, ">", $logfile);
+    if (open(my $fh, ">", $logfile)) {
+        print $fh "=== Export plugin visibility check (".localtime().") ===\n";
 
-    print $fh "=== Export plugin visibility check ===\n";
-
-    foreach my $plugin_id (sort keys %{$c->{plugins}}) {
-        next unless $plugin_id =~ /^Export::/;
-        my $disabled = $c->{plugins}->{$plugin_id}->{params}->{disable} // "(undef)";
-        my $visible  = $c->{plugins}->{$plugin_id}->{params}->{visible} // "(undef)";
-        print $fh sprintf("%-40s disable=%-6s visible=%s\n",
-            $plugin_id, $disabled, $visible);
+        foreach my $plugin_id (sort keys %{$repository->{config}->{plugins}}) {
+            next unless $plugin_id =~ /^Export::/;
+            my $p = $repository->{config}->{plugins}->{$plugin_id}->{params} || {};
+            my $disabled = defined $p->{disable} ? $p->{disable} : "(undef)";
+            my $visible  = defined $p->{visible} ? $p->{visible} : "(undef)";
+            my $advertise = defined $p->{advertise} ? $p->{advertise} : "(undef)";
+            print $fh sprintf("%-40s disable=%-6s visible=%-8s advertise=%s\n",
+                $plugin_id, $disabled, $visible, $advertise);
+        }
+        close $fh;
     }
+});
 
-    close $fh;
-}
 
 
 =head1 COPYRIGHT
