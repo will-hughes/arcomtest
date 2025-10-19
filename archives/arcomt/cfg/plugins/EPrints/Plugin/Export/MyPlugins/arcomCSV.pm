@@ -1,6 +1,6 @@
 =head1 NAME
 
-EPrints::Plugin::Export::CustomCSV
+EPrints::Plugin::Export::MyPlugins::arcomCSV
 
 =head1 DESCRIPTION
 
@@ -8,7 +8,7 @@ Custom CSV export plugin for specific requirements with fixed column headers.
 
 =cut
 
-package EPrints::Plugin::Export::CustomCSV;
+package EPrints::Plugin::Export::MyPlugins::arcomCSV;
 
 use Unicode::Normalize;
 use Text::CSV_XS;
@@ -241,8 +241,8 @@ sub clean_field
     return "" unless defined $value;
     
     # Remove extra whitespace and normalize
-    $value =~ s/\s+/ /g;
-    $value =~ s/^\s+|\s+$//g;
+    $value = ~ s/\s+/ /g;
+    $value = ~ s/^\s+|\s+$/ /g;
     
     return $value;
 }
