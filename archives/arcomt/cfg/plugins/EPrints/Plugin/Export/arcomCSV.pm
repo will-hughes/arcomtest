@@ -53,22 +53,29 @@ sub get_authors {
     my @creators = @{$dataobj->get_value('creators') || []};
     my @author_names;
     
-    warn "Found " . scalar(@creators) . " creators"; # Debug
-    
     foreach my $creator (@creators) {
-        # More robust handling
         my $name = '';
-        if ($creator->{family}) {
+        
+        # Try different creator formats
+        if (ref($creator->{name}) eq 'HASH') {
+            # Format: {name => {family => "Smith", given => "John"}}
+            $name = $creator->{name}->{family} || '';
+            if ($creator->{name}->{given}) {
+                $name .= ", " . $creator->{name}->{given} if $name;
+            }
+        } elsif ($creator->{family}) {
+            # Format: {family => "Smith", given => "John"}  
             $name = $creator->{family};
             if ($creator->{given}) {
                 $name .= ", " . $creator->{given};
             }
         }
+        
         push @author_names, $name if $name;
     }
     
     my $result = join('; ', @author_names);
-    warn "Authors result: $result"; # Debug
+    warn "Authors final result: '$result'"; # Debug
     return $result;
 }
 
@@ -100,11 +107,10 @@ sub get_journal {
 
 sub get_thesis_status {
     my( $self, $dataobj ) = @_;
-    # Use thesis_name instead of thesis_type
-    my $thesis_name = $dataobj->get_value('thesis_name') || '';
-    return $thesis_name;
+    # Use thesis_type_display which has the properly formatted name
+    my $thesis_display = $dataobj->get_value('thesis_type_display') || '';
+    return $thesis_display;
 }
-
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
