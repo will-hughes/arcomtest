@@ -48,6 +48,21 @@ sub get_headers {
     );
 }
 
+sub get_authors {
+    my( $self, $dataobj ) = @_;
+    my @creators = @{$dataobj->get_value('creators') || []};
+    my @author_names;
+    foreach my $creator (@creators) {
+        my $name = $creator->{family} || '';
+        if ($creator->{given}) {
+            $name .= ", " . $creator->{given} if $name;
+        }
+        push @author_names, $name if $name;
+    }
+    return join('; ', @author_names);
+}
+
+# Update get_data_row - change the author field:
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
@@ -55,18 +70,18 @@ sub get_data_row {
     
     return (
         '',
-        $type,  # Use the new method
-        'Test Author',  # Still test data
-        $dataobj->get_value('date') ? substr($dataobj->get_value('date'), 0, 4) : "",  # Real year
-        $self->clean_field($dataobj->get_value('title')),  # Use clean_field
-        'test',
-        'test abstract',
+        $type,
+        $self->get_authors($dataobj),  # Use real authors
+        $dataobj->get_value('date') ? substr($dataobj->get_value('date'), 0, 4) : "",
+        $self->clean_field($dataobj->get_value('title')),
+        'test',  # Still test keywords
+        'test abstract',  # Still test abstract
         '',
         '',
         '', '', '', '',
         '0', '1', '',
         '', '', '',
-        $self->get_url($dataobj),  # Use get_url
+        $self->get_url($dataobj),
         'NULL'
     );
 }
