@@ -75,3 +75,4 @@ sub clean_field {
     $value =~ s/^\s+|\s+$//g;
     return $value;
 }
+1;
