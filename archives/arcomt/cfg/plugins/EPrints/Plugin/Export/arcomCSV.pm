@@ -199,8 +199,11 @@ sub get_keywords
     my( $self, $dataobj ) = @_;
     
     # Use the actual keywords field, not subjects
-    my @keywords = @{$dataobj->get_value('keywords') || []};
-    return join('; ', @keywords);
+    my $keywords = $dataobj->get_value('keywords');
+    if (defined $keywords && ref($keywords) eq 'ARRAY') {
+        return join('; ', @$keywords);
+    }
+    return "";  # Return empty string for undefined or non-array keywords
 }
 
 sub get_journal
