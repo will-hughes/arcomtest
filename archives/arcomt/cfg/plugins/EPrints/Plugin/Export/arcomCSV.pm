@@ -13,7 +13,7 @@ sub new {
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible} = 'all';
     $self->{suffix} = '.csv';
-    $self->{mimetype} = 'text/plain';
+    $self->{mimetype} = 'text/csv';
     $self->{disposition} = 'attachment';
 
     return $self;
