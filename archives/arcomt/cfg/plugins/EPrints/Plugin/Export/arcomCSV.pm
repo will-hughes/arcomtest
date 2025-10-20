@@ -62,7 +62,16 @@ sub get_authors {
     return join('; ', @author_names);
 }
 
-# Update get_data_row - change the author field:
+sub get_keywords {
+    my( $self, $dataobj ) = @_;
+    my $keywords = $dataobj->get_value('keywords');
+    if (defined $keywords && ref($keywords) eq 'ARRAY') {
+        return join('; ', @$keywords);
+    }
+    return "";
+}
+
+# Update get_data_row again:
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
@@ -71,11 +80,11 @@ sub get_data_row {
     return (
         '',
         $type,
-        $self->get_authors($dataobj),  # Use real authors
+        $self->get_authors($dataobj),
         $dataobj->get_value('date') ? substr($dataobj->get_value('date'), 0, 4) : "",
         $self->clean_field($dataobj->get_value('title')),
-        'test',  # Still test keywords
-        'test abstract',  # Still test abstract
+        $self->get_keywords($dataobj),  # Real keywords
+        $self->clean_field($dataobj->get_value('abstract')),  # Real abstract
         '',
         '',
         '', '', '', '',
