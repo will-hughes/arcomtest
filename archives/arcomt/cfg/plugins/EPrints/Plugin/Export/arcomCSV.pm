@@ -62,30 +62,49 @@ sub output_headers {
     }
 }
 
-sub output_data_row {
-    my ($self, $dataobj) = @_;
+sub output_list
+{
+    my( $self, %opts ) = @_;
+
+    my $list = $opts{list};
     
-    # Debug: log dataobj info
-    warn "Processing eprint: " . $dataobj->get_value('title');
+    # Debug: log that we're being called
+    warn "output_list called for list with " . $list->count . " items";
     
-    my @row = $self->get_data_row($dataobj);
-    
-    # Debug: log row data
-    warn "Row data: " . join(" | ", @row);
-    
+    my @rows;
     my $csv = Text::CSV_XS->new({ 
         binary => 1,
         eol => "\n",
     });
-    
-    if ($csv->combine(@row)) {
-        my $row_string = $csv->string();
-        warn "CSV row: $row_string";
-        return $row_string;
+
+    # Write headers
+    my @headers = $self->get_headers();
+    if ($csv->combine(@headers)) {
+        push @rows, $csv->string();
+        warn "Headers written: " . $csv->string();
     } else {
-        warn "Failed to combine row: " . $csv->error_diag();
-        return "";
+        warn "Failed to combine headers: " . $csv->error_diag();
     }
+
+    # Write each data row
+    $list->map(sub {
+        my( $session, $dataset, $dataobj ) = @_;
+        
+        warn "Processing eprint: " . $dataobj->get_id;
+        
+        my @row = $self->get_data_row($dataobj);
+        if ($csv->combine(@row)) {
+            push @rows, $csv->string();
+            warn "Row written for eprint " . $dataobj->get_id;
+        } else {
+            warn "Failed to combine row for eprint " . $dataobj->get_id . ": " . $csv->error_diag();
+        }
+    });
+
+    my $result = join("", @rows);
+    warn "output_list returning " . length($result) . " bytes";
+    
+    return $result;
 }
 
 sub get_headers
