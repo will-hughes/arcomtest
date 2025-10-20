@@ -4,7 +4,7 @@ use Unicode::Normalize;
 use Text::CSV_XS;
 use strict;
 
-@ISA = ('EPrints::Plugin::Export');
+our @ISA = ('EPrints::Plugin::Export');
 
 sub new
 {
