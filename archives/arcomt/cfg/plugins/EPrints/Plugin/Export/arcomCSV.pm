@@ -12,7 +12,7 @@ sub new
 
     my $self = $class->SUPER::new( %opts );
 
-    $self->{name} = "CSV";
+    $self->{name} = "arcomCSV";
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible} = "all";
     $self->{advertise} = 1;
