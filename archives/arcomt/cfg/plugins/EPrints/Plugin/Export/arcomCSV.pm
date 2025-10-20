@@ -51,12 +51,14 @@ sub get_headers {
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
+    my $type = $self->get_eprint_type($dataobj);
+    
     return (
         '',
-        'Test Type',
-        'Test Author',
-        '2024',
-        $dataobj->get_value('title') || 'No Title',
+        $type,  # Use the new method
+        'Test Author',  # Still test data
+        $dataobj->get_value('date') ? substr($dataobj->get_value('date'), 0, 4) : "",  # Real year
+        $self->clean_field($dataobj->get_value('title')),  # Use clean_field
         'test',
         'test abstract',
         '',
@@ -64,7 +66,7 @@ sub get_data_row {
         '', '', '', '',
         '0', '1', '',
         '', '', '',
-        'http://test.com',
+        $self->get_url($dataobj),  # Use get_url
         'NULL'
     );
 }
