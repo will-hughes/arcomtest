@@ -52,22 +52,44 @@ sub get_authors {
     my( $self, $dataobj ) = @_;
     my @creators = @{$dataobj->get_value('creators') || []};
     my @author_names;
+    
+    warn "Found " . scalar(@creators) . " creators"; # Debug
+    
     foreach my $creator (@creators) {
-        my $name = $creator->{family} || '';
-        if ($creator->{given}) {
-            $name .= ", " . $creator->{given} if $name;
+        # More robust handling
+        my $name = '';
+        if ($creator->{family}) {
+            $name = $creator->{family};
+            if ($creator->{given}) {
+                $name .= ", " . $creator->{given};
+            }
         }
         push @author_names, $name if $name;
     }
-    return join('; ', @author_names);
+    
+    my $result = join('; ', @author_names);
+    warn "Authors result: $result"; # Debug
+    return $result;
 }
 
 sub get_keywords {
     my( $self, $dataobj ) = @_;
     my $keywords = $dataobj->get_value('keywords');
+    
+    warn "Keywords raw value: " . (defined $keywords ? $keywords : 'UNDEF');
+    warn "Keywords ref type: " . (ref($keywords) || 'SCALAR');
+    
     if (defined $keywords && ref($keywords) eq 'ARRAY') {
-        return join('; ', @$keywords);
+        my $result = join('; ', @$keywords);
+        warn "Keywords array result: $result";
+        return $result;
     }
+    elsif (defined $keywords) {
+        warn "Keywords string result: $keywords";
+        return $keywords;
+    }
+    
+    warn "No keywords found";
     return "";
 }
 
@@ -78,11 +100,11 @@ sub get_journal {
 
 sub get_thesis_status {
     my( $self, $dataobj ) = @_;
-    my $thesis_type = $dataobj->get_value('thesis_type') || 'PhD';
-    return "Unpublished " . $thesis_type . " thesis";
+    # Use thesis_name instead of thesis_type
+    my $thesis_name = $dataobj->get_value('thesis_name') || '';
+    return $thesis_name;
 }
 
-# Final get_data_row with thesis logic:
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
@@ -100,11 +122,11 @@ sub get_data_row {
         $self->clean_field($dataobj->get_value('abstract')),
         $is_journal ? $dataobj->get_value('issn') || "" : "",
         $is_journal ? $self->get_journal($dataobj) : "",
-        '', '', '',  # Conference fields remain empty
-        $is_thesis ? $self->get_thesis_status($dataobj) : "",  # Thesis status
+        '', '', '',  # Conference fields
+        $is_thesis ? $self->get_thesis_status($dataobj) : "0",  # "0" for non-thesis
         '0', '1', '',  # Fixed thesis fields
         $dataobj->get_value('volume') || "",
-        $dataobj->get_value('number') || "", 
+        $dataobj->get_value('number') || "",
         $dataobj->get_value('pagerange') || "",
         $self->get_url($dataobj),
         'NULL'
