@@ -236,8 +236,8 @@ sub clean_field
     return "" unless defined $value;
     
     # Remove extra whitespace and normalize
-    $value = ~ s/\s+/ /g;
-    $value = ~ s/^\s+|\s+$/ /g;
+    $value =~ s/\s+/ /g;
+    $value =~ s/^\s+|\s+$//g;
     
     return $value;
 }
