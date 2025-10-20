@@ -18,6 +18,8 @@ sub new
     $self->{advertise} = 1;
     $self->{suffix} = ".csv";
     $self->{mimetype} = "text/csv; charset=utf-8";
+    $self->{disposition} = 'attachment';
+
     
     return $self;
 }
