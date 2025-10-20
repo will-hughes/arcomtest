@@ -54,7 +54,7 @@ $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
 
 # Only show selected export plugins to regular users
 $c->{plugins}{"Export::MyPlugins::RIS"}{params}{visible} = "all";
-$c->{plugins}{"Export::MyPlugins::arcomCSV"}{params}{visible} = "all";
+$c->{plugins}{"Export::arcomCSV"}{params}{visible} = "all";
 $c->{plugins}{"Export::EndNote"}{params}{visible} = "all";
 $c->{plugins}{"Export::BibTeX"}{params}{visible} = "all";
 $c->{plugins}{"Export::HTML"}{params}{visible} = "all";
