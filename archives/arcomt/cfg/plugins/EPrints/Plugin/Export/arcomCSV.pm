@@ -69,4 +69,25 @@ sub get_data_row {
     );
 }
 
+sub get_eprint_type {
+    my( $self, $dataobj ) = @_;
+    my $type = $dataobj->get_value('type');
+    return 'Thesis' if $type eq 'thesis';
+    return 'Journal Article' if $type eq 'article';
+    return 'Journal Article'; # default
+}
+
+sub clean_field {
+    my( $self, $value ) = @_;
+    return "" unless defined $value;
+    $value =~ s/\s+/ /g;
+    $value =~ s/^\s+|\s+$//g;
+    return $value;
+}
+
+sub get_url {
+    my( $self, $dataobj ) = @_;
+    return $dataobj->get_value('official_url') ||
+           $self->{session}->get_repository->get_conf( "base_url" ) . "/id/eprint/" . $dataobj->get_id;
+}
 1;
