@@ -118,6 +118,10 @@ sub get_data_row {
     my $is_thesis = ($type eq 'Thesis');
     my $is_journal = ($type eq 'Journal Article');
     
+    # Debug ISSN
+    my $issn_value = $dataobj->get_value('issn');
+    warn "ISSN debug - Type: $type, ISSN value: " . ($issn_value || 'UNDEFINED') . ", Has value: " . ($dataobj->is_set('issn') ? 'YES' : 'NO');
+    
     return (
         '',
         $type,
