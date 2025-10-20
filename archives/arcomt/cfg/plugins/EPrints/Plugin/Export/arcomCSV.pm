@@ -14,6 +14,7 @@ sub new {
     $self->{visible} = 'all';
     $self->{suffix} = '.csv';
     $self->{mimetype} = 'text/plain';
+    $self->{disposition} = 'attachment';
 
     return $self;
 }
@@ -75,28 +76,19 @@ sub get_authors {
     }
     
     my $result = join('; ', @author_names);
-    warn "Authors final result: '$result'"; # Debug
     return $result;
 }
 
 sub get_keywords {
     my( $self, $dataobj ) = @_;
     my $keywords = $dataobj->get_value('keywords');
-    
-    warn "Keywords raw value: " . (defined $keywords ? $keywords : 'UNDEF');
-    warn "Keywords ref type: " . (ref($keywords) || 'SCALAR');
-    
     if (defined $keywords && ref($keywords) eq 'ARRAY') {
         my $result = join('; ', @$keywords);
-        warn "Keywords array result: $result";
         return $result;
     }
     elsif (defined $keywords) {
-        warn "Keywords string result: $keywords";
         return $keywords;
     }
-    
-    warn "No keywords found";
     return "";
 }
 
@@ -117,10 +109,7 @@ sub get_data_row {
     my $type = $self->get_eprint_type($dataobj);
     my $is_thesis = ($type eq 'Thesis');
     my $is_journal = ($type eq 'Journal Article');
-    
-    # Debug ISSN
     my $issn_value = $dataobj->get_value('issn');
-    warn "ISSN debug - Type: $type, ISSN value: " . ($issn_value || 'UNDEFINED') . ", Has value: " . ($dataobj->is_set('issn') ? 'YES' : 'NO');
     
     return (
         '',
