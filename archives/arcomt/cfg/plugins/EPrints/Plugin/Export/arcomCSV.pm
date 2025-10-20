@@ -71,11 +71,17 @@ sub get_keywords {
     return "";
 }
 
-# Update get_data_row again:
+sub get_journal {
+    my( $self, $dataobj ) = @_;
+    return $dataobj->get_value('publication') || "";
+}
+
+# Update get_data_row with journal-specific logic:
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
     my $type = $self->get_eprint_type($dataobj);
+    my $is_journal = ($type eq 'Journal Article');
     
     return (
         '',
@@ -83,13 +89,15 @@ sub get_data_row {
         $self->get_authors($dataobj),
         $dataobj->get_value('date') ? substr($dataobj->get_value('date'), 0, 4) : "",
         $self->clean_field($dataobj->get_value('title')),
-        $self->get_keywords($dataobj),  # Real keywords
-        $self->clean_field($dataobj->get_value('abstract')),  # Real abstract
-        '',
-        '',
+        $self->get_keywords($dataobj),
+        $self->clean_field($dataobj->get_value('abstract')),
+        $is_journal ? $dataobj->get_value('issn') || "" : "",  # ISSN for journals only
+        $is_journal ? $self->get_journal($dataobj) : "",  # Journal name for journals only
         '', '', '', '',
         '0', '1', '',
-        '', '', '',
+        $dataobj->get_value('volume') || "",  # Real volume
+        $dataobj->get_value('number') || "",  # Real issue
+        $dataobj->get_value('pagerange') || "",  # Real pages
         $self->get_url($dataobj),
         'NULL'
     );
