@@ -1,4 +1,4 @@
-package EPrints::Plugin::Export::MyPlugins::arcomCSV;
+package EPrints::Plugin::Export::arcomCSV;
 
 use Unicode::Normalize;
 use Text::CSV_XS;
