@@ -76,11 +76,18 @@ sub get_journal {
     return $dataobj->get_value('publication') || "";
 }
 
-# Update get_data_row with journal-specific logic:
+sub get_thesis_status {
+    my( $self, $dataobj ) = @_;
+    my $thesis_type = $dataobj->get_value('thesis_type') || 'PhD';
+    return "Unpublished " . $thesis_type . " thesis";
+}
+
+# Final get_data_row with thesis logic:
 sub get_data_row {
     my ($self, $dataobj) = @_;
     
     my $type = $self->get_eprint_type($dataobj);
+    my $is_thesis = ($type eq 'Thesis');
     my $is_journal = ($type eq 'Journal Article');
     
     return (
@@ -91,13 +98,14 @@ sub get_data_row {
         $self->clean_field($dataobj->get_value('title')),
         $self->get_keywords($dataobj),
         $self->clean_field($dataobj->get_value('abstract')),
-        $is_journal ? $dataobj->get_value('issn') || "" : "",  # ISSN for journals only
-        $is_journal ? $self->get_journal($dataobj) : "",  # Journal name for journals only
-        '', '', '', '',
-        '0', '1', '',
-        $dataobj->get_value('volume') || "",  # Real volume
-        $dataobj->get_value('number') || "",  # Real issue
-        $dataobj->get_value('pagerange') || "",  # Real pages
+        $is_journal ? $dataobj->get_value('issn') || "" : "",
+        $is_journal ? $self->get_journal($dataobj) : "",
+        '', '', '',  # Conference fields remain empty
+        $is_thesis ? $self->get_thesis_status($dataobj) : "",  # Thesis status
+        '0', '1', '',  # Fixed thesis fields
+        $dataobj->get_value('volume') || "",
+        $dataobj->get_value('number') || "", 
+        $dataobj->get_value('pagerange') || "",
         $self->get_url($dataobj),
         'NULL'
     );
