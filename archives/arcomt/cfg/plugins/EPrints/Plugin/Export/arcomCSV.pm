@@ -15,7 +15,6 @@ sub new
     $self->{name} = "arcomCSV";
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
     $self->{visible} = "all";
-    $self->{advertise} = 1;
     $self->{suffix} = ".csv";
     $self->{mimetype} = "text/csv; charset=utf-8";
     $self->{disposition} = 'attachment';
@@ -29,31 +28,67 @@ sub output_file_name {
     return "arcom.csv";
     }
 
-sub output_dataobj
-{
-    my( $self, $dataobj ) = @_;
+#sub output_dataobj
+#{
+#    my( $self, $dataobj ) = @_;
+#
+#    my $csv = Text::CSV_XS->new({ 
+#        binary => 1,
+#        eol => "\n",
+#        quote_space => 0,
+#    });
+#
+    # For single record output, we need to include headers
+ #   my $output = "";
+#    
+    # Write headers
+#    $csv->combine($self->get_headers());
+#    $output .= $csv->string() . "\n";
+#    
+    # Write data
+#    my @row = $self->get_data_row($dataobj);
+#    $csv->combine(@row);
+#    $output .= $csv->string();
+#
+#    return $output;
+#}
+sub output_dataobj {
+    my ($self, $dataobj) = @_;
+    
+    # For single record, include headers + data
+    if (!$self->{_header_done}) {
+        $self->{_header_done} = 1;
+        return $self->output_headers() . $self->output_data_row($dataobj);
+    }
+    
+    # For additional records, just data
+    return $self->output_data_row($dataobj);
+}
 
+sub output_headers {
+    my ($self) = @_;
+    
     my $csv = Text::CSV_XS->new({ 
         binary => 1,
         eol => "\n",
-        quote_space => 0,
     });
-
-    # For single record output, we need to include headers
-    my $output = "";
     
-    # Write headers
     $csv->combine($self->get_headers());
-    $output .= $csv->string() . "\n";
-    
-    # Write data
-    my @row = $self->get_data_row($dataobj);
-    $csv->combine(@row);
-    $output .= $csv->string();
-
-    return $output;
+    return $csv->string();
 }
 
+sub output_data_row {
+    my ($self, $dataobj) = @_;
+    
+    my $csv = Text::CSV_XS->new({ 
+        binary => 1,
+        eol => "\n",
+    });
+    
+    my @row = $self->get_data_row($dataobj);
+    $csv->combine(@row);
+    return $csv->string();
+}
 sub get_headers
 {
     my( $self ) = @_;
