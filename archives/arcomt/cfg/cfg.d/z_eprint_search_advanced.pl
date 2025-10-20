@@ -6,6 +6,7 @@ $c->{search}->{advanced} =
 		{ meta_fields => [ "creators_name" ] },
 		{ meta_fields => [ "publication" ] },
 		{ meta_fields => [ "volume" ] },
+		{ meta_fields => [ "issue" ] },
 		{ meta_fields => [ "abstract" ] },
 		{ meta_fields => [ "date" ] },
 		{ meta_fields => [ "official_url" ] },
@@ -62,5 +63,6 @@ License along with EPrints 3.4.
 If not, see L<http://www.gnu.org/licenses/>.
 
 =for LICENSE END
+
 
 
