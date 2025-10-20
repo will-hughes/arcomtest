@@ -126,7 +126,7 @@ sub get_data_row {
         $self->clean_field($dataobj->get_value('title')),
         $self->get_keywords($dataobj),
         $self->clean_field($dataobj->get_value('abstract')),
-        $is_journal ? $dataobj->get_value('issn') || "" : "",
+        $is_journal ? $dataobj->get_value('issn') || "" : "",  # Use ISSN for journals
         $is_journal ? $self->get_journal($dataobj) : "",
         '', '', '',  # Conference fields
         $is_thesis ? $self->get_thesis_status($dataobj) : "0",  # "0" for non-thesis
