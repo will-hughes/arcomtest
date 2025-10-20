@@ -6,89 +6,88 @@ use Unicode::Normalize;
 use Text::CSV_XS;
 use strict;
 
-sub new
-{
-    my( $class, %opts ) = @_;
+sub new {
+    my ($class, %opts) = @_;
+    my $self = $class->SUPER::new(%opts);
 
-    my $self = $class->SUPER::new( %opts );
-
-    $self->{name} = "arcomCSV";
+    $self->{name} = 'arcomCSV';
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
-    $self->{visible} = "all";
-    $self->{suffix} = ".csv";
-    $self->{mimetype} = "text/csv; charset=utf-8";
+    $self->{visible} = 'all';
+    $self->{suffix} = '.csv';
+    $self->{mimetype} = 'text/csv; charset=utf-8';
     $self->{disposition} = 'attachment';
 
-    
     return $self;
 }
 
 sub output_file_name {
     my ($plugin, $list) = @_;
     return "arcom.csv";
-    }
+}
 
-#sub output_dataobj
-#{
-#    my( $self, $dataobj ) = @_;
-#
-#    my $csv = Text::CSV_XS->new({ 
-#        binary => 1,
-#        eol => "\n",
-#        quote_space => 0,
-#    });
-#
-    # For single record output, we need to include headers
- #   my $output = "";
-#    
-    # Write headers
-#    $csv->combine($self->get_headers());
-#    $output .= $csv->string() . "\n";
-#    
-    # Write data
-#    my @row = $self->get_data_row($dataobj);
-#    $csv->combine(@row);
-#    $output .= $csv->string();
-#
-#    return $output;
-#}
 sub output_dataobj {
     my ($self, $dataobj) = @_;
     
-    # For single record, include headers + data
-    if (!$self->{_header_done}) {
-        $self->{_header_done} = 1;
-        return $self->output_headers() . $self->output_data_row($dataobj);
-    }
+    # Debug: log that we're being called
+    warn "output_dataobj called for eprint ID: " . $dataobj->get_id;
     
-    # For additional records, just data
-    return $self->output_data_row($dataobj);
+    my $result = $self->output_headers() . $self->output_data_row($dataobj);
+    
+    # Debug: log the result size
+    warn "output_dataobj returning " . length($result) . " bytes";
+    
+    return $result;
 }
 
 sub output_headers {
     my ($self) = @_;
     
+    my @headers = $self->get_headers();
+    
+    # Debug: log headers
+    warn "Headers: " . join(", ", @headers);
+    
     my $csv = Text::CSV_XS->new({ 
         binary => 1,
         eol => "\n",
     });
     
-    $csv->combine($self->get_headers());
-    return $csv->string();
+    if ($csv->combine(@headers)) {
+        my $header_row = $csv->string();
+        warn "Header row: $header_row";
+        return $header_row;
+    } else {
+        warn "Failed to combine headers: " . $csv->error_diag();
+        return "";
+    }
 }
 
 sub output_data_row {
     my ($self, $dataobj) = @_;
     
+    # Debug: log dataobj info
+    warn "Processing eprint: " . $dataobj->get_value('title');
+    
+    my @row = $self->get_data_row($dataobj);
+    
+    # Debug: log row data
+    warn "Row data: " . join(" | ", @row);
+    
     my $csv = Text::CSV_XS->new({ 
         binary => 1,
         eol => "\n",
     });
     
-    my @row = $self->get_data_row($dataobj);
-    $csv->combine(@row);
-    return $csv->string();
+    if ($csv->combine(@row)) {
+        my $row_string = $csv->string();
+        warn "CSV row: $row_string";
+        return $row_string;
+    } else {
+        warn "Failed to combine row: " . $csv->error_diag();
+        return "";
+    }
 }
+
 sub get_headers
 {
     my( $self ) = @_;
