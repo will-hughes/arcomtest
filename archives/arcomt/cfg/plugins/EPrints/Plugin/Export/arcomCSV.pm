@@ -1,10 +1,10 @@
 package EPrints::Plugin::Export::arcomCSV;
 
+@ISA = ('EPrints::Plugin::Export');
+
 use Unicode::Normalize;
 use Text::CSV_XS;
 use strict;
-
-our @ISA = ('EPrints::Plugin::Export');
 
 sub new
 {
