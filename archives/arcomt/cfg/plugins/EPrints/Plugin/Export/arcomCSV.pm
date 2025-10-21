@@ -11,7 +11,7 @@ sub new {
 
     $self->{name} = 'arcomCSV';
     $self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
-    $self->{visible} = 'all';
+    $self->{visible} = 'staff';
     $self->{suffix} = '.csv';
     $self->{mimetype} = 'text/csv';
     $self->{disposition} = 'attachment';
