@@ -2,7 +2,7 @@
 <!DOCTYPE page SYSTEM "entities.dtd" >
 <xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
 
-<xpage:title>Welcome to SOMETHING</xpage:title>
+<xpage:title>Welcome to <epc:phrase ref="archive_name" /></xpage:title>
 <xpage:body>
 
 <div style="text-align: right;">
@@ -53,6 +53,7 @@
 
 </xpage:body>
 </xpage:page>
+
 
 
 
