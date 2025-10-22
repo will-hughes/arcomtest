@@ -68,7 +68,7 @@
 <epp:phrase id="viewname_eprint_domain">Domains</epp:phrase>
 <epp:phrase id="viewname_eprint_subject">Subjects</epp:phrase>
 <epp:phrase id="viewname_eprint_facet">Research facets</epp:phrase>
-<epp:phrase id="viewname_descriptive_scope">Descriptive scope</epp:phrase>
+<epp:phrase id="viewname_eprint_descriptive_scope">Descriptive scope</epp:phrase>
 	
 <!-- Navigation -->
 <epp:phrase id="navigation:back_to_journals">← Back to Journal List</epp:phrase>
