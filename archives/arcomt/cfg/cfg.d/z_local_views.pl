@@ -36,6 +36,9 @@ push @{$c->{browse_views}},
         { 
             fields => [ "type" ], 
         },
+        { 
+            fields => [ "date_year" ], 
+        },
     ],
     order => "creators_name/date",
 },
