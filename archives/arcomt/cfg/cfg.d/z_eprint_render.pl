@@ -4,7 +4,7 @@ $c->{summary_page_metadata} = [qw/
 	iterm
 	domain
 	subject
-	descriptive_scope
+	dscope
 	note
 	datestamp
 	lastmod
