@@ -121,6 +121,22 @@ Browse by Journal/Volume
 <epc:pin name="value1" /> - Volume <epc:pin name="value2" />
 </epp:phrase>
 
+<!-- For doctype view -->	
+<epp:phrases>
+  <!-- Level 1: Document types -->
+  <epp:phrase id="viewtitle_eprint_doctype_list">Browse by Document Type</epp:phrase>
+  
+  <!-- Level 2: When a specific document type is selected -->
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_conference_item">Browse by Conference Paper: Year of Publication</epp:phrase>
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_article">Browse by Article: Year of Publication</epp:phrase>
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_thesis">Browse by Thesis: Year of Publication</epp:phrase>
+  
+  <!-- Level 3: When a specific year is selected -->
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_conference_item_date">Conference Papers from <epc:pin name="value1" /></epp:phrase>
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_article_date">Articles from <epc:pin name="value1" /></epp:phrase>
+  <epp:phrase id="viewtitle_eprint_doctype_list_type_thesis_date">Theses from <epc:pin name="value1" /></epp:phrase>
+</epp:phrases>
+	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
   <epp:phrase id="lib/metafield:join_name.last"> and </epp:phrase>
