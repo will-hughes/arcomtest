@@ -25,7 +25,7 @@ push @{$c->{fields}->{eprint}},
 	required => 0,		   
 },
 {
-    name => 'descriptive_scope',
+    name => 'dscope',
     type => 'text',
     required => 0,
     input_boxes => 1,
