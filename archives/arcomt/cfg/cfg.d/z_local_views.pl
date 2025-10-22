@@ -91,9 +91,13 @@ push @{$c->{browse_views}},
 {   id => "facet",
     allow_null => 0,
     hideempty => 1,
+    menus => [
+        { 
+        fields => [ "facet" ], 
+        }, 
+    ],
     order => "creators_name/date", 
-},
-{   id => "dscope",
+},{   id => "dscope",
     allow_null => 0,
     hideempty => 1,
     menus => [
