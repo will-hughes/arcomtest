@@ -27,6 +27,7 @@ push @{$c->{fields}->{eprint}},
 {
     name => 'dscope',
     type => 'text',
+	maxlength => 10,
     required => 0,
     input_boxes => 1,
 },
