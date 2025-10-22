@@ -133,7 +133,7 @@ sub process_batch {
         
         if (keys %found_iterms) {
             # Calculate descriptive scope before commit
-            my $descriptive_scope = update_descriptive_scope($eprint, \%found_facets);
+            my $dscope = update_dscope($eprint, \%found_facets);
             
 #            # Verbose debug output
 #            if ($verbose) {
