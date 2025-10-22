@@ -122,12 +122,10 @@ Browse by Journal/Volume
 </epp:phrase>
 
 <!-- For doctype view -->	
-<!-- Try without the "type_" prefix -->
-<epp:phrase id="viewtitle_eprint_doctype_list_conference_item">Browse by Conference Paper: Year of Publication</epp:phrase>
-<epp:phrase id="viewtitle_eprint_doctype_list_article">Browse by Article: Year of Publication</epp:phrase>
-
-<!-- Or try with just the field name -->
-<epp:phrase id="viewtitle_eprint_doctype_list_date">Browse by Year</epp:phrase>
+<!-- Doctype browse phrases -->
+<epp:phrase id="viewtitle_eprint_doctype_menu_1">Browse by Document Type</epp:phrase>
+<epp:phrase id="viewtitle_eprint_doctype_menu_2"><epc:pin name="value1" /> by Year</epp:phrase>
+<epp:phrase id="viewtitle_eprint_doctype_list"><epc:pin name="value1" /> from <epc:pin name="value2" /></epp:phrase>
 	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
