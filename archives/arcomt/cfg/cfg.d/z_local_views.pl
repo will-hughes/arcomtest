@@ -94,7 +94,10 @@ push @{$c->{browse_views}},
     menus => [
         { 
         fields => [ "facet" ], 
-        }, 
+        },
+        {
+        fields => [ "iterm" ],
+        },
     ],
     order => "creators_name/date", 
 },
