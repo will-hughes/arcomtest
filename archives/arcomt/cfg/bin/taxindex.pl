@@ -167,7 +167,7 @@ sub process_batch {
     return $batch_updated;
 }
 
-sub update_descriptive_scope {
+sub update_dscope {
     my ( $eprint, $found_facets_ref ) = @_;
     
     my %facet_letters;
