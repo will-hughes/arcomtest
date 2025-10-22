@@ -142,14 +142,14 @@ sub process_batch {
 #                print "    Domains: " . join(', ', keys %found_domains) . "\n";
 #                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
 #                print "    Facets: " . join(', ', keys %found_facets) . "\n";
-#                print "    Descriptive Scope: $descriptive_scope\n";
+#                print "    Descriptive Scope: $dscope\n";
 #            }
             
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->set_value('domain', [keys %found_domains]);
             $eprint->set_value('subject', [keys %found_subjects]);
             $eprint->set_value('facet', [keys %found_facets]);
-            $eprint->set_value('descriptive_scope', $descriptive_scope);
+            $eprint->set_value('dscope', $dscope);
             
             $eprint->commit();
             $batch_updated++;
@@ -158,7 +158,7 @@ sub process_batch {
             $eprint->set_value('domain', []);
             $eprint->set_value('subject', []);
             $eprint->set_value('facet', []);
-            $eprint->set_value('descriptive_scope', "0");
+            $eprint->set_value('dscope', "0");
             $eprint->commit();
         }
     }
