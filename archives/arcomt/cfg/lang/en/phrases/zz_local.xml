@@ -80,7 +80,13 @@
 
 <!-- Index Terms Navigation -->
 <epp:phrase id="navigation:back_to_iterms">← Back to Index Terms</epp:phrase>
-	<!-- For iterm view -->
+
+<!-- For descriptive_scope view -->
+<epp:phrase id="viewtitle_eprint_descriptive_scope_list">
+    Items with Index Term: <epc:pin name="value1" />
+</epp:phrase>
+
+<!-- For iterm view -->
 <epp:phrase id="viewtitle_eprint_iterm_list">
     Items with Index Term: <epc:pin name="value1" />
 </epp:phrase>
