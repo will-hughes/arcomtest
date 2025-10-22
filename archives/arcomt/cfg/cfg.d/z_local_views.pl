@@ -38,7 +38,7 @@ push @{$c->{browse_views}},
         },
         { 
             fields => [ "date" ],
-            new_column_at => [1,1],
+            new_column_at => [1,1,1],
         },
     ],
     order => "creators_name/date",
