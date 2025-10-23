@@ -6,6 +6,8 @@ $c->{search}->{simple} =
 			meta_fields => [
 				"abstract",
 				"keywords",
+				"subject",
+				"domain",
 				"creators_name",
 				"title",
 			]
