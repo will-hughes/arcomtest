@@ -121,15 +121,23 @@ sub process_batch {
             $eprint->value('keywords') || '',
         ));
         
-        # Efficient hash lookup with word boundaries
-        foreach my $lword (keys %$lookup_terms) {
-            if( $text =~ /(^|\W)\Q$lword\E($|\W)/i ) {
-                $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
-                $found_domains{$lookup_terms->{$lword}->{domain}} = 1;
-                $found_subjects{$lookup_terms->{$lword}->{subject}} = 1;
-                $found_facets{$lookup_terms->{$lword}->{facet}} = 1;
-            }
-        }
+# Efficient hash lookup with word boundaries
+foreach my $lword (keys %$lookup_terms) {
+    # Remove quotes and normalize spacing
+    my $clean_lword = $lword;
+    $clean_lword =~ s/['"]//g;  # Remove quotes
+    $clean_lword =~ s/\s+/ /g;  # Normalize spaces
+
+    # Create a regex that handles word boundaries for phrases
+    my $regex = qr/\b\Q$clean_lword\E\b/i;
+
+    if( $text =~ $regex ) {
+        $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
+        $found_domains{$lookup_terms->{$lword}->{domain}} = 1;
+        $found_subjects{$lookup_terms->{$lword}->{subject}} = 1;
+        $found_facets{$lookup_terms->{$lword}->{facet}} = 1;
+    }
+}
         
         if (keys %found_iterms) {
             # Calculate descriptive scope before commit
