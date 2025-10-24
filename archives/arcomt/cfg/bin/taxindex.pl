@@ -123,7 +123,7 @@ sub process_batch {
         
         # Efficient hash lookup with word boundaries
         foreach my $lword (keys %$lookup_terms) {
-            if( $text =~ /\b\Q$lword\E\b/i ) {
+            if( $text =~ /(^|\W)\Q$lword\E($|\W)/i ) {
                 $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
                 $found_domains{$lookup_terms->{$lword}->{domain}} = 1;
                 $found_subjects{$lookup_terms->{$lword}->{subject}} = 1;
