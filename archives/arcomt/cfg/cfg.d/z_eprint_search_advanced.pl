@@ -5,15 +5,15 @@ $c->{search}->{advanced} =
 		{ meta_fields => [ "title" ] },
 		{ meta_fields => [ "creators_name" ] },
 		{ meta_fields => [ "publication" ] },
-		{ meta_fields => [ "volume" ] }, #do not try 'number' as it fails for some reason
 		{ meta_fields => [ "abstract" ] },
+		{ meta_fields => [ "volume" ] }, #do not try 'number' as it fails for some reason
 		{ meta_fields => [ "date" ] },
-		{ meta_fields => [ "official_url" ] },
 		{ meta_fields => [ "issn" ] },
 		{ meta_fields => [ "keywords" ] },
 		{ meta_fields => [ "iterm" ] },
 		{ meta_fields => [ "domain" ] },
 		{ meta_fields => [ "subject" ] },
+		{ meta_fields => [ "official_url" ] },
 		{ meta_fields => [ "note" ] },
 		{ meta_fields => [ "type" ] },
 	],
@@ -27,6 +27,10 @@ $c->{search}->{advanced} =
 		"byyearoldest"	 => "date/creators_name/title",
 		"byname"  	 => "creators_name/-date/title",
 		"bytitle" 	 => "title/creators_name/-date"
+		"bykeywords" => "keywords/creators_name/title",
+		"byiterm" => "iterm/creators_name/title",
+		"bysubject" => "subject/creators_name/title",
+		"bydomain" => "domain/creators_name/title",
 	},
 	default_order => "byyear",
 	show_zero_results => 1,
@@ -62,6 +66,7 @@ License along with EPrints 3.4.
 If not, see L<http://www.gnu.org/licenses/>.
 
 =for LICENSE END
+
 
 
 
