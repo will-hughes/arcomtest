@@ -100,20 +100,13 @@ push @{$c->{browse_views}},
             fields => [ "facet" ],
         },
         {
-            fields => [ "facet_iterm" ],
-            render_value => sub {
-                my ($value) = @_;
-                # Extract just the iterm part after the '--' separator
-                return (split /--/, $value, 2)[1];
-            },
-            # Filter to only show facet_iterm values for the selected facet
-            where => [
-                { meta_fields => [ "facet_iterm" ], value => ".+", match => "=", transform => sub { 
-                    my $selected_facet = shift;
-                    return qr/^\Q$selected_facet\E--/;
-                }},
-            ],
+            fields => [ "iterm" ],
+            group => "facet",  # ← Add this line to group iterms by facet
         },
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => ".+" },
+        { meta_fields => [ "iterm" ], value => ".+" },
     ],
     order => "creators_name/date",
 },
