@@ -1,0 +1,6 @@
+# types for eprint 
+
+article
+conference_item
+thesis
+other
