@@ -106,6 +106,11 @@ push @{$c->{browse_views}},
                 # Extract just the iterm part after the '--' separator
                 return (split /--/, $value, 2)[1];
             },
+            # CRITICAL: Filter to only show facet_iterm values that start with the selected facet
+            where => [
+                "facet_iterm LIKE ?",
+                { meta_fields => ["facet"], value => '%', transform => sub { "$_[0]--%" } }
+            ],
         },
     ],
     order => "creators_name/date",
