@@ -198,22 +198,12 @@ Browse by Journal/Volume
           <li>Common short words, called "stop words" (e.g., <em>and</em>, <em>or</em>, <em>the</em>), are ignored and cannot be used as Boolean operators.</li>
         </ul>
 
-        <p><strong>Stemming:</strong></p>
-        <ul>
-          <li>Stemming means using the root of a word to match all variants. This is applied automatically in every search. For example:
-            <ul>
-              <li><em>advanced</em> will also match <em>advance</em>, <em>advancing</em>, etc.</li>
-              <li><em>buildings</em> matches <em>building</em>, <em>build</em>, etc.</li>
-            </ul>
-          </li>
-        </ul>
-
         <p><strong>Refine Search:</strong></p>
         <ul>
-          <li>After your first search, you can use "Refine Search" to narrow results further by adding more <strong>AND</strong> filters or expanding them as needed.</li>
+          <li>After your first search, you can use "Refine Search" to narrow results further by adding more <strong>'all of'</strong> filters or expanding them as needed.</li>
         </ul>
 
-        <p>There is also an option to undertake a Simple Search, at the top right of any screen in this site. This automatically searches all indexed fields such as authors, titles, and journal names. The same basic rules apply to both search types regarding punctuation, stop words, and stemming.</p>
+        <p>There is also an option to undertake a Simple Search, at the top right of most screens in this site. This automatically searches all indexed fields such as authors, titles, and journal names. The same basic rules apply to both search types regarding punctuation, stop words, and stemming.</p>
 
       </div>
     </details>
