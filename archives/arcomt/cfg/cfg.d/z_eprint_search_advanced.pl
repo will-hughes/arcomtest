@@ -27,12 +27,8 @@ $c->{search}->{advanced} =
 		"byyearoldest"	 => "date/creators_name/title",
 		"byname"  	 => "creators_name/-date/title",
 		"bytitle" 	 => "title/creators_name/-date"
-		"bykeywords" => "keywords/creators_name/title",
-		"byiterm" => "iterm/creators_name/title",
-		"bysubject" => "subject/creators_name/title",
-		"bydomain" => "domain/creators_name/title",
 	},
-	default_order => "byyear",
+	default_order => "byname",
 	show_zero_results => 1,
 };
 
@@ -66,6 +62,7 @@ License along with EPrints 3.4.
 If not, see L<http://www.gnu.org/licenses/>.
 
 =for LICENSE END
+
 
 
 
