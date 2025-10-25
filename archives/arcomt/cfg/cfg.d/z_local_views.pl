@@ -97,14 +97,15 @@ push @{$c->{browse_views}},
     hideempty => 1,
     menus => [
         { 
+            id => "facet_menu",        # give the first menu an id
             fields => [ "facet" ],
             hideempty => 1,
         },
         {
             fields => [ "iterm" ],
-            group => "facet",        # group iterms under each facet (nesting like volume->publication)
+            group => "facet_menu",     # refer to the first menu by id so second level is nested correctly
             hideempty => 1,
-            # text ordering (case-insensitive). iterm values are textual per your note.
+            # text ordering (case-insensitive). iterm values are textual.
             sort_order => sub {
                 my( $repo, $values, $lang ) = @_;
                 my @sorted = sort { lc($a) cmp lc($b) } @$values;
