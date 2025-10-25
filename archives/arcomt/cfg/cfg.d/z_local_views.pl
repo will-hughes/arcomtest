@@ -100,12 +100,12 @@ push @{$c->{browse_views}},
             fields => [ "facet" ],
         },
         {
-            fields => [ "iterm" ],
-            # Critical: filter iterms by the selected facet
-            where => [
-                "facet = ?", 
-                { meta_fields => ["facet"] }
-            ],
+            fields => [ "facet_iterm" ],
+            render_value => sub {
+                my ($value) = @_;
+                # Extract just the iterm part after the '--' separator
+                return (split /--/, $value, 2)[1];
+            },
         },
     ],
     order => "creators_name/date",
