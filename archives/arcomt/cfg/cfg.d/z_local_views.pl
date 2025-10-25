@@ -97,18 +97,20 @@ push @{$c->{browse_views}},
     hideempty => 1,
     menus => [
         { 
-        fields => [ "facet" ], 
+            fields => [ "facet" ],
         },
         {
-        fields => [ "iterm" ],
+            fields => [ "iterm" ],
+            # Critical: filter iterms by the selected facet
+            where => [
+                "facet = ?", 
+                { meta_fields => ["facet"] }
+            ],
         },
-    ],
-    filters => [
-        { meta_fields => [ "facet" ], value => ".+" },
-        { meta_fields => [ "iterm" ], value => ".+" },
     ],
     order => "creators_name/date",
 },
+
 {   id => "dscope",
     allow_null => 0,
     hideempty => 1,
