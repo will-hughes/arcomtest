@@ -32,7 +32,6 @@ Examples:
     perl $0 --archive arcom                    # Process all eprints
     perl $0 --archive arcom --verbose          # Verbose output
     perl $0 --archive arcom --since-date 2024-01-01  # Incremental update
-    perl $0 --archive arcomt                 # Process test repository
     perl $0 --archive arcom --eprints-file new_records.txt # selected records only
 
 USAGE
@@ -103,7 +102,7 @@ sub process_batch {
         if ($verbose) {
             print "  Processing record: $eprint_id\n";
         } else {
-        # Non-verbose: show counter that updates in place
+            # Non-verbose: show counter that updates in place
             print "  Processed $count of " . scalar(@$batch_ids) . " records in batch\r";
         }
         
@@ -114,6 +113,12 @@ sub process_batch {
         my %found_domains;
         my %found_subjects; 
         my %found_facets;
+        # NEW: Compound fields to preserve relationships
+        my %found_facet_iterm;
+        my %found_facet_domain;
+        my %found_domain_subject;
+        my %found_subject_iterm;
+        my %found_taxonomy_path;
         
         my $text = lc(join(' ', 
             $eprint->value('title') || '',
@@ -121,52 +126,76 @@ sub process_batch {
             $eprint->value('keywords') || '',
         ));
         
-# Efficient hash lookup with word boundaries
-foreach my $lword (keys %$lookup_terms) {
-    # Remove quotes and normalize spacing
-    my $clean_lword = $lword;
-    $clean_lword =~ s/['"]//g;  # Remove quotes
-    $clean_lword =~ s/\s+/ /g;  # Normalize spaces
+        # Efficient hash lookup with word boundaries
+        foreach my $lword (keys %$lookup_terms) {
+            # Remove quotes and normalize spacing
+            my $clean_lword = $lword;
+            $clean_lword =~ s/['"]//g;  # Remove quotes
+            $clean_lword =~ s/\s+/ /g;  # Normalize spaces
 
-    # Create a regex that handles word boundaries for phrases
-    my $regex = qr/\b\Q$clean_lword\E\b/i;
+            # Create a regex that handles word boundaries for phrases
+            my $regex = qr/\b\Q$clean_lword\E\b/i;
 
-    if( $text =~ $regex ) {
-        $found_iterms{$lookup_terms->{$lword}->{iterm}} = 1;
-        $found_domains{$lookup_terms->{$lword}->{domain}} = 1;
-        $found_subjects{$lookup_terms->{$lword}->{subject}} = 1;
-        $found_facets{$lookup_terms->{$lword}->{facet}} = 1;
-    }
-}
+            if( $text =~ $regex ) {
+                my $t = $lookup_terms->{$lword};
+                $found_iterms{$t->{iterm}} = 1;
+                $found_domains{$t->{domain}} = 1;
+                $found_subjects{$t->{subject}} = 1;
+                $found_facets{$t->{facet}} = 1;
+                
+                # NEW: Store the compound relationships
+                $found_facet_iterm{"$t->{facet}--$t->{iterm}"} = 1;
+                $found_facet_domain{"$t->{facet}--$t->{domain}"} = 1;
+                $found_domain_subject{"$t->{domain}--$t->{subject}"} = 1;
+                $found_subject_iterm{"$t->{subject}--$t->{iterm}"} = 1;
+                $found_taxonomy_path{"facet:$t->{facet}--domain:$t->{domain}--subject:$t->{subject}--iterm:$t->{iterm}"} = 1;
+            }
+        }
         
         if (keys %found_iterms) {
             # Calculate descriptive scope before commit
             my $dscope = update_dscope($eprint, \%found_facets);
             
-#            # Verbose debug output
-#            if ($verbose) {
-#                print "\n  EPrint $eprint_id found:\n";
-#                print "    Terms: " . join(', ', keys %found_iterms) . "\n";
-#                print "    Domains: " . join(', ', keys %found_domains) . "\n";
-#                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
-#                print "    Facets: " . join(', ', keys %found_facets) . "\n";
-#                print "    Descriptive Scope: $dscope\n";
-#            }
+            # Verbose debug output
+            if ($verbose) {
+                print "\n  EPrint $eprint_id found:\n";
+                print "    Terms: " . join(', ', keys %found_iterms) . "\n";
+                print "    Domains: " . join(', ', keys %found_domains) . "\n";
+                print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
+                print "    Facets: " . join(', ', keys %found_facets) . "\n";
+                print "    Facet-Term pairs: " . join(', ', keys %found_facet_iterm) . "\n";
+                print "    Descriptive Scope: $dscope\n";
+            }
             
+            # Set all the fields - both original and new compound fields
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->set_value('domain', [keys %found_domains]);
             $eprint->set_value('subject', [keys %found_subjects]);
             $eprint->set_value('facet', [keys %found_facets]);
             $eprint->set_value('dscope', $dscope);
             
+            # NEW: Set the compound relationship fields
+            $eprint->set_value('facet_iterm', [keys %found_facet_iterm]);
+            $eprint->set_value('facet_domain', [keys %found_facet_domain]);
+            $eprint->set_value('domain_subject', [keys %found_domain_subject]);
+            $eprint->set_value('subject_iterm', [keys %found_subject_iterm]);
+            $eprint->set_value('taxonomy_path', [keys %found_taxonomy_path]);
+            
             $eprint->commit();
             $batch_updated++;
         } else {
+            # Clear all fields if no terms found
             $eprint->set_value('iterm', []);
             $eprint->set_value('domain', []);
             $eprint->set_value('subject', []);
             $eprint->set_value('facet', []);
             $eprint->set_value('dscope', "0");
+            # NEW: Also clear compound fields
+            $eprint->set_value('facet_iterm', []);
+            $eprint->set_value('facet_domain', []);
+            $eprint->set_value('domain_subject', []);
+            $eprint->set_value('subject_iterm', []);
+            $eprint->set_value('taxonomy_path', []);
             $eprint->commit();
         }
     }
