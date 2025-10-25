@@ -100,21 +100,40 @@ push @{$c->{browse_views}},
             id => "facet_menu",
             fields => [ "facet" ],
             hideempty => 1,
-            # Prefer taxonomy table values; fallback to normal index if the helper fails.
             values_function => sub {
                 my( $repo, $menu, $lang ) = @_;
+
+                # determine archive dir (fallback to your known path)
+                my $conf = eval { $repo->get_conf } || {};
+                my $archdir = $conf->{archivedir} || '/opt/eprints3/archives/arcomt';
+
+                my $helper_file = "$archdir/cfg/cfg.d/z_taxonomy_db.pl";
+
+                # load the helper file using do() so the path is resolved correctly
+                if( -f $helper_file ) {
+                    do $helper_file;
+                    if( my $err = $@ ) {
+                        # compile/runtime error
+                        $repo->log( "z_taxonomy_db.pl load error: $err" ) if $repo->can('log');
+                        return;  # let EPrints fall back to default indexing
+                    }
+                } else {
+                    # file not found — fall back
+                    return;
+                }
+
+                # Now call the helper package
                 eval {
-                    require_once "archives/arcomt/cfg/cfg.d/z_taxonomy_db.pl";
+                    require TaxonomyDBHelpers;
                     my $vals = TaxonomyDBHelpers::get_facets($repo);
                     return $vals;
                 } or do {
-                    # If anything fails, return undef so EPrints uses the default index-based values.
+                    $repo->log("TaxonomyDBHelpers::get_facets failed: $@") if $repo->can('log');
                     return;
                 };
             },
         },
         {
-            # second-level menu: get iterms from taxonomy table for the selected facet
             fields => [ "iterm" ],
             group => "facet_menu",
             hideempty => 1,
@@ -122,12 +141,28 @@ push @{$c->{browse_views}},
                 my( $repo, $menu, $selected_values, $lang ) = @_;
                 my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
                 return [] unless defined $facet && $facet ne '';
+
+                my $conf = eval { $repo->get_conf } || {};
+                my $archdir = $conf->{archivedir} || '/opt/eprints3/archives/arcomt';
+                my $helper_file = "$archdir/cfg/cfg.d/z_taxonomy_db.pl";
+
+                if( -f $helper_file ) {
+                    do $helper_file;
+                    if( my $err = $@ ) {
+                        $repo->log( "z_taxonomy_db.pl load error: $err" ) if $repo->can('log');
+                        return [];
+                    }
+                } else {
+                    return [];
+                }
+
                 eval {
-                    require_once "archives/arcomt/cfg/cfg.d/z_taxonomy_db.pl";
+                    require TaxonomyDBHelpers;
                     my $iterms = TaxonomyDBHelpers::get_iterms_for_facet($repo, $facet);
                     return $iterms;
                 } or do {
-                    return;
+                    $repo->log("TaxonomyDBHelpers::get_iterms_for_facet failed: $@") if $repo->can('log');
+                    return [];
                 };
             },
             sort_order => sub {
