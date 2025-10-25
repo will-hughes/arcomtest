@@ -98,10 +98,18 @@ push @{$c->{browse_views}},
     menus => [
         { 
             fields => [ "facet" ],
+            hideempty => 1,
         },
         {
             fields => [ "iterm" ],
-            group => "facet",  # ← Add this line to group iterms by facet
+            group => "facet",        # group iterms under each facet (nesting like volume->publication)
+            hideempty => 1,
+            # text ordering (case-insensitive). iterm values are textual per your note.
+            sort_order => sub {
+                my( $repo, $values, $lang ) = @_;
+                my @sorted = sort { lc($a) cmp lc($b) } @$values;
+                return \@sorted;
+            },
         },
     ],
     filters => [
@@ -109,6 +117,8 @@ push @{$c->{browse_views}},
         { meta_fields => [ "iterm" ], value => ".+" },
     ],
     order => "creators_name/date",
+    max_items => 10000,
+    variation => [ "DEFAULT;numeric" ],
 },
 
 {   id => "dscope",
@@ -121,4 +131,3 @@ push @{$c->{browse_views}},
     ],
     order => "creators_name/date", 
 };
-
