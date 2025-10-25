@@ -96,16 +96,40 @@ push @{$c->{browse_views}},
     allow_null => 0,
     hideempty => 1,
     menus => [
-        { 
-            id => "facet_menu",        # give the first menu an id
+        {
+            id => "facet_menu",
             fields => [ "facet" ],
             hideempty => 1,
+            # Prefer taxonomy table values; fallback to normal index if the helper fails.
+            values_function => sub {
+                my( $repo, $menu, $lang ) = @_;
+                eval {
+                    require_once "archives/arcomt/cfg/cfg.d/z_taxonomy_db.pl";
+                    my $vals = TaxonomyDBHelpers::get_facets($repo);
+                    return $vals;
+                } or do {
+                    # If anything fails, return undef so EPrints uses the default index-based values.
+                    return;
+                };
+            },
         },
         {
+            # second-level menu: get iterms from taxonomy table for the selected facet
             fields => [ "iterm" ],
-            group => "facet_menu",     # refer to the first menu by id so second level is nested correctly
+            group => "facet_menu",
             hideempty => 1,
-            # text ordering (case-insensitive). iterm values are textual.
+            values_function => sub {
+                my( $repo, $menu, $selected_values, $lang ) = @_;
+                my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
+                return [] unless defined $facet && $facet ne '';
+                eval {
+                    require_once "archives/arcomt/cfg/cfg.d/z_taxonomy_db.pl";
+                    my $iterms = TaxonomyDBHelpers::get_iterms_for_facet($repo, $facet);
+                    return $iterms;
+                } or do {
+                    return;
+                };
+            },
             sort_order => sub {
                 my( $repo, $values, $lang ) = @_;
                 my @sorted = sort { lc($a) cmp lc($b) } @$values;
@@ -119,7 +143,6 @@ push @{$c->{browse_views}},
     ],
     order => "creators_name/date",
     max_items => 10000,
-    variation => [ "DEFAULT;numeric" ],
 },
 
 {   id => "dscope",
