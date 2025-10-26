@@ -83,6 +83,8 @@ sub get_facet_iterm_pairs {
     return [] unless defined $facet && $facet ne '';
 
     my $dbh = dbh($repo);   # <-- use your own helper here
+    $repo->log("DEBUG get_facet_iterm_pairs($facet) called");
+
     my $sql = q{
         SELECT iterm
         FROM taxonomy
