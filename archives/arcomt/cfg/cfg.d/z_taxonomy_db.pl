@@ -78,4 +78,27 @@ sub get_iterms_for_facet {
     return \@out;
 }
 
+sub get_facet_iterm_pairs {
+    my( $repo, $facet ) = @_;
+    return [] unless defined $facet && $facet ne '';
+
+    my $dbh = dbh($repo);
+    my $sql = q{
+        SELECT iterm
+        FROM taxonomy
+        WHERE facet = ?
+          AND iterm IS NOT NULL
+          AND iterm != ''
+        ORDER BY LOWER(iterm)
+    };
+    my $sth = $dbh->prepare($sql) or return [];
+    $sth->execute($facet) or return [];
+    my @out;
+    while( my ($v) = $sth->fetchrow_array ) {
+        push @out, "$facet--$v" if defined $v && $v ne '';
+    }
+    $sth->finish;
+    return \@out;
+}
+
 1;
