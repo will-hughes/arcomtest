@@ -92,34 +92,185 @@ push @{$c->{browse_views}},
     order => "creators_name/date", 
 },
 
-{
-    id => "facet",
+# Separate browse views for each facet type
+{   id => "facet_analytical",
     allow_null => 0,
     hideempty => 1,
-    menus => [
-        {
-            id => "facet_menu",  # ← Add explicit id
-            fields => [ "facet" ],
-            hideempty => 1,
-        },
-        {
-            id => "facet_iterm_menu",
-            fields => [ "facet_iterm" ],
-            group => "facet_menu",   # ← This should now work
-            hideempty => 1,
-            render_value => sub {
-                my( $repo, $value ) = @_;
-                my ($facet, $iterm) = split(/--/, $value, 2);
-                return $repo->xml->create_text_node( $iterm // $value );
-            },
-        },
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
     ],
     filters => [
-        { meta_fields => [ "facet" ], value => ".+" },
-        { meta_fields => [ "facet_iterm" ], value => ".+" },
+        { meta_fields => [ "facet" ], value => "analytical_technique" },
+        { meta_fields => [ "iterm" ], value => ".+" },
     ],
-    order => "creators_name/date",
-    max_items => 10000,
+    order => "creators_name/date", 
+},
+
+{   id => "facet_concept",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "concept" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_empirical",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "empirical_technique" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_individual",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "phenomenon_individual" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_location",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "phenomenon_location" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_object",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "phenomenon_object" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_process",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "phenomenon_process" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_role",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "phenomenon_role" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
+},
+
+{   id => "facet_theoretical",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [ 
+        { 
+            fields => [ "iterm" ],
+            new_column_at => [1,1],
+            mode => "sections",
+            open_first_section => 1,
+            group_range_function => "EPrints::Update::Views::cluster_ranges_30",
+            grouping_function => "group_by_a_to_z_hideempty",
+        } 
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => "theoretical_framing" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date", 
 },
 
 {   id => "dscope",
