@@ -101,38 +101,15 @@ push @{$c->{browse_views}},
             id => "facet_menu",
             fields => [ "facet" ],
             hideempty => 1,
-            values_function => sub {
-                my( $repo, $menu, $lang ) = @_;
-                require TaxonomyDBHelpers;
-                return TaxonomyDBHelpers::get_facets($repo);
-            },
         },
         {
-            id => "facet_iterm_menu",
+            id => "facet_iterm_menu", 
             fields => [ "facet_iterm" ],
-            group => "facet_menu",   # ensures dependency
             hideempty => 1,
-            values_function => sub {
-                my( $repo, $menu, $selected_values, $lang ) = @_;
-                my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
-                $repo->log("DEBUG values_function facet_iterm_menu facet=$facet");
-
-                return [] unless defined $facet && $facet ne '';
-
-                require TaxonomyDBHelpers;
-                return TaxonomyDBHelpers::get_facet_iterm_pairs($repo, $facet);
-            },
             render_value => sub {
                 my( $repo, $value ) = @_;
                 my ($facet, $iterm) = split(/--/, $value, 2);
                 return $repo->xml->create_text_node( $iterm // $value );
-            },
-            sort_order => sub {
-                my( $repo, $values, $lang ) = @_;
-                my @sorted = sort {
-                    (split(/--/, $a, 2))[1] cmp (split(/--/, $b, 2))[1]
-                } @$values;
-                return \@sorted;
             },
         },
     ],
