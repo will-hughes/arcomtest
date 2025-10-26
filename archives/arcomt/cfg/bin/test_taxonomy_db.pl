@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use lib "/opt/eprints3/perl_lib";
 use EPrints;
 
 my $repoid = shift @ARGV || "arcomt";   # archive ID
