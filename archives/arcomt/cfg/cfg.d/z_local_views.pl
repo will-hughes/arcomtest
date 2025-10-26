@@ -115,6 +115,8 @@ push @{$c->{browse_views}},
             values_function => sub {
                 my( $repo, $menu, $selected_values, $lang ) = @_;
                 my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
+                $repo->log("DEBUG values_function facet_iterm_menu facet=$facet");
+
                 return [] unless defined $facet && $facet ne '';
 
                 require TaxonomyDBHelpers;
