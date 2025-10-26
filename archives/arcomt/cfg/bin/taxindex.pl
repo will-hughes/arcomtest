@@ -113,12 +113,6 @@ sub process_batch {
         my %found_domains;
         my %found_subjects; 
         my %found_facets;
-        # NEW: Compound fields to preserve relationships
-        my %found_facet_iterm;
-        my %found_facet_domain;
-        my %found_domain_subject;
-        my %found_subject_iterm;
-        my %found_taxonomy_path;
         
         my $text = lc(join(' ', 
             $eprint->value('title') || '',
@@ -142,13 +136,6 @@ sub process_batch {
                 $found_domains{$t->{domain}} = 1;
                 $found_subjects{$t->{subject}} = 1;
                 $found_facets{$t->{facet}} = 1;
-                
-                # NEW: Store the compound relationships
-                $found_facet_iterm{"$t->{facet}--$t->{iterm}"} = 1;
-                $found_facet_domain{"$t->{facet}--$t->{domain}"} = 1;
-                $found_domain_subject{"$t->{domain}--$t->{subject}"} = 1;
-                $found_subject_iterm{"$t->{subject}--$t->{iterm}"} = 1;
-                $found_taxonomy_path{"facet:$t->{facet}--domain:$t->{domain}--subject:$t->{subject}--iterm:$t->{iterm}"} = 1;
             }
         }
         
@@ -167,20 +154,13 @@ sub process_batch {
                 print "    Descriptive Scope: $dscope\n";
             }
             
-            # Set all the fields - both original and new compound fields
+            # Set all the fields
             $eprint->set_value('iterm', [keys %found_iterms]);
             $eprint->set_value('domain', [keys %found_domains]);
             $eprint->set_value('subject', [keys %found_subjects]);
             $eprint->set_value('facet', [keys %found_facets]);
             $eprint->set_value('dscope', $dscope);
-            
-            # NEW: Set the compound relationship fields
-            $eprint->set_value('facet_iterm', [keys %found_facet_iterm]);
-            $eprint->set_value('facet_domain', [keys %found_facet_domain]);
-            $eprint->set_value('domain_subject', [keys %found_domain_subject]);
-            $eprint->set_value('subject_iterm', [keys %found_subject_iterm]);
-            $eprint->set_value('taxonomy_path', [keys %found_taxonomy_path]);
-            
+                        
             $eprint->commit();
             $batch_updated++;
         } else {
@@ -190,12 +170,6 @@ sub process_batch {
             $eprint->set_value('subject', []);
             $eprint->set_value('facet', []);
             $eprint->set_value('dscope', "0");
-            # NEW: Also clear compound fields
-            $eprint->set_value('facet_iterm', []);
-            $eprint->set_value('facet_domain', []);
-            $eprint->set_value('domain_subject', []);
-            $eprint->set_value('subject_iterm', []);
-            $eprint->set_value('taxonomy_path', []);
             $eprint->commit();
         }
     }
