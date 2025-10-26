@@ -93,39 +93,32 @@ push @{$c->{browse_views}},
 },
 
 {
-    id => "facet_custom",
-    allow_null => 0, 
+    id => "facet",
+    allow_null => 0,
     hideempty => 1,
     menus => [
         {
-            id => "facet_menu",
+            id => "facet_menu",  # ← Add explicit id
             fields => [ "facet" ],
             hideempty => 1,
-            values_function => sub {
-                my( $repo, $menu, $lang ) = @_;
-                require TaxonomyDBHelpers;
-                return TaxonomyDBHelpers::get_facets($repo);
-            },
         },
         {
-            id => "iterm_menu",
-            fields => [ "iterm" ],  # Use simple iterm field, not facet_iterm
+            id => "facet_iterm_menu",
+            fields => [ "facet_iterm" ],
+            group => "facet_menu",   # ← This should now work
             hideempty => 1,
-            values_function => sub {
-                my( $repo, $menu, $selected_values, $lang ) = @_;
-                my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
-                return [] unless defined $facet && $facet ne '';
-                
-                require TaxonomyDBHelpers;
-                return TaxonomyDBHelpers::get_iterms_for_facet($repo, $facet);
+            render_value => sub {
+                my( $repo, $value ) = @_;
+                my ($facet, $iterm) = split(/--/, $value, 2);
+                return $repo->xml->create_text_node( $iterm // $value );
             },
         },
     ],
     filters => [
         { meta_fields => [ "facet" ], value => ".+" },
-        { meta_fields => [ "iterm" ], value => ".+" },
+        { meta_fields => [ "facet_iterm" ], value => ".+" },
     ],
-    order => "creators_name/date", 
+    order => "creators_name/date",
     max_items => 10000,
 },
 
