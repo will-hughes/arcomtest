@@ -110,7 +110,7 @@ push @{$c->{browse_views}},
         {
             id => "facet_iterm_menu",
             fields => [ "facet_iterm" ],
-            group => "facet_menu",
+            group => "facet_menu",   # ensures dependency
             hideempty => 1,
             values_function => sub {
                 my( $repo, $menu, $selected_values, $lang ) = @_;
@@ -120,7 +120,6 @@ push @{$c->{browse_views}},
                 require TaxonomyDBHelpers;
                 return TaxonomyDBHelpers::get_facet_iterm_pairs($repo, $facet);
             },
-            # Display only the iterm part (after the --)
             render_value => sub {
                 my( $repo, $value ) = @_;
                 my ($facet, $iterm) = split(/--/, $value, 2);
@@ -141,7 +140,8 @@ push @{$c->{browse_views}},
     ],
     order => "creators_name/date",
     max_items => 10000,
-},
+}
+
 
 
 {   id => "dscope",
