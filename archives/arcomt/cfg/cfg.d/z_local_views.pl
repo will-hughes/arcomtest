@@ -140,9 +140,7 @@ push @{$c->{browse_views}},
     ],
     order => "creators_name/date",
     max_items => 10000,
-}
-
-
+},
 
 {   id => "dscope",
     allow_null => 0,
