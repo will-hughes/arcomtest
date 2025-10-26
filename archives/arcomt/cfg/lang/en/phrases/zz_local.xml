@@ -69,7 +69,15 @@
 <epp:phrase id="viewname_eprint_subject">Subjects</epp:phrase>
 <epp:phrase id="viewname_eprint_facet">Research facets</epp:phrase>
 <epp:phrase id="viewname_eprint_dscope">Descriptive scope</epp:phrase>
-<epp:phrase id="viewname_eprint_facet_custom">Browse by Facets and Terms</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_analytical">Research facets - Analytical Techniques</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_concept">Research facets - Concepts</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_empirical">Research facets - Empirical Techniques</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_individual">Research facets - Phenomenon: Individuals</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_location">Research facets - Phenomenon: Locations</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_object">Research facets - Phenomenon: Objects</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_process">Research facets - Phenomenon: Processes</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_role">Research facets - Phenomenon: Roles</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_theoretical">Browse by Theoretical Framings</epp:phrase>
 	
 <!-- Navigation -->
 <epp:phrase id="navigation:back_to_journals">← Back to Journal List</epp:phrase>
