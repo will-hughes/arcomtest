@@ -92,7 +92,8 @@ push @{$c->{browse_views}},
     order => "creators_name/date", 
 },
 
-{   id => "facet",
+{
+    id => "facet",
     allow_null => 0,
     hideempty => 1,
     menus => [
@@ -102,39 +103,13 @@ push @{$c->{browse_views}},
             hideempty => 1,
             values_function => sub {
                 my( $repo, $menu, $lang ) = @_;
-
-                # determine archive dir (fallback to your known path)
-                my $conf = eval { $repo->get_conf } || {};
-                my $archdir = $conf->{archivedir} || '/opt/eprints3/archives/arcomt';
-
-                my $helper_file = "$archdir/cfg/cfg.d/z_taxonomy_db.pl";
-
-                # load the helper file using do() so the path is resolved correctly
-                if( -f $helper_file ) {
-                    do $helper_file;
-                    if( my $err = $@ ) {
-                        # compile/runtime error
-                        $repo->log( "z_taxonomy_db.pl load error: $err" ) if $repo->can('log');
-                        return;  # let EPrints fall back to default indexing
-                    }
-                } else {
-                    # file not found — fall back
-                    return;
-                }
-
-                # Now call the helper package
-                eval {
-                    require TaxonomyDBHelpers;
-                    my $vals = TaxonomyDBHelpers::get_facets($repo);
-                    return $vals;
-                } or do {
-                    $repo->log("TaxonomyDBHelpers::get_facets failed: $@") if $repo->can('log');
-                    return;
-                };
+                require TaxonomyDBHelpers;
+                return TaxonomyDBHelpers::get_facets($repo);
             },
         },
         {
-            fields => [ "iterm" ],
+            id => "facet_iterm_menu",
+            fields => [ "facet_iterm" ],
             group => "facet_menu",
             hideempty => 1,
             values_function => sub {
@@ -142,43 +117,32 @@ push @{$c->{browse_views}},
                 my $facet = $selected_values && @$selected_values ? $selected_values->[0] : undef;
                 return [] unless defined $facet && $facet ne '';
 
-                my $conf = eval { $repo->get_conf } || {};
-                my $archdir = $conf->{archivedir} || '/opt/eprints3/archives/arcomt';
-                my $helper_file = "$archdir/cfg/cfg.d/z_taxonomy_db.pl";
-
-                if( -f $helper_file ) {
-                    do $helper_file;
-                    if( my $err = $@ ) {
-                        $repo->log( "z_taxonomy_db.pl load error: $err" ) if $repo->can('log');
-                        return [];
-                    }
-                } else {
-                    return [];
-                }
-
-                eval {
-                    require TaxonomyDBHelpers;
-                    my $iterms = TaxonomyDBHelpers::get_iterms_for_facet($repo, $facet);
-                    return $iterms;
-                } or do {
-                    $repo->log("TaxonomyDBHelpers::get_iterms_for_facet failed: $@") if $repo->can('log');
-                    return [];
-                };
+                require TaxonomyDBHelpers;
+                return TaxonomyDBHelpers::get_facet_iterm_pairs($repo, $facet);
+            },
+            # Display only the iterm part (after the --)
+            render_value => sub {
+                my( $repo, $value ) = @_;
+                my ($facet, $iterm) = split(/--/, $value, 2);
+                return $repo->xml->create_text_node( $iterm // $value );
             },
             sort_order => sub {
                 my( $repo, $values, $lang ) = @_;
-                my @sorted = sort { lc($a) cmp lc($b) } @$values;
+                my @sorted = sort {
+                    (split(/--/, $a, 2))[1] cmp (split(/--/, $b, 2))[1]
+                } @$values;
                 return \@sorted;
             },
         },
     ],
     filters => [
         { meta_fields => [ "facet" ], value => ".+" },
-        { meta_fields => [ "iterm" ], value => ".+" },
+        { meta_fields => [ "facet_iterm" ], value => ".+" },
     ],
     order => "creators_name/date",
     max_items => 10000,
 },
+
 
 {   id => "dscope",
     allow_null => 0,
