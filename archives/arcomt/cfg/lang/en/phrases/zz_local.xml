@@ -69,6 +69,7 @@
 <epp:phrase id="viewname_eprint_subject">Subjects</epp:phrase>
 <epp:phrase id="viewname_eprint_facet">Research facets</epp:phrase>
 <epp:phrase id="viewname_eprint_dscope">Descriptive scope</epp:phrase>
+<epp:phrase id="viewname_eprint_facet_custom">Browse by Facets and Terms</epp:phrase>
 	
 <!-- Navigation -->
 <epp:phrase id="navigation:back_to_journals">← Back to Journal List</epp:phrase>
