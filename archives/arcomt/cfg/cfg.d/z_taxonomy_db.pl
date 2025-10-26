@@ -82,7 +82,7 @@ sub get_facet_iterm_pairs {
     my( $repo, $facet ) = @_;
     return [] unless defined $facet && $facet ne '';
 
-    my $dbh = $repo->get_database->dbh;
+    my $dbh = dbh($repo);   # <-- use your own helper here
     my $sql = q{
         SELECT iterm
         FROM taxonomy
