@@ -150,7 +150,6 @@ sub process_batch {
                 print "    Domains: " . join(', ', keys %found_domains) . "\n";
                 print "    Subjects: " . join(', ', keys %found_subjects) . "\n";
                 print "    Facets: " . join(', ', keys %found_facets) . "\n";
-                print "    Facet-Term pairs: " . join(', ', keys %found_facet_iterm) . "\n";
                 print "    Descriptive Scope: $dscope\n";
             }
             
