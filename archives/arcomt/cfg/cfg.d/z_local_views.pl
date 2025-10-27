@@ -92,6 +92,23 @@ push @{$c->{browse_views}},
     order => "creators_name/date", 
 },
 
+{   id => "facet",
+    allow_null => 0,
+    hideempty => 1,
+    menus => [
+        { 
+        fields => [ "facet" ], 
+        },
+        {
+        fields => [ "iterm" ],
+        },
+    ],
+    filters => [
+        { meta_fields => [ "facet" ], value => ".+" },
+        { meta_fields => [ "iterm" ], value => ".+" },
+    ],
+    order => "creators_name/date",
+},
 {   id => "dscope",
     allow_null => 0,
     hideempty => 1,
@@ -102,3 +119,4 @@ push @{$c->{browse_views}},
     ],
     order => "creators_name/date", 
 };
+
