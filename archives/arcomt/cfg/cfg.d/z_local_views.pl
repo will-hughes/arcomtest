@@ -18,6 +18,7 @@ push @{$c->{browse_views}},
                 my @sorted_values = sort { $a <=> $b } @$values;
                 return \@sorted_values;
             },
+			new_column_at => [9,9,9],
         },
     ],
         
@@ -31,18 +32,17 @@ push @{$c->{browse_views}},
     variation => [ "DEFAULT;numeric" ],
 },
 {
-    id => "doctype",
+    id => "theses",
     menus => [ 
         { 
-            fields => [ "type" ], 
+            fields => [ "place_of_pub" ],  # Country first
         },
         { 
-            fields => [ "date" ],
-            new_column_at => [1,1,1],
+            fields => [ "institution" ],   # Then institution within country
         },
     ],
-    order => "creators_name/date",
-},
+    order => "creators_name/title",  # Sort by creator name, then title as tiebreaker
+}
 
 {   id => "iterm",
     allow_null => 0,
@@ -92,23 +92,6 @@ push @{$c->{browse_views}},
     order => "creators_name/date", 
 },
 
-{   id => "facet",
-    allow_null => 0,
-    hideempty => 1,
-    menus => [
-        { 
-        fields => [ "facet" ], 
-        },
-        {
-        fields => [ "iterm" ],
-        },
-    ],
-    filters => [
-        { meta_fields => [ "facet" ], value => ".+" },
-        { meta_fields => [ "iterm" ], value => ".+" },
-    ],
-    order => "creators_name/date",
-},
 {   id => "dscope",
     allow_null => 0,
     hideempty => 1,
