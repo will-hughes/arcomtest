@@ -37,7 +37,7 @@ $c->{browse_views} = [
 				fields => [ "date;res=year" ],
 				reverse_order => 1,
 				allow_null => 1,
-				new_column_at => [10,10],
+				new_column_at => [1,1,1],
 			}
 		],
 		order => "creators_name/title",
