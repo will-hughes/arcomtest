@@ -63,7 +63,7 @@
 
 <epp:phrase id="viewname_eprint_journal_volume">Journal</epp:phrase>
 <epp:phrase id="viewtitle:browse_by_volume_for_journal">Browsing <epc:print expr="publication"/> by Volume</epp:phrase>
-<epp:phrase id="viewname_eprint_doctype">Document type</epp:phrase>
+<epp:phrase id="viewname_eprint_thesis">Doctoral theses</epp:phrase>
 <epp:phrase id="viewname_eprint_iterm">Index terms</epp:phrase>
 <epp:phrase id="viewname_eprint_domain">Domains</epp:phrase>
 <epp:phrase id="viewname_eprint_subject">Subjects</epp:phrase>
