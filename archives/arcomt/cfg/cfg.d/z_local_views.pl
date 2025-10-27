@@ -42,7 +42,7 @@ push @{$c->{browse_views}},
         },
     ],
     order => "creators_name/title",  # Sort by creator name, then title as tiebreaker
-}
+},
 
 {   id => "iterm",
     allow_null => 0,
