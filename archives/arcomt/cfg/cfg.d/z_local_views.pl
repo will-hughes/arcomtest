@@ -32,7 +32,7 @@ push @{$c->{browse_views}},
     variation => [ "DEFAULT;numeric" ],
 },
 {
-    id => "theses",
+    id => "thesis",
     menus => [ 
         { 
             fields => [ "place_of_pub" ],  # Country first
