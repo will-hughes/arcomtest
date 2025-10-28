@@ -19,7 +19,9 @@
   <dt id="about-this-repository"><a href="{$config{rel_path}}/information.html">About the ARCOM CM Abstracts</a></dt>
   <dd><b>Find out what this website is, why we are doing it, how we are doing it and how to get involved.</b></dd>
 
-  
+  <dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
+  <dd>Browse items in the catalogue by <a href="{$config{rel_path}}/view/year/">year</a>, <a href="{$config{rel_path}}/view/creators/">author</a>, <a href="{$config{rel_path}}/view/journal_volume/">journal</a> or <a href="{$config{rel_path}}/view/thesis/">thesis</a>.</dd>
+ 
   <dt id="latest-additions"><a href="{$config{rel_cgipath}}/latest">Latest Additions</a></dt>
   <dd>View items added to the catalogue in the past week.</dd>
 
@@ -31,10 +33,6 @@
 
 </xpage:body>
 </xpage:page>
-
-
-
-
 
 
 
