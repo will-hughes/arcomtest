@@ -19,28 +19,17 @@
   <dt id="about-this-repository"><a href="{$config{rel_path}}/information.html">About the ARCOM CM Abstracts</a></dt>
   <dd><b>Find out what this website is, why we are doing it, how we are doing it and how to get involved.</b></dd>
 
-  <dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
- <dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
-<dd>
-  <p>Browse items in the catalogue by:</p>
-  <ul>
-    <li><a href="{$config{rel_path}}/view/year/">year</a></li>
-    <li><a href="{$config{rel_path}}/view/creators/">author</a></li>
-    <li><a href="{$config{rel_path}}/view/journal_volume/">journal</a></li>
-    <li><a href="{$config{rel_path}}/view/thesis/">thesis</a></li>
-    <li>taxonomic indexes (see below)</li>
-  </ul>
-  
+<dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
+  <dd>Browse items in the catalogue by <a href="{$config{rel_path}}/view/year/">year</a>, <a href="{$config{rel_path}}/view/creators/">author</a>, <a href="{$config{rel_path}}/view/journal_volume/">journal</a>, <a href="{$config{rel_path}}/view/thesis/">thesis</a> or taxonomic indexes. 
   <h4>Taxonomic Indexes</h4>
-  <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary.</p>
-  <ul>
-    <li>These <a href="{$config{rel_path}}/view/iterm/">index terms</a> are grouped into approximately 2,500 <a href="{$config{rel_path}}/view/subject/">subjects</a></li>
-    <li>Subjects are grouped into approximately 180 <a href="{$config{rel_path}}/view/subject/">domains</a> of knowledge</li>
-    <li>Index terms are categorized into five research facets based on modelling structural features of empirical research</li>
-    <li>The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> indicates how many of the five facets are present in each record</li>
+    <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary.</p>
+  <ul>  
+	<li>These <a href="{$config{rel_path}}/view/iterm/">index terms</a> can be browsed alphabetically.</li>
+    <li>The index terms are grouped into approximately 2,500 <a href="{$config{rel_path}}/view/subject/">subjects</a>.</li>
+	<li>Subjects are grouped into approximately 180 <a href="{$config{rel_path}}/view/subject/">domains</a> of knowledge.</li>
+    <li>Index terms are also categorized into five research facets based on modelling structural features of empirical research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> indicates how many of the five facets are present in each record.</li>
   </ul>
 </dd>
-</dl>
 
 <p style="margin-top: 2em; font-size: 90%">
 <epc:phrase ref="archive_name" /> is provided by the <strong>Association of Researchers in Construction Management</strong> at <a href="https://www.arcom.ac.uk">www.arcom.ac.uk</a>
@@ -48,6 +37,7 @@
 
 </xpage:body>
 </xpage:page>
+
 
 
 
