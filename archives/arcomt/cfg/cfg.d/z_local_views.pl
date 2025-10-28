@@ -36,9 +36,11 @@ push @{$c->{browse_views}},
     menus => [ 
         { 
             fields => [ "place_of_pub" ],  # Country first
+			new_column_at => [9,9,9],
         },
         { 
             fields => [ "institution" ],   # Then institution within country
+			new_column_at => [9,9],
         },
     ],
     order => "creators_name/title",  # Sort by creator name, then title as tiebreaker
