@@ -121,11 +121,12 @@ Browse by Journal/Volume
 <epc:pin name="value1" /> - Volume <epc:pin name="value2" />
 </epp:phrase>
 
-<!-- For doctype view -->	
-<!-- Doctype browse phrases -->
-<epp:phrase id="viewtitle_eprint_doctype_menu_1">Browse by Document Type</epp:phrase>
-<epp:phrase id="viewtitle_eprint_doctype_menu_2"><epc:pin name="value1" /> by Year</epp:phrase>
-<epp:phrase id="viewtitle_eprint_doctype_list"><epc:pin name="value1" /> from <epc:pin name="value2" /></epp:phrase>
+<!-- For thesis view -->	
+<!-- Thesis browse phrases -->
+<epp:phrase id="viewname_theses">Doctoral Theses</epp:phrase>
+<epp:phrase id="viewtitle_eprint_thesis_menu_1">Browse by Country</epp:phrase>
+<epp:phrase id="viewtitle_eprint_thesis_menu_2"><epc:pin name="value1" /> by Institution</epp:phrase>
+<epp:phrase id="viewtitle_eprint_thesis_list">Theses from <epc:pin name="value1" /> - <epc:pin name="value2" /></epp:phrase>
 	
 <!-- These are used to join creator names nicely -->
   <epp:phrase id="lib/metafield:join_name">; </epp:phrase>
