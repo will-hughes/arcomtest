@@ -21,9 +21,8 @@
 
   <dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
   <dd>Browse items in the catalogue by <a href="{$config{rel_path}}/view/year/">year</a>, <a href="{$config{rel_path}}/view/creators/">author</a>, <a href="{$config{rel_path}}/view/journal_volume/">journal</a>, <a href="{$config{rel_path}}/view/thesis/">thesis</a> or taxonomic indexes. 
-  The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary. These <a href="{$config{rel_path}}/view/iterm/">index terms</a> are grouped together into approximately 2,500 subjects and these <a href="{$config{rel_path}}/view/subject/">subjects</a> are grouped into approximately 180 <a href="{$config{rel_path}}/view/subject/">domains</a> of knowledge. In addition, the index terms have been categorized into five research facets, based on modelling the dominant structural features of empricial research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> represented by the text is an indication of how many of the five facets are present in each record.</dd>
-  </dd>
- 
+  <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary. These <a href="{$config{rel_path}}/view/iterm/">index terms</a> are grouped together into approximately 2,500 subjects and these <a href="{$config{rel_path}}/view/subject/">subjects</a> are grouped into approximately 180 <a href="{$config{rel_path}}/view/subject/">domains</a> of knowledge. In addition, the index terms have been categorized into five research facets, based on modelling the dominant structural features of empricial research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> represented by the text is an indication of how many of the five facets are present in each record.</p></dd>
+   
   <dt id="latest-additions"><a href="{$config{rel_cgipath}}/latest">Latest Additions</a></dt>
   <dd>View items added to the catalogue in the past week.</dd>
 
@@ -35,6 +34,7 @@
 
 </xpage:body>
 </xpage:page>
+
 
 
 
