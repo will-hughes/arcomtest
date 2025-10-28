@@ -13,13 +13,13 @@
   <p>The live ARCOM CM Abstracts are at <a href="https://www.arcom.ac.uk/abstracts.php">www.arcom.ac.uk/abstracts.php</a></p></dd>
     
 
-  <dt id="search-repository"><h4><a href="{$config{rel_cgipath}}/search/advanced">Advanced search</a></h4></dt>
+  <dt id="search-repository"><a href="{$config{rel_cgipath}}/search/advanced">Advanced search</a></dt>
   <dd>Search the catalogue using a full range of fields. <b>Use the search field at the top of the page for a quick search of the database</b>.</dd>
     
-  <dt id="about-this-repository"><h4><a href="{$config{rel_path}}/information.html">About the ARCOM CM Abstracts</a></h4></dt>
+  <dt id="about-this-repository"><a href="{$config{rel_path}}/information.html">About the ARCOM CM Abstracts</a></dt>
   <dd><b>Find out what this website is, why we are doing it, how we are doing it and how to get involved.</b></dd>
 
-<dt id="browse-repository"><h4><a href="{$config{rel_path}}/view/">Browse catalogue</a></h4></dt>
+<dt id="browse-repository"><a href="{$config{rel_path}}/view/">Browse catalogue</a></dt>
   <dd>Browse items in the catalogue by <a href="{$config{rel_path}}/view/year/">year</a>, <a href="{$config{rel_path}}/view/creators/">author</a>, <a href="{$config{rel_path}}/view/journal_volume/">journal</a>, <a href="{$config{rel_path}}/view/thesis/">thesis</a> or taxonomic indexes. 
   <h4>Taxonomic Indexes</h4>
     <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary.</p>
