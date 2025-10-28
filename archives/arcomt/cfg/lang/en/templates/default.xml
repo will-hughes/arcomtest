@@ -45,7 +45,7 @@
                   <li role="none">
                     <a href="{$config{rel_path}}/view/thesis/" role="menuitem">
                       <epc:phrase ref="bin/generate_views:indextitleprefix"/>
-                      <epc:phrase ref="viewname_eprint_doctype"/>
+                      <epc:phrase ref="viewname_eprint_thesis"/>
                     </a>
                   </li>
                   <li role="none">
