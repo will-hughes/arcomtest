@@ -26,7 +26,7 @@
   <ul>  
 	<li>These <a href="{$config{rel_path}}/view/iterm/">index terms</a> can be browsed alphabetically.</li>
     <li>The index terms are grouped into approximately 2,500 <a href="{$config{rel_path}}/view/subject/">subjects</a>.</li>
-	<li>Subjects are grouped into approximately 180 <a href="{$config{rel_path}}/view/subject/">domains</a> of knowledge.</li>
+	<li>Subjects are grouped into approximately 180 <a href="{$config{rel_path}}/view/domain/">domains</a> of knowledge.</li>
     <li>Index terms are also categorized into five research facets based on modelling structural features of empirical research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> indicates how many of the five facets are present in each record.</li>
   </ul>
 </dd>
@@ -38,3 +38,4 @@
 
 </xpage:body>
 </xpage:page>
+
