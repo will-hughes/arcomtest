@@ -30,6 +30,7 @@
     <li>Index terms are also categorized into five research facets based on modelling structural features of empirical research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> indicates how many of the five facets are present in each record.</li>
   </ul>
 </dd>
+</dl>
 
 <p style="margin-top: 2em; font-size: 90%">
 <epc:phrase ref="archive_name" /> is provided by the <strong>Association of Researchers in Construction Management</strong> at <a href="https://www.arcom.ac.uk">www.arcom.ac.uk</a>
@@ -37,6 +38,7 @@
 
 </xpage:body>
 </xpage:page>
+
 
 
 
