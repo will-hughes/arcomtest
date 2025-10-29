@@ -73,9 +73,9 @@
                     </a>
                   </li>
             	<li role="none">
-                    <a href="{$config{rel_path}}/view/facet/" role="menuitem">
+                    <a href="{$config{rel_path}}/view/dscope/" role="menuitem">
                       <epc:phrase ref="bin/generate_views:indextitleprefix"/>
-                      <epc:phrase ref="viewname_eprint_facet"/>
+                      <epc:phrase ref="viewname_eprint_dscope"/>
                     </a>
                   </li>
             	</ul>
