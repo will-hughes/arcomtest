@@ -2,8 +2,8 @@
 $c->{summary_page_metadata} = [qw/
 	keywords
 	iterm
-	domain
 	subject
+	domain
 	dscope
 	note
 	datestamp
