@@ -22,11 +22,11 @@
 <dt id="browse-repository"><strong><a href="{$config{rel_path}}/view/">Browse catalogue</a></strong></dt>
   <dd>Browse items in the catalogue by <a href="{$config{rel_path}}/view/year/">year</a>, <a href="{$config{rel_path}}/view/creators/">author</a>, <a href="{$config{rel_path}}/view/journal_volume/">journal</a>, <a href="{$config{rel_path}}/view/thesis/">thesis</a> or taxonomic indexes. 
   <h4>Taxonomic Indexes</h4>
-    <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of 7,000 or so index terms is derived from this vocabulary.</p>
+    <p>The taxonomic indexes are based on an analysis of all the words in titles, abstracts and keywords of the records in this database. A regularized set of nearly 7,000 index terms is derived from this vocabulary.</p>
   <ul>  
 	<li>These <a href="{$config{rel_path}}/view/iterm/">index terms</a> can be browsed alphabetically.</li>
-    <li>The index terms are grouped into approximately 400 <a href="{$config{rel_path}}/view/subject/">subjects</a>.</li>
-	<li>Subjects are grouped into 21 <a href="{$config{rel_path}}/view/domain/">domains</a> of knowledge.</li>
+    <li>The index terms are grouped into approximately 500 <a href="{$config{rel_path}}/view/subject/">subjects</a>, representing the lenses through which we study construction management.</li>
+	<li>The abstracts are also grouped into 34 <a href="{$config{rel_path}}/view/domain/">topics</a>, which are the common practical issues that are the focus of CM research.</li>
     <li>Index terms are also categorized into five research facets based on modelling structural features of empirical research. The <a href="{$config{rel_path}}/view/dscope/">descriptive scope</a> indicates how many of the five facets are present in each record.</li>
   </ul>
 </dd>
@@ -38,5 +38,6 @@
 
 </xpage:body>
 </xpage:page>
+
 
 
