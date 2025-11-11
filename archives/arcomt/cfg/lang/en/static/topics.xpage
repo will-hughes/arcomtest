@@ -5,11 +5,14 @@
 <xpage:title>Topics</xpage:title>
     <xpage:body>
         <div>
-            <p><em>This section explains the main topic headings, groups them into levels and gives examples of relevant subjects.</em></p>
+            <p>This section explains the main topic headings, with examples of what lies beneath them in the taxonomy.</p>
+            <p>Topics are realted to practical problems faced by pracitioners and researchers in construction management. They represent the kind of things that we are looking at when thinking about research. As the industry changes and develops, it will be easy to adapt this list to refelct concerns that become more apparent. This taxonomy is built on the problems that research papers in this database are dealing with, rather than an abstract view of the way that knowledge might be imagined to be constructed. Our aim is to reflect the world as it is, rather than as it ought to be. Of course, these categorizations are still developing and the more that people use them and comment on them, the more useful they will become.</p>
+            <p>In the list below, the separation of the topics into Policy, Strategy, Tactics and Operations is only for illustrative purposes, to break up what would otherwise be a long list to take in. But these high-level categories of topics are not otherwise used in the taxonomic processes.</p>
+            
         </div>
         <div>
         <h3>Policy and Governance Level</h3>
-        <p><em>Topics concerned with high-level rules, principles, oversight, and long-term direction.</em></p>
+        <p><b>Topics concerned with high-level rules, principles, oversight, and long-term direction.</b></p>
         <p><b>Ethics -</b> Moral principles, values, and professional conduct in CM. Covers corruption, social justice, equity, fairness in tendering, and corporate social responsibility.</p>
         <p><b>Governance -</b> The frameworks, structures, and systems of direction, control, and accountability within construction organizations, construction projects and policy environments. Includes corporate governance, project governance, and stakeholder boards.</p>
         <p><b>Legal Issues -</b> The body of law and its application to construction. Includes contract law, tort, negligence, liability, dispute resolution (adjudication, arbitration), and intellectual property.</p>
@@ -18,7 +21,7 @@
         </div>
         <div>
         <h3>Strategic Level</h3>
-        <p><em>Topics concerned with long-term planning, direction-setting, and strategic decision-making.</em></p>
+        <p><b>Topics concerned with long-term planning, direction-setting, and strategic decision-making.</b></p>
         <p><b>Business Strategy -</b> The long-term vision and planning of construction firms. Includes high-level corporate direction, market positioning, growth, mergers and acquisitions, business models, competitive advantage, and financial modelling.</p>
         <p><b>Urban Studies -</b> The interface between construction and the city. Covers urban development, regeneration, infrastructure integration, and the socio-spatial impacts of construction on the urban fabric.</p>
         <p><b>Education -</b> The system of knowledge and skills development for the industry. Includes university curricula, vocational training, continuing professional development (CPD), pedagogy, and addressing the skills gap.</p>
@@ -33,7 +36,7 @@
         </div>
         <div>
         <h3>Tactical/Controls Level</h3>
-        <p><em>Topics concerned with the methods, systems, and controls used to implement strategy.</em></p>
+        <p><b>Topics concerned with the methods, systems, and controls used to implement strategy.</b></p>
         <p><b>Research Practice -</b> The activity and methodology of conducting research in CM. Includes research design, data collection methods, analytical techniques, and dissemination.</p>
         <p><b>Cost Management -</b> The systems for estimating, budgeting, and controlling costs throughout the project lifecycle. Includes cost forecasting, earned value management, and life-cycle costing.</p>
         <p><b>Engineering Principles -</b> The foundational technical knowledge and analytical methods applied to construction. Includes structural mechanics, geotechnics, and material science that inform design and construction decisions.</p>
@@ -46,7 +49,7 @@
         </div>
         <div>
         <h3>Operational Level</h3>
-        <p><em>Topics concerned with the day-to-day execution of tasks and physical production.</em></p>
+        <p><b>Topics concerned with the day-to-day execution of tasks and physical production.</b></p>
         <p><b>Construction Materials -</b> The properties, selection, sourcing, and on-site handling of materials used in construction, such as concrete, steel, timber, and composites.</p>
         <p><b>Construction Technology -</b> The methods, techniques, and physical processes used to assemble and erect structures. Includes formwork, tunnelling, and modern methods of construction (MMC).</p>
         <p><b>Contract Administration -</b> The operational management of the contract during the construction phase. Includes processing payments, variations, instructions, and claims.</p>
