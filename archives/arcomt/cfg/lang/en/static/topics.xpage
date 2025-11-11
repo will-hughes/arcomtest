@@ -9,109 +9,58 @@
         </div>
         <div>
         <b>Policy and Governance Level</b>
-        <p><b>Topics concerned with high-level rules, principles, oversight, and long-term direction.</b></p>
-        <b>Ethics</b>
+        <p><em>Topics concerned with high-level rules, principles, oversight, and long-term direction.</em></p>
         <p><b>Ethics -</b> Moral principles, values, and professional conduct in CM. Covers corruption, social justice, equity, fairness in tendering, and corporate social responsibility.</p>
-        <b>Governance</b>
         <p><b>Governance -</b> The frameworks, structures, and systems of direction, control, and accountability within construction organizations, construction projects and policy environments. Includes corporate governance, project governance, and stakeholder boards.</p>
-        <b>Legal Issues</b>
         <p><b>Legal Issues -</b> The body of law and its application to construction. Includes contract law, tort, negligence, liability, dispute resolution (adjudication, arbitration), and intellectual property.</p>
-        <b>Regulations and Compliance</b>
         <p><b>Regulations and Compliance -</b> Adherence to statutory rules, building codes, safety regulations, environmental directives, and zoning laws. Focuses on the implementation and enforcement of external mandates.</p>
-        <b>Sustainability</b>
         <p><b>Sustainability -</b> The pursuit of environmentally, socially, and economically viable construction and asset management. Includes climate resilience, circular economy, carbon footprint, biodiversity, and social value.</p>
+        </div>
+        <div>
         <b>Strategic Level</b>
-        <p><b>Topics concerned with long-term planning, direction-setting, and strategic decision-making.</b></p>
-        <b>Business Strategy</b>
+        <p><em>Topics concerned with long-term planning, direction-setting, and strategic decision-making.</em></p>
         <p><b>Business Strategy -</b> The long-term vision and planning of construction firms. Includes high-level corporate direction, market positioning, growth, mergers and acquisitions, business models, competitive advantage, and financial modelling.</p>
-        <b>Urban Studies</b>
         <p><b>Urban Studies -</b> The interface between construction and the city. Covers urban development, regeneration, infrastructure integration, and the socio-spatial impacts of construction on the urban fabric.</p>
-        <b>Education</b>
         <p><b>Education -</b> The system of knowledge and skills development for the industry. Includes university curricula, vocational training, continuing professional development (CPD), pedagogy, and addressing the skills gap.</p>
-        <b>Procurement</b>
         <p><b>Procurement -</b> The strategic process of acquiring goods, services, and works from external sources. Encompasses contract strategy selection, supply chain formation, and tendering.</p>
-        <b>Project Management</b>
         <p><b>Project Management -</b> The overarching framework for initiating, planning, executing, controlling, and closing a project. The integrative function that integrates many other topics at a project level.</p>
-        <b>Risk Management</b>
         <p><b>Risk Management -</b> The culture, processes, and structures directed toward realizing potential opportunities and managing adverse effects. Includes risk identification, analysis, and response planning. (Note: Risk Mitigation is a tactical activity within this Topic).</p>
-        
-        <b>International Construction</b>
         <p><b>International Construction -</b> The specific challenges of executing projects across national borders. Includes cross-cultural management, working in different regulatory environments, international joint ventures, and economic development projects.</p>
-        
-        <b>Site Management</b>
         <p><b>Site Management -</b> The strategic and tactical command of the construction site itself. This includes site establishment, logistics planning, security, and the overarching coordination of all on-site activities and trades.</p>
-        
-        <b>Roles and Professions</b>
         <p><b>Roles and Professions -</b> The sociology and development of the individuals and professional groups in construction. Includes professional identity, role theory, ethics, education, and the dynamics between different disciplines (e.g., architects, engineers, contractors).</p>
-        
-        <b>Organizational Design</b>
         <p><b>Organizational Design -</b> The strategic work of intentionally structuring the construction firm, programme or project, its parts, relationships, and culture, to enable effectiveness and achieve goals. The scope includes: structural design, integration/alliances, cultural development, governance design, knowledge flows.</p>
-        
-        <b>Human Resources</b>
         <p><b>Human Resources -</b> The management of people within the organization. Includes recruitment, compensation, performance management, industrial relations, and workforce planning (Strategic for policy and planning or tactical for implementation).</p>
-        
+        </div>
+        <div>
         <b>Tactical/Controls Level</b>
-        <p><b>Topics concerned with the methods, systems, and controls used to implement strategy.</b></p>
-        
-        <b>Research Practice</b>
+        <p><em>Topics concerned with the methods, systems, and controls used to implement strategy.</em></p>
         <p><b>Research Practice -</b> The activity and methodology of conducting research in CM. Includes research design, data collection methods, analytical techniques, and dissemination.</p>
-        
-        <b>Cost Management</b>
         <p><b>Cost Management -</b> The systems for estimating, budgeting, and controlling costs throughout the project lifecycle. Includes cost forecasting, earned value management, and life-cycle costing.</p>
-        
-        <b>Engineering Principles</b>
         <p><b>Engineering Principles -</b> The foundational technical knowledge and analytical methods applied to construction. Includes structural mechanics, geotechnics, and material science that inform design and construction decisions.</p>
-        
-        <b>Quality Management</b>
         <p><b>Quality Management -</b> The processes and systems to ensure that products and services meet defined standards and requirements. Includes quality assurance, quality control, and continuous improvement.</p>
-        
-        <b>Time Control</b>
         <p><b>Time Control -</b> The systems for scheduling, sequencing, and monitoring project timelines. Includes critical path method (CPM), line-of-balance, and delay analysis.</p>
-        
-        <b>Stakeholder Management</b>
         <p><b>Stakeholder Management -</b> The systematic identification, analysis, and engagement of all individuals or groups affected by a project. Includes public consultation, community relations, and managing client expectations.</p>
-        
-        <b>Information Management</b>
         <p><b>Information Management -</b> The strategic governance of an organization's data and information assets. Focuses on what information is needed, by whom, and in what format, to support decision-making.</p>
-        
-        <b>Supply Chain Management</b>
         <p><b>Supply Chain Management -</b> The strategic coordination and integration of the entire network of companies and processes from raw material to completed facility. Focuses on relationships, logistics, and value flow.</p>
-        
-        <b>Value Management</b>
         <p><b>Value Management -</b> The systematic process of achieving the best functional balance between project cost, time, and performance to meet the client's needs and maximize value.</p>
-        
+        </div>
+        <div>
         <b>Operational Level</b>
-        <p><b>Topics concerned with the day-to-day execution of tasks and physical production.</b></p>
-        
-        <b>Construction Materials</b>
+        <p><em>Topics concerned with the day-to-day execution of tasks and physical production.</em></p>
         <p><b>Construction Materials -</b> The properties, selection, sourcing, and on-site handling of materials used in construction, such as concrete, steel, timber, and composites.</p>
-        
-        <b>Construction Technology</b>
         <p><b>Construction Technology -</b> The methods, techniques, and physical processes used to assemble and erect structures. Includes formwork, tunnelling, and modern methods of construction (MMC).</p>
-        
-        <b>Contract Administration</b>
         <p><b>Contract Administration -</b> The operational management of the contract during the construction phase. Includes processing payments, variations, instructions, and claims.</p>
-        
-        <b>Design Practice</b>
         <p><b>Design Practice -</b> The management and coordination of the design process. Includes design management, value engineering, buildability reviews, and the integration of design disciplines.</p>
-        
-        <b>Digital Applications</b>
         <p><b>Digital Applications -</b> The use of digital tools and data in construction. Includes BIM, digital twins, common data environments, and automation.</p>
-        
-        <b>Health and Safety</b>
         <p><b>Health and Safety -</b> The practices and systems to protect the well-being of people on construction sites. Includes hazard identification, risk assessment, and safety culture.</p>
-        
-        <b>Logistics</b>
         <p><b>Logistics -</b> The coordination of the movement and storage of materials, equipment, and personnel to, from, and on the construction site.</p>
-        
-        <b>Plant and Equipment</b>
         <p><b>Plant and Equipment -</b> The selection, operation, and maintenance of machinery and tools used in construction activities.</p>
-        
+        </div>
+        <div>
         <b>Multi-level</b>
-        
-        <b>Geographical Context</b>
         <p><b>Geographical Context -</b> The influence of physical, cultural, political, and economic geography on construction practices, including regional variations, location-specific challenges, and comparative studies across different geographical settings.</p>
-        
+        </div>
+        <div>
         <b>Ideas, Suggestions, Criticisms</b>
         <p>Please make suggestions, share your ideas and critique these classifications. They are far from perfect and, perhaps, rather clumsy in places. Bear in mind that this is only offered as a prototype. The idea is that it will prompt constructive suggestions and offers of help to work on a more nuanced and effective approach. The hope is that the structure offers a good scaffolding for more effective categories that are appropriate to the aims.</p>
         </div>
