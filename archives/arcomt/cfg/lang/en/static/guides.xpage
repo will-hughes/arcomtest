@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE page SYSTEM "entities.dtd" >
+<xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+
+<xpage:title>Descriptive Scope</xpage:title>
+    <xpage:body>
+        <div>
+            <p>Here you will find a short list of helpful guides that explain more of the detail of how this database is structured in relation to a systematic taxonomy. While the taxonomy has been derived and structured by people, the application of it is automatic. A large table holds index terms, topics, subjects, research facets and lookup words. The lookup words are used to automatically match words in the titles, abstracts and author keywords of each item, and where there is a match, the corresponding index terms, etc, are applied to the record. The use of lookup words helps to deal with synonyms and spelling variations. If you feel that any record has been misclassified, please let us know so that we can adjust specific words in relation to whether we are using the right ones, and whether they associated with right subjects and topics.</p>
+        </div>
+        <div>
+            <p>The following guidance is available and can also be accessed from any point in the site from the navigation bar at the top of the page:</p>
+            
+        <ul>
+            <li><a href="https://arcomabstracts.com/taxonomy.html">A description of the taxonomy</a></li>
+            <li><a href="https://arcomabstracts.com/taxonomy.html">The first level: Topics</a></li>
+            <li><a href="https://arcomabstracts.com/taxonomy.html">The second level: Subjects</a></li>
+            <li><a href="https://arcomabstracts.com/taxonomy.html">The cryptic 'descriptive scope'</a></li>
+
+        </ul>
+                     
+        <p>All comments and suggestions will be gratefully received.</p>
+        </div>
+
+        <div><small>
+            <p>-------------------------------------------</p>
+            <h3 id="contact-information">Contact Information</h3>
+            <p>If you have any questions about the database, or suggestions for improving it, please get in touch. We welcome feedback from researchers, students, practitioners, and anyone with an interest in construction management research; including anyone involved in cataloguing, indexing, or managing similar databases in other topic areas.</p>
+            <p>These explanatory notes and commentaries have been written by Prof Will Hughes as the curator of the site and reflect personal understanding and interpretation. They are offered to clarify the structure and intent of the catalogue and to encourage thoughtful discussion.</p>
+            <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
+        </small></div>
+
+        <p><small><i>Last updated 11 November 2025</i></small></p>
+    </xpage:body>
+</xpage:page>
