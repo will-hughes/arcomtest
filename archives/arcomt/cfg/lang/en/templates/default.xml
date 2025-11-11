@@ -80,7 +80,28 @@
                   </li>
             	</ul>
               </li>
-              
+
+			<li role="none">
+      <a href="#" title="Guides" role="menuitem" menu="ep_tm_menu_explanations" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_explanations">
+        Explanations
+      </a>
+      <ul role="menu" id="ep_tm_menu_guides" style="display:none;">
+        <li role="none">
+          <a href="{$config{rel_path}}/taxonomy.html" role="menuitem">About the taxonomySite</a>
+        </li>
+        <li role="none">
+          <a href="{$config{rel_path}}/topics.html" role="menuitem">Topics</a>
+        </li>
+        <li role="none">
+          <a href="{$config{rel_path}}/subjects.html" role="menuitem">Subjects</a>
+        </li>
+        <li role="none">
+          <a href="{$config{rel_path}}/dscope.html" role="menuitem">Descriptive Scope</a>
+        </li>
+      </ul>
+    </li>
+
+				
 				<li role="none" style="margin-left:auto;">
 					<a href="{$config{rel_path}}/cgi/search/advanced" title="Advanced Search" role="menuitem">Advanced Search</a>
 
