@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE page SYSTEM "entities.dtd" >
+<xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+
+<xpage:title>Subjects</xpage:title>
+    <xpage:body>
+        <div>
+            <em>Subjects are the academic lens through which we examine the real-world issues categorized into topics.</em>
+        </div>
+        
+        <div>
+            <p>The list of subjects in this taxonomy consists of more than 500 items. We are working on a way of presenting them here, but this is still work in progress.</p>
+        </div>
+
+        <div><small>
+            <p>-------------------------------------------</p>
+            <h3 id="contact-information">Contact Information</h3>
+            <p>If you have any questions about the database, or suggestions for improving it, please get in touch. We welcome feedback from researchers, students, practitioners, and anyone with an interest in construction management research; including anyone involved in cataloguing, indexing, or managing similar databases in other topic areas.</p>
+            <p>These explanatory notes and commentaries have been written by Prof Will Hughes as the curator of the site and reflect personal understanding and interpretation. They are offered to clarify the structure and intent of the catalogue and to encourage thoughtful discussion.</p>
+            <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
+        </small></div>
+
+        <p><small><i>Last updated 11 November 2025</i></small></p>
+    </xpage:body>
+</xpage:page>
