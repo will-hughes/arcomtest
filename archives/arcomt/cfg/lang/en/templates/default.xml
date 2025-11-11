@@ -82,9 +82,7 @@
               </li>
 
 			<li role="none">
-      <a href="#" title="Guides" role="menuitem" menu="ep_tm_menu_explanations" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_explanations">
-        Explanations
-      </a>
+      <a href="#" title="Guides" role="menuitem" menu="ep_tm_menu_guides" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_guides">Guides</a>
       <ul role="menu" id="ep_tm_menu_guides" style="display:none;">
         <li role="none">
           <a href="{$config{rel_path}}/taxonomy.html" role="menuitem">About the taxonomySite</a>
