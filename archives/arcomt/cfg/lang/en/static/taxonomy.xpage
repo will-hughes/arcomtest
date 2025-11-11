@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE page SYSTEM "entities.dtd" >
+<xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+
+<xpage:title>Taxonomy</xpage:title>
+    <xpage:body>
+		<div>
+        <em>An introduction to the analytical taxonomy developed for the ARCOM CM Abstracts.</em>
+		</div>
+		<div>
+			<p>
+			This taxonomy structures Construction Management (CM) research around two ideas.  Topics, are the real-world problems and practical contexts of the industry. Subjects are the academic disciplines that provide the theoretical lenses for research.
+			</p>
+			<ul>
+				<li>Topic = The "What": The empirical problem space or area of practical concern in CM practice and in CM research.</li>
+				<li>Subject = The "How": The academic framing, theoretical positioning, and analytical approach used to investigate the Topic.</li>
+			</ul>
+			<p>In developing a systematic approach to cataloguing the research work in an industrial sector, it is helpful to organize ideas into categories. One helpful route is to begin with classifying the empirical issues into areas like policy, strategy, tactics and operations; this works well for industry-based phenomena and points towards a more fine-grained list of academic subject specialisms that are brought to bear on the topics. This is not always a crisp classification, though, as some Topics may fit into more than one of these issues, depending on how it is being applied. Nevertheless, it has helped in envisaging the process of top-down classification, even though it is not part of the implementation of the taxonomic index.
+			</p>
+			<p>
+			Please follow the links for more details on the topics that are represented in this metadata catalogue and the subject specialisms that are applied to them in the research. 
+			</p>
+		</div>
+        <div><small>
+			<p>
+				-------------------------------------------
+			</p>
+            <h3 id="contact-information">Contact Information</h3>
+            <p>If you have any questions about the database, or suggestions for improving it, please get in touch. We welcome feedback from researchers, students, practitioners, and anyone with an interest in construction management research; including anyone involved in cataloguing, indexing, or managing similar databases in other topic areas.</p>
+			<p>These explanatory notes and commentaries have been written by Prof Will Hughes as the curator of the site and reflect personal understanding and interpretation. They are offered to clarify the structure and intent of the catalogue and to encourage thoughtful disc</p>
+            <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
+        </small></div>
+
+        <p><small><i>Last updated 11 November 2025</i></small></p>
+    </xpage:body>
+</xpage:page>
