@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE page SYSTEM "entities.dtd" >
+<xpage:page xmlns="http://www.w3.org/1999/xhtml" xmlns:xpage="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+
+<xpage:title>Descriptive Scope</xpage:title>
+    <xpage:body>
+        <div>
+            <em>Construction Management is an area of research whose name points at a specific focus. Construction is an industry sector, so the research will be focused on what happens in this sector. Management is a social science, so that sets up some expectation about the kind of research we might expect to see.</em>
+        </div>
+        
+        <div>
+            <p>Applied research is empirical research, and this provides a basic proposition that whatever phenomenon that is being examined is related to certain specific phenomena in and around the construction sector. The phenomenon being examined in any specific piece of research could be any one (or more) of a variety:</p>
+            
+            <ul>
+                <li>object</li>
+                <li>process</li>
+                <li>role</li>
+                <li>location</li>
+                <li>individual</li>
+            </ul>
+            
+            <p>The remaining research facets are suggested as definitional aspects of any piece of empirical research. A research paper, or thesis, could reasonably be expected to develop <em>concepts</em> from the literature and to characterize the relationships between the concepts through a <em>theoretical framing</em>. The research design would explain what <em>empirical techniques</em> are used, and why they were chosen, as well as explaining the <em>analytical techniques</em> used to process that data. The remaining facets of research, such as results and conclusions, would be a part of the paper, but in this metadata catalogue, we are only cataloguing the titles, abstracts and keywords of papers. In any case, the words used in results and conclusions are very likely not quite as specific as the words used in the other research facets.</p>
+            
+            <p>The idea of descriptive scope is that we have categorized each of the index terms in the taxonomy as being characteristic of one the five research facets: Phenomenon, Concept, Theoretical framing, Empirical technique, Analytical technique. By looking at the index terms that have been allocated to a record in the catalogue, we can indicate whether there any index terms that are usually used in these categories. Each of the letters "PCTEA" appear only if there is at least one index term from one of the five facets. This is preceded by a number that simply indicates how many. For example, if all of them are present, the descriptive scope is indicated with "5 PCTEA". If there are no words usually used to describe concepts, and no words usually used to describe empirical techniques, then the descriptive scope would be "3 PTA".</p>
+            
+            <p>This gives a very quick and dirty indication of how comprehensive the abstract and title are in relation to a complete description of empirically based research, but only if we have the right index terms and have categorized them correctly.</p>
+            
+            <p>What do you think of this indicator? Could it be helpful? Are there any ways that we could improve the categorization of these words, or the way we use them? For example, some research may be comprehensively summarized in the abstract, but we are not picking up the right words.</p>
+            
+            <p>All comments and suggestions will be gratefully received.</p>
+        </div>
+
+        <div><small>
+            <p>-------------------------------------------</p>
+            <h3 id="contact-information">Contact Information</h3>
+            <p>If you have any questions about the database, or suggestions for improving it, please get in touch. We welcome feedback from researchers, students, practitioners, and anyone with an interest in construction management research; including anyone involved in cataloguing, indexing, or managing similar databases in other topic areas.</p>
+            <p>These explanatory notes and commentaries have been written by Prof Will Hughes as the curator of the site and reflect personal understanding and interpretation. They are offered to clarify the structure and intent of the catalogue and to encourage thoughtful discussion.</p>
+            <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
+        </small></div>
+
+        <p><small><i>Last updated 11 November 2025</i></small></p>
+    </xpage:body>
+</xpage:page>
