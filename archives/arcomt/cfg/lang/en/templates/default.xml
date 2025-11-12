@@ -82,19 +82,19 @@
               </li>
 
 			<li role="none">
-      <a href="{$config{rel_path}}/guides.html" title="Guides" role="menuitem" menu="ep_tm_menu_guides" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_guides">Guides</a>
+      <a href="{$config{rel_path}}/guides/" title="Guides" role="menuitem" menu="ep_tm_menu_guides" aria-expanded="false" aria-haspopup="true" aria-owns="ep_tm_menu_guides">Guides</a>
       <ul role="menu" id="ep_tm_menu_guides" style="display:none;">
         <li role="none">
-          <a href="{$config{rel_path}}/taxonomy.html" role="menuitem">About the taxonomy</a>
+          <a href="{$config{rel_path}}/guides/taxonomy.html" role="menuitem">About the taxonomy</a>
         </li>
         <li role="none">
-          <a href="{$config{rel_path}}/topics.html" role="menuitem">Topics</a>
+          <a href="{$config{rel_path}}/guides/topics.html" role="menuitem">Topics</a>
         </li>
         <li role="none">
-          <a href="{$config{rel_path}}/subjects.html" role="menuitem">Subjects</a>
+          <a href="{$config{rel_path}}/guides/subjects.html" role="menuitem">Subjects</a>
         </li>
         <li role="none">
-          <a href="{$config{rel_path}}/dscope.html" role="menuitem">Descriptive Scope</a>
+          <a href="{$config{rel_path}}/guides/dscope.html" role="menuitem">Descriptive Scope</a>
         </li>
       </ul>
     </li>
