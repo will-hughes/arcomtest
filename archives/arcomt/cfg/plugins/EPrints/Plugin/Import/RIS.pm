@@ -199,47 +199,49 @@ sub convert_input
             &_join_field_data($epdata, $entry, 'T2', 'series', ', ');
         }
 
-# THES - type specific 
-if ( $type eq 'THES' )
-{
-    &_join_field_data($epdata, $entry, 'T2', 'department');
-    &_join_field_data($epdata, $entry, 'PB', 'institution');
-	&_names($epdata, $entry, ['A3'], 'contributors', 'thesis_advisor');
+		# THES - type specific 
+		if ( $type eq 'THES' )
+			{
+			&_join_field_data($epdata, $entry, 'T2', 'department');
+			&_join_field_data($epdata, $entry, 'PB', 'institution');
+			&_names($epdata, $entry, ['A2'], 'contributors', 'thesis_advisor'); # EndNote must export thesis advisor in A2 or multiple names not properly rendered.
 
-    # Make a deep copy of the M3 field before calling _join_field_data
-    my $m3 = $entry->{'M3'} ? [ @{$entry->{'M3'}} ] : undef;
+			# Make a deep copy of the M3 field before calling _join_field_data
+			my $m3 = $entry->{'M3'} ? [ @{$entry->{'M3'}} ] : undef;
 
-    # Pass the copy of M3 to _join_field_data to avoid modifying the original
-    &_join_field_data($epdata, { %$entry, 'M3' => $m3 }, 'M3', 'thesis_type_display');
+			# Pass the copy of M3 to _join_field_data to avoid modifying the original
+			&_join_field_data($epdata, { %$entry, 'M3' => $m3 }, 'M3', 'thesis_type_display');
 
-    $epdata->{date_type} = 'completed';
-    $epdata->{thesis_type} = 'doctoral';
+			$epdata->{date_type} = 'completed';
+			$epdata->{thesis_type} = 'doctoral';
 
-    # Process the M3 field for thesis-specific details
-    if ( defined $m3 ) {
-        if ( defined $m3->[0] ) {
-            # Extract words from M3 field (trim leading/trailing spaces)
-            my @words = split(/\s+/, $m3->[0] =~ s/^\s+|\s+$//gr);
+			# Process the M3 field for thesis-specific details
+			if ( defined $m3 ) {
+				if ( defined $m3->[0] ) {
+					# Extract words from M3 field (trim leading/trailing spaces)
+					my @words = split(/\s+/, $m3->[0] =~ s/^\s+|\s+$//gr);
 
-            # Determine 'ispublished' based on the first word (default to 'unpub')
-            $epdata->{ispublished} = (lc($words[0]) eq 'unpublished') ? 'unpub' : 'pub';
-
-            # Extract and validate qualification (middle word)
-            $epdata->{thesis_name} = lc($words[1]); # Directly use the value without validation
-        }
-    }
-	# Clear M3 in $epdata and $entry to prevent it from being interpreted as "Unmapped bibliographic data"
-	$epdata->{M3} = undef;  # Set the key to undef instead of deleting it
-	$entry->{M3} = undef;   # Set the key to undef instead of deleting it
-}
-        # T3 - Tertiary title / Series title / Corporation
-        if ( grep /$type/, ('BILL','BLOG','HEAR','UNPB' ) )
-        { 
-            &_push_array_field_data($epdata, $entry, 'T3', 'corp_creators');
-        }
-        
-        delete $entry->{TY};
-    }
+					# Determine 'ispublished' based on the first word (default to 'unpub')
+					$epdata->{ispublished} = (lc($words[0]) eq 'unpublished') ? 'unpub' : 'pub';
+					# print STDERR "ispublished set to: " . $epdata->{ispublished} . "\n";        # Debugging
+					# Extract and validate qualification (middle word)
+					$epdata->{thesis_name} = lc($words[1]); # Directly use the value without validation
+					# print STDERR "thesis_name set to: ." . $epdata->{thesis_name} . ".\n";        # Debugging
+					
+				}
+			}
+			# Clear M3 in $epdata and $entry to prevent it from being interpreted as "Unmapped bibliographic data"
+			# $epdata->{M3} = undef;  # Set the key to undef instead of deleting it
+			$entry->{M3} = undef;   # Set the key to undef instead of deleting it
+			}
+		
+		# T3 - Tertiary title / Series title / Corporation
+		if ( grep /$type/, ('BILL','BLOG','HEAR','UNPB' ) )
+			{ 
+			&_push_array_field_data($epdata, $entry, 'T3', 'corp_creators');
+			}
+	delete $entry->{TY};
+	}
 
     # The rest: not type dependent, or left over after picking out specific cases above
 
@@ -274,7 +276,7 @@ if ( $type eq 'THES' )
     &_join_field_data($epdata, $entry, 'CY', 'place_of_pub', ', ');
 
     # DOI / NIHMSID / CFDA / PMCID
-    &_return_first_value($epdata, $entry, ['DO','C7','C6'], 'id_number', $unmapped);
+    &_return_first_value($epdata, $entry, ['DO','C6'], 'id_number', $unmapped);
 
     # SN - ISBN (ISSN are caught earlier
     &_join_field_data($epdata, $entry, 'SN', 'isbn', '; ');
@@ -305,6 +307,11 @@ if ( $type eq 'THES' )
         delete $entry->{SP};
         my $ep = defined $entry->{EP} ? join('', @{$entry->{EP}}) : undef;
         delete $entry->{EP};
+		
+		# Replace Unicode en/em dashes with ASCII hyphen (from ChatGPT 1 Jul 2025 - WPH)
+		$sp =~ s/[\x{2013}\x{2014}]/-/g if defined $sp;
+		$ep =~ s/[\x{2013}\x{2014}]/-/g if defined $ep;
+
         if ( $sp =~ /^[0-9]*-[0-9]*$/ )
         {
             $epdata->{pagerange} = $sp;
@@ -321,11 +328,15 @@ if ( $type eq 'THES' )
             $epdata->{pages} = int $sp;
         }
     }
+    elsif (defined $entry->{C7}) {
+    my $c7 = join('', @{$entry->{C7}});
+    delete $entry->{C7};
+    $epdata->{article_number} = $c7;  # Pick up article number for use as start page (WH 4 Jun 2025)
+}
     
     # Date of publication - Take the first 4 digit match
     &_process_dates($epdata, $entry, ['PY','Y1','Y2','DA'], $unmapped);
 
-    # N1 - Notes
     &_join_field_data($epdata, $entry, 'N1', 'note');
 
     # Process any leftovers and add $unmapped fields to the notes field
@@ -600,7 +611,7 @@ sub _process_names
     }
     elsif ( grep /$type/, ('THES') )
     {
-        &_names($epdata, $entry, ['A2'], 'contributors', 'thesis_advisor');
+        &_names($epdata, $entry, ['A3'], 'contributors', 'thesis_advisor');
     }
     elsif ( grep /$type/, ('DATA','MUSIC') )
     {
