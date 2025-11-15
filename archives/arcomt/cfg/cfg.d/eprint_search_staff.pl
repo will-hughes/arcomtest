@@ -33,8 +33,8 @@ $c->{datasets}->{eprint}->{search}->{staff} =
 		"byyearoldest"	 => "date/creators_name/title",
 		"byname"  	 => "creators_name/-date/title",
 		"bytitle" 	 => "title/creators_name/-date",
-		"byarticle_asc"  => "article_number",
-        "byarticle_desc" => "-article_number"
+		"byeprintid_asc"  => "eprintid",
+        "byeprintid_desc" => "-eprintid"
 	},
 	default_order => "byname",
 	show_zero_results => 1,
