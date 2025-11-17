@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xpage xmlns="http://eprints.org/ep3/xpage" xmlns:epc="http://eprints.org/ep3/control">
+
+  <h1>Text Analysis Tool</h1>
+  
+  <p>Please enter your text below:</p>
+  
+  <form method="POST">
+    <textarea name="user_text" rows="10" cols="80" style="width: 100%;">
+      <epc:if test="$user_text"><epc:print expr="$user_text" /></epc:if>
+    </textarea>
+    <br/>
+    <input type="submit" name="submit" value="Analyze Text" />
+  </form>
+
+  <epc:if test="$user_text">
+    <h2>You entered:</h2>
+    <p><epc:print expr="$user_text" /></p>
+  </epc:if>
+
+</xpage>
