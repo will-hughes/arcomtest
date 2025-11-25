@@ -16,6 +16,7 @@ $c->{search}->{advanced} =
 		{ meta_fields => [ "facet" ] },
 		{ meta_fields => [ "official_url" ] },
 		{ meta_fields => [ "place_of_pub" ] },
+		{ meta_fields => [ "institution" ] },
 		{ meta_fields => [ "type" ] },
 	],
 	template => "default",
@@ -63,6 +64,7 @@ License along with EPrints 3.4.
 If not, see L<http://www.gnu.org/licenses/>.
 
 =for LICENSE END
+
 
 
 
