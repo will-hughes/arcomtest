@@ -22,6 +22,7 @@ $c->{datasets}->{eprint}->{search}->{staff} =
 		{ meta_fields => [ "official_url" ] },
 		{ meta_fields => [ "article_number" ] },
 		{ meta_fields => [ "place_of_pub" ] },
+		{ meta_fields => [ "institution" ] },
 		{ meta_fields => [ "type" ] },
 	],
 	preamble_phrase => "Plugin/Screen/Staff/EPrintSearch:description",
