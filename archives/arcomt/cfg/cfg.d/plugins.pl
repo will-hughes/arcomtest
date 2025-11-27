@@ -58,6 +58,7 @@ $c->{plugins}{"Export::arcomCSV"}{params}{visible} = "staff";
 $c->{plugins}{"Export::MyPlugins::EndNote"}{params}{visible} = "all";    # ← FIXED
 $c->{plugins}{"Export::MyPlugins::BibTeX"}{params}{visible} = "all";     # ← FIXED
 $c->{plugins}{"Export::HTML"}{params}{visible} = "all";
+$c->{plugins}{"Export::HTML"}{params}{disable} = 0;  # Explicitly enable
 
 # Disable conflicting standard/flavour plugins
 $c->{plugins}{"Import::RIS"}{params}{disable} = 1;
@@ -70,6 +71,9 @@ $c->{plugins}{"Export::BibTeX"}{params}{disable} = 1;
 $c->{plugin_alias_map}->{"Export::myplugins::ris"} = "Export::MyPlugins::RIS";
 $c->{plugin_alias_map}->{"Export::myplugins::endnote"} = "Export::MyPlugins::EndNote";
 $c->{plugin_alias_map}->{"Export::myplugins::bibtex"} = "Export::MyPlugins::BibTeX";
+$c->{plugin_alias_map}->{"Export::bibtex"} = "Export::MyPlugins::BibTeX";
+$c->{plugin_alias_map}->{"Export::Bibtex"} = "Export::MyPlugins::BibTeX";
+$c->{plugin_alias_map}->{"Export::html"} = "Export::HTML";
 
 # Hide all others from regular users
 $c->{plugins}{"Export::Atom"}{params}{visible} = "staff";
