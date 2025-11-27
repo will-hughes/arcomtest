@@ -55,9 +55,21 @@ $c->{plugins}->{"Issues::ExactTitleDups"}->{params}->{disable} = 1;
 # Only show selected export plugins to regular users
 $c->{plugins}{"Export::MyPlugins::RIS"}{params}{visible} = "all";
 $c->{plugins}{"Export::arcomCSV"}{params}{visible} = "staff";
-$c->{plugins}{"Export::EndNote"}{params}{visible} = "all";
-$c->{plugins}{"Export::BibTeX"}{params}{visible} = "all";
+$c->{plugins}{"Export::MyPlugins::EndNote"}{params}{visible} = "all";    # ← FIXED
+$c->{plugins}{"Export::MyPlugins::BibTeX"}{params}{visible} = "all";     # ← FIXED
 $c->{plugins}{"Export::HTML"}{params}{visible} = "all";
+
+# Disable conflicting standard/flavour plugins
+$c->{plugins}{"Import::RIS"}{params}{disable} = 1;
+$c->{plugins}{"Export::RIS"}{params}{disable} = 1;
+$c->{plugins}{"Import::EndNote"}{params}{disable} = 1;
+$c->{plugins}{"Export::EndNote"}{params}{disable} = 1;
+$c->{plugins}{"Export::BibTeX"}{params}{disable} = 1;
+
+# Handle case sensitivity - redirect lowercase to proper case
+$c->{plugin_alias_map}->{"Export::myplugins::ris"} = "Export::MyPlugins::RIS";
+$c->{plugin_alias_map}->{"Export::myplugins::endnote"} = "Export::MyPlugins::EndNote";
+$c->{plugin_alias_map}->{"Export::myplugins::bibtex"} = "Export::MyPlugins::BibTeX";
 
 # Hide all others from regular users
 $c->{plugins}{"Export::Atom"}{params}{visible} = "staff";
