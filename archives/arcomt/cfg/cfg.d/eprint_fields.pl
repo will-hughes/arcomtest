@@ -64,7 +64,13 @@ push @{$c->{fields}->{eprint}},
 	input_rows => 3,
 	make_single_value_orderkey => 'EPrints::Extras::english_title_orderkey',
 },
-
+{  # Not used in our implementation but errors are logged if it does not exist
+	name => 'subjects',
+	type => 'subject',
+	multiple => 1,
+	top => 'subjects',
+	browse_link => 'subjects',
+},
 {
 	name => 'ispublished',
 	type => 'set',
