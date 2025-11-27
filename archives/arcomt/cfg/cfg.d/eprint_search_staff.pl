@@ -18,7 +18,6 @@ $c->{datasets}->{eprint}->{search}->{staff} =
 		{ meta_fields => [ "iterm" ] },
 		{ meta_fields => [ "domain" ] },
 		{ meta_fields => [ "subject" ] },
-		{ meta_fields => [ "facet" ] },
 		{ meta_fields => [ "official_url" ] },
 		{ meta_fields => [ "article_number" ] },
 		{ meta_fields => [ "place_of_pub" ] },
