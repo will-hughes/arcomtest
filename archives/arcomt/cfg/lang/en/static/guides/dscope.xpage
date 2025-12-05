@@ -5,30 +5,28 @@
 <xpage:title>Descriptive Scope</xpage:title>
     <xpage:body>
         <div>
-            <p>Construction Management is an area of research whose name points at a specific focus. Construction is an industry sector, so research will be focused on what happens in this sector. Management is a social science, so that sets up some expectation about the kind of research we might expect to see. For these reasons, CM maybe seen as the application of the social sciences to the construction sector; but not necessarily exclusively. In pratical terms is is dfined by what we actually do.</p>
-        </div>
-        
-        <div>
-            <p>Applied research is empirical research, and this provides a basic proposition that whatever phenomenon that is being examined is related to certain specific phenomena in and around the construction sector. The phenomenon being examined in any specific piece of research could be any one (or more) of a variety:</p>
-            
-            <ul>
-                <li>object</li>
-                <li>process</li>
-                <li>role</li>
-                <li>location</li>
-                <li>individual</li>
-            </ul>
-            
-            <p>The remaining research facets are suggested as definitional aspects of any piece of empirical research. A research paper, or thesis, could reasonably be expected to develop <em>concepts</em> from the literature and to characterize the relationships between the concepts through a <em>theoretical framing</em>. The research design would explain what <em>empirical techniques</em> are used, and why they were chosen, as well as explaining the <em>analytical techniques</em> used to process that data. The remaining facets of research, such as results and conclusions, would be a part of the paper, but in this metadata catalogue, we are only cataloguing the titles, abstracts and keywords of papers. In any case, the words used in results and conclusions are very likely not quite as specific as the words used in the other research facets.</p>
-            
-            <p>The idea of descriptive scope is that we have categorized each of the index terms in the taxonomy as being characteristic of one the five research facets: Phenomenon, Concept, Theoretical framing, Empirical technique, Analytical technique. By looking at the index terms that have been allocated to a record in the catalogue, we can indicate whether there any index terms that are usually used in these categories. Each of the letters "PCTEA" appear only if there is at least one index term from one of the five facets. This is preceded by a number that simply indicates how many. For example, if all of them are present, the descriptive scope is indicated with "5 PCTEA". If there are no words usually used to describe concepts, and no words usually used to describe empirical techniques, then the descriptive scope would be "3 PTA".</p>
-            
-            <p>This gives a very quick and dirty indication of how comprehensive the abstract and title are in relation to a complete description of empirically based research, but only if we have the right index terms and have categorized them correctly.</p>
-            
-            <p>What do you think of this indicator? Could it be helpful? Are there any ways that we could improve the categorization of these words, or the way we use them? For example, some research may be comprehensively summarized in the abstract, but we are not picking up the right words.</p>
-            
-            <p>All comments and suggestions will be gratefully received.</p>
-        </div>
+<p>Construction Management is a research field with a clear focus. Construction is an industry sector, so research centres on activity within that sector. Management is part of the social sciences, and research in this field draws on many of them, including economics, law and sociology. In practice, the field is defined by what researchers actually study. It is often described as the application of social science to the construction sector, although this is not the whole story.</p>
+
+<p>Applied research is empirical research. This means that, in any particular piece of research, the phenomenon under study is linked to specific activity in or around construction. A study may focus on one or more types of <b>phenomena</b>:</p>
+
+<ul>
+	<li>object</li>
+	<li>process</li>
+	<li>role</li>
+	<li>location</li>
+	<li>individual</li>
+</ul>
+<p>Other facets help define any piece of empirical research. A paper or thesis draws on <b>concepts</b> from the literature and sets out the relationships between them. This forms the <b>theoretical framing</b>. The research design then explains the <b>empirical techniques</b> used to collect data and the <b>analytical techniques</b> used to examine it. The paper will also report results and conclusions, but for this catalogue we use only titles, abstracts and keywords (the metadata). Results and conclusions are often closely tied to the specific context of the study, while the metadata tends to use terms that describe broader issues and is therefore more suitable for indexing.</p>
+
+<p>Descriptive scope is based on how the taxonomy assigns each index term to one of five facets: Phenomenon, Concept, Theoretical framing, Empirical technique, or Analytical technique. By inspecting the index terms assigned to a record, we can see whether any terms from each facet appear. Each letter in "PCTEA" appears only when at least one term from that facet is present. A number in front shows how many facets appear. For instance, "5 PCTEA" means all five facets are represented. If a record contains no terms that belong to Concepts or Empirical techniques, the descriptive scope becomes "3 PTA".</p>
+
+<p>This gives a quick indication of how fully the title and abstract describe an empirical study. Its value depends on the quality of the index terms and on whether they are assigned to the correct facets.</p>
+
+<p>What do you think of this indicator? Would it be useful in practice? Are there ways to refine the categories or the way we apply them? For example, an abstract may summarize the work well, yet we may still miss key terms.</p>
+
+<p>Comments and suggestions are welcome.</p>
+
+</div>
 
         <div><small>
             <p>-------------------------------------------</p>
