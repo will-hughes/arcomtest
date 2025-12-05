@@ -6,11 +6,11 @@
     <xpage:body>
 
         <div>
-            <p>Subjects are the academic lens through which we examine the real-world issues, categorized into topics. The Index Terms have been derived from the text in the titles, abstracts and keywords of the items in this database. They are grouped together into academic subjects. These subjects are the building blocks of academic knowledge. They represent the kind of science or discipline that is being appplied to real-world problems, insofar as the words in the metadata use the terminology of those subjects.</p>
-        </div>
-        
-        <div>
-            <p>The list of subjects in this taxonomy consists of more than 500 items. You may browse them in the browse menu, accessible from the navigation bar at the top of the page - click 'Browse' and then 'Browse by Subjects'. As always, if any of these Subjects look strange or unexpected, or bring up unexpected papers when you click on them or if you think important Subjects are missing from the list, please let us know.</p>
+			<p>Subjects are the academic lens through which we examine real-world issues. The index terms in this catalogue come from the titles, abstracts and keywords of the items in the database. These terms are grouped into academic subjects, which act as the basic building blocks of academic knowledge. They indicate which areas of scholarship are being applied to real-world problems, based on the terminology found in the metadata.</p>
+
+			<p>Many of these subjects will be familiar from degree programmes and textbooks, as they represent the core disciplinary perspectives used in construction-related research. Examples include contract law, construction economics, organizational behaviour, sustainability science and qualitative research methods. These examples are illustrative only: the full taxonomy contains more than 500 subjects.</p>
+
+			<p>We are still developing the best way to present the full list here, so this section remains work in progress.</p>
         </div>
 
         <div><small>
@@ -21,6 +21,8 @@
             <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
         </small></div>
 
-        <p><small><i>Last updated 11 November 2025</i></small></p>
+        <p><small><i>Last updated 5 December 2025</i></small></p>
     </xpage:body>
 </xpage:page>
+
+
