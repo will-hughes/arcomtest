@@ -36,6 +36,6 @@
             <p>Any correspondence concerning this catalogue should be sent to <a href="mailto:{$config{adminemail}}"><epc:print expr="$config{adminemail}" /></a>.</p>
         </small></div>
 
-        <p><small><i>Last updated 11 November 2025</i></small></p>
+        <p><small><i>Last updated 5 December 2025</i></small></p>
     </xpage:body>
 </xpage:page>
