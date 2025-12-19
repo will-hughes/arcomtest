@@ -18,6 +18,7 @@
 	<epp:phrase id="eprint_fieldopt_thesis_name_archd">ArchD</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_archdr">ArchDr</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_darch">DArch</epp:phrase>
+	<epp:phrase id="eprint_fieldopt_thesis_name_artd">ArtD</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_dba">DBA</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_dbl">DBL</epp:phrase>
 	<epp:phrase id="eprint_fieldopt_thesis_name_dcom">DCom</epp:phrase>
